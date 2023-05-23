@@ -7,7 +7,23 @@ public class Missao {
     private String descricao;
     private int nivelDificuldade;
     private int pontos;
-
+    
+    public void incluirMissao() {
+        
+    }
+    
+    public void consultarMissoes(){
+        
+    }
+    
+    public void alterarMissao() {
+        
+    }
+    
+    public void excluirMissao() {
+        
+    }
+    
     public long getId() {
         return id;
     }

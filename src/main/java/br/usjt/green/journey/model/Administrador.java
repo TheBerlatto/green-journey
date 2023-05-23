@@ -11,16 +11,4 @@ public class Administrador extends Pessoa {
     public void setCodAdmin(int codAdmin) {
         this.codAdmin = codAdmin;
     }
-    
-    public void incluirMissao() {
-        
-    }
-    
-    public void excluirMissao() {
-        
-    }
-    
-    public void alterarMissao() {
-        
-    }
 }

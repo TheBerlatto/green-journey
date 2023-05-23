@@ -4,7 +4,6 @@ public class MissaoAtribuida {
 
     private boolean finalizada;
     private Missao missao;
-    private Usuario usuario;
 
     public boolean isFinalizada() {
         return finalizada;
@@ -21,14 +20,4 @@ public class MissaoAtribuida {
     public void setMissao(Missao missao) {
         this.missao = missao;
     }
-
-    public Usuario getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
-    }
-    
-    
 }
