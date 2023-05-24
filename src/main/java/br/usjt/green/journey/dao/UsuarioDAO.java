@@ -19,4 +19,31 @@ public class UsuarioDAO {
             }
         }
     }
+    public void atualizarUsuario(Usuario usuario) throws Exception{
+    /*recebe os dados do usuario e atribui*/
+    /*comando do sql usado*/
+    String sql = "UPDATE tb_pessoa SET email = ?, senha = ?, username = ? WHERE codigo = ?";
+    /*conexao com o banco e pre-compila o comando sql*/
+    try (Connection conn = ConnectionFactory.obtemConexao(); 
+            PreparedStatement ps = conn.prepareStatement(sql)) {
+        ps.setString(1, usuario.getUsername());
+        ps.setString(2, usuario.getEmail());
+        ps.setString(2, usuario.getSenha()); 
+        
+        ps.execute();
+    }
+    
+    }
+    public void deletarUsuario(Usuario usuario) throws Exception{
+    /*classe responsavel por excluir o usuario do banco*/
+    String sql = "DELETE FROM tb_pessoa WHERE codigo = ?";
+    
+    try (Connection conn = ConnectionFactory.obtemConexao(); 
+            PreparedStatement ps = conn.prepareStatement(sql)){
+    
+    }
+    }
+    public void atribuirMissao(Missao missao){
+    
+    }
 }

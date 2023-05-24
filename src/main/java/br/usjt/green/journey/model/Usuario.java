@@ -28,6 +28,8 @@ public class Usuario extends Pessoa {
         return pontuacao;
     }
 
+    /*a pontuação deve ser recebida da lista de missões, verificando cada missão
+    se ela foi concluida ou não, se ela foi então atribuir os pontos a esse atributo*/
     public void setPontuacao(int pontuacao) {
         this.pontuacao = pontuacao;
     }

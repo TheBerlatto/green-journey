@@ -18,4 +18,7 @@ public class MissaoDAO {
             ps.executeUpdate();
         }
     }
+    public void deleteMissao(Missao missao) throws Exception {
+    
+    }
 }
