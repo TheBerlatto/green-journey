@@ -7,7 +7,11 @@ public class Usuario extends Pessoa {
     private long Id;
     private int pontuacao;
     private List<MissaoAtribuida> listaMissoes;
-    
+
+    public Usuario(String username, String senha) {
+        super(username, senha);
+    }
+        
     public void concluirMissao(){
         
     }
