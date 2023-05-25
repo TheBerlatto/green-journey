@@ -9,6 +9,9 @@ import java.sql.ResultSet;
 public class UsuarioDAO {
 
     public boolean consultarUsuario(Usuario usuario) throws Exception {
+        
+        /*metodo que consulta os dados do usuario usando o username e a senha*/
+        
         String sql = "select * from tb_usuario where nome = ? and senha = ? ";
         try (Connection conn = ConnectionFactory.obtemConexao(); PreparedStatement ps = conn.prepareStatement(sql)) {
 
@@ -40,9 +43,12 @@ public class UsuarioDAO {
     
     try (Connection conn = ConnectionFactory.obtemConexao(); 
             PreparedStatement ps = conn.prepareStatement(sql)){
-    
+        ps.setLong(1, usuario.getId());
+        
+        ps.execute();
     }
     }
+    /*metodo que associa uma missão ao usuario*/
     public void atribuirMissao(Missao missao){
     
     }
