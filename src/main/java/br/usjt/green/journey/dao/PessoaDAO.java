@@ -6,7 +6,6 @@ package br.usjt.green.journey.dao;
 
 import br.usjt.green.journey.connection.ConnectionFactory;
 import br.usjt.green.journey.model.Pessoa;
-import br.usjt.green.journey.model.Usuario;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

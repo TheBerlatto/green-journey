@@ -14,7 +14,7 @@ public class Missao {
         
     }
     
-    public void consultarMissoes(){
+    public void consultarMissoes() throws Exception{
         MissaoDAO dao = new MissaoDAO();
         dao.consultar(this.id);
     }
@@ -27,7 +27,7 @@ public class Missao {
         
     }
     
-    public long getId() {
+    public int getId() {
         return id;
     }
 

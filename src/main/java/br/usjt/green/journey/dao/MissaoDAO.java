@@ -9,7 +9,7 @@ import java.sql.ResultSet;
 public class MissaoDAO {
 
     public void incluir(Missao missao) throws Exception {
-        String sql = "insert into tb_missao (titulo, descricao, nivelDificuldade, pontos) VALUES (?, ?, ?, ?)";
+        String sql = "insert into tb_missao (titulo, descricao, nivelDificuldade, pontos) VALUES (?, ?, ?, ?);";
         try (Connection conn = ConnectionFactory.obtemConexao(); PreparedStatement ps = conn.prepareStatement(sql)) {
 
             ps.setString(1, missao.getTitulo());
@@ -29,7 +29,7 @@ public class MissaoDAO {
     }
     
     public Missao consultar(int id) throws Exception {
-        String sql = "SELECT * FROM tb_missao WHERE id = ?";
+        String sql = "SELECT * FROM tb_missao WHERE id = ?;";
         Missao missao = new Missao();
         try (Connection conn = ConnectionFactory.obtemConexao(); PreparedStatement ps = conn.prepareStatement(sql)) {
 
@@ -49,10 +49,17 @@ public class MissaoDAO {
     }
     
     public void alterar(Missao missao) throws Exception {
-        String sql = "update tb_missao set titulo = ?, ";
+        String sql = "UPDATE tb_missao SET titulo = ?, descricao = ?, nivelDificuldade = ?, pontos = ? WHERE id = ?;";
         try (Connection conn = ConnectionFactory.obtemConexao(); PreparedStatement ps = conn.prepareStatement(sql)) {
-
+            
+            ps.setString(1, missao.getTitulo());
+            ps.setString(2, missao.getDescricao());
+            ps.setInt(3, missao.getNivelDificuldade());
+            ps.setInt(4, missao.getPontos());
+            ps.setInt(5, missao.getId());
             ps.executeUpdate();
+            
+            //A AVALIAR!!!
         }
     }
 }
