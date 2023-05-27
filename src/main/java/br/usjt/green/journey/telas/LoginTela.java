@@ -4,8 +4,8 @@
  */
 package br.usjt.green.journey.telas;
 
-import br.usjt.green.journey.dao.UsuarioDAO;
-import br.usjt.green.journey.model.Usuario;
+import br.usjt.green.journey.dao.PessoaDAO;
+import br.usjt.green.journey.model.Pessoa;
 import javax.swing.JOptionPane;
 
 /**
@@ -101,11 +101,11 @@ public class LoginTela extends javax.swing.JFrame {
         
         try {
             //verificar se o usuario existe no db
-            Usuario usuario = new Usuario(username, senha);
-            UsuarioDAO dao = new UsuarioDAO();
+            Pessoa pessoa = new Pessoa(username, senha);
+            PessoaDAO dao = new PessoaDAO();
             
-            if (dao.consultarUsuario(usuario)) {
-                JOptionPane.showMessageDialog(null, "Bem vindo, " + usuario.getUsername() + "!", "Olá!", JOptionPane.INFORMATION_MESSAGE);
+            if (dao.consultar(pessoa)) {
+                JOptionPane.showMessageDialog(null, "Bem vindo, " + pessoa.getUsername() + "!", "Olá!", JOptionPane.INFORMATION_MESSAGE);
             } else {
                 JOptionPane.showMessageDialog(null, "Usuário Inválido!", "Oops", JOptionPane.WARNING_MESSAGE);
             }

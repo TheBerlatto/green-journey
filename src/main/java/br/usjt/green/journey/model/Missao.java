@@ -1,8 +1,10 @@
 package br.usjt.green.journey.model;
 
+import br.usjt.green.journey.dao.MissaoDAO;
+
 public class Missao {
 
-    private long id;
+    private int id;
     private String titulo;
     private String descricao;
     private int nivelDificuldade;
@@ -13,7 +15,8 @@ public class Missao {
     }
     
     public void consultarMissoes(){
-        
+        MissaoDAO dao = new MissaoDAO();
+        dao.consultar(this.id);
     }
     
     public void alterarMissao() {
@@ -28,7 +31,7 @@ public class Missao {
         return id;
     }
 
-    public void setId(long Id) {
+    public void setId(int Id) {
         this.id = Id;
     }
 

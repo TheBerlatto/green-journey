@@ -4,7 +4,6 @@ import java.util.List;
 
 public class Usuario extends Pessoa {
 
-    private long Id;
     private int pontuacao;
     private List<MissaoAtribuida> listaMissoes;
 
@@ -14,14 +13,6 @@ public class Usuario extends Pessoa {
         
     public void concluirMissao(){
         
-    }
-    
-    public long getId() {
-        return Id;
-    }
-
-    public void setId(long Id) {
-        this.Id = Id;
     }
 
     public int getPontuacao() {

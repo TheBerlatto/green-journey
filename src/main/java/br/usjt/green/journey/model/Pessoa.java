@@ -1,9 +1,8 @@
 package br.usjt.green.journey.model;
 
-import java.util.Date;
-
 public class Pessoa {
 
+    private int id;
     private String username;
     private String email;
     private String senha;
@@ -36,4 +35,12 @@ public class Pessoa {
     public void setSenha(String senha) {
         this.senha = senha;
     }    
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }  
 }
