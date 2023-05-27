@@ -39,10 +39,11 @@ public class MissaoAtDAO {
                     // Verifica se já existe a associação entre usuário e missão
                     if (!existeAssociacao(idUsuario, idMissao, conn) && !existeMissao(idMissao, conn)) {
                         // Insere a associação entre usuário e missão
-                        String sqlInsert = "INSERT INTO tb_missao_usuario (id_usuario, id_missao) VALUES (?, ?)";
+                        String sqlInsert = "INSERT INTO tb_missaoAt (id_usuario, id_missao, finalizada) VALUES (?, ?, ?)";
                         try (PreparedStatement stmtInsert = conn.prepareStatement(sqlInsert)) {
                             stmtInsert.setInt(1, idUsuario);
                             stmtInsert.setInt(2, idMissao);
+                            stmtInsert.setBoolean(3, false);
                             stmtInsert.executeUpdate();
                         }
                     }
@@ -82,9 +83,20 @@ public class MissaoAtDAO {
         }
         return false;
     }
-    public void alterarEstado(){
-    /*altera estado da missão de não finalizada para finalizxada*/
-    
+    public void alterarEstado(int idUsuario, int idMissao) throws Exception{
+    /*altera estado da missão de não finalizada para finalizada*/
+      String sql = "UPDATE tb_missaoAt SET finalizada = ? WHERE id_missao = ? AND id_usuario = ?";
+        try (Connection conn = ConnectionFactory.obtemConexao();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setBoolean(1, true);
+            stmt.setInt(2, idMissao);
+            stmt.setInt(3, idUsuario);
+            stmt.executeUpdate();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
     }
+    
+    
     
 }
