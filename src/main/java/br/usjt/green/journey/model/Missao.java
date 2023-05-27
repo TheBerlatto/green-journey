@@ -10,13 +10,21 @@ public class Missao {
     private int nivelDificuldade;
     private int pontos;
     
-    public void incluirMissao() {
+    private MissaoDAO missaoDAO = new MissaoDAO();
+    
+    public void inserirMissao() throws Exception {
+        Missao missao = new Missao();
+        missao.setTitulo(this.titulo);
+        missao.setDescricao(this.descricao);
+        missao.setNivelDificuldade(this.nivelDificuldade);
+        missao.setPontos(this.pontos);
         
+        missaoDAO.inserir(missao);
     }
     
-    public void consultarMissoes() throws Exception{
-        MissaoDAO dao = new MissaoDAO();
-        dao.consultar(this.id);
+    public Missao consultarMissao(int id) throws Exception{
+        MissaoDAO missaoDAO = new MissaoDAO();
+        return missaoDAO.consultar(id);
     }
     
     public void alterarMissao() {

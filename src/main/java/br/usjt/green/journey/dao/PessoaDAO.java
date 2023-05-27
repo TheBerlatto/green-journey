@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package br.usjt.green.journey.dao;
 
 import br.usjt.green.journey.connection.ConnectionFactory;
@@ -17,7 +13,7 @@ import java.sql.ResultSet;
 public class PessoaDAO {
 
     public void inserir(Pessoa pessoa) throws Exception {
-        String sql = "INSERT INTO tb_pessoa (username, email, senha, tipoPessoa) VALUES (?, ?, ?, 'U');";
+        String sql = "INSERT INTO tb_pessoa (username, email, senha, pontuacao, tipoPessoa) VALUES (?, ?, ?, 0, 'U');";
         try (Connection conn = ConnectionFactory.obtemConexao(); PreparedStatement ps = conn.prepareStatement(sql)) {
 
             ps.setString(1, pessoa.getUsername());

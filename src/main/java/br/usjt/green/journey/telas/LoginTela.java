@@ -6,6 +6,7 @@ package br.usjt.green.journey.telas;
 
 import br.usjt.green.journey.dao.PessoaDAO;
 import br.usjt.green.journey.model.Pessoa;
+import br.usjt.green.journey.model.Usuario;
 import javax.swing.JOptionPane;
 
 /**
@@ -36,12 +37,30 @@ public class LoginTela extends javax.swing.JFrame {
         senhaPasswordField = new javax.swing.JPasswordField();
         sairButton = new javax.swing.JButton();
         entrarButton = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setAutoRequestFocus(false);
+        setBackground(new java.awt.Color(178, 204, 178));
+        setBounds(new java.awt.Rectangle(0, 0, 0, 0));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setEnabled(false);
+        setFocusable(false);
+        getContentPane().setLayout(null);
 
         loginTextField.setBorder(javax.swing.BorderFactory.createTitledBorder("Digite seu username:"));
+        loginTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginTextFieldActionPerformed(evt);
+            }
+        });
+        getContentPane().add(loginTextField);
+        loginTextField.setBounds(371, 114, 142, 39);
 
         senhaPasswordField.setBorder(javax.swing.BorderFactory.createTitledBorder("Digite sua senha:"));
+        getContentPane().add(senhaPasswordField);
+        senhaPasswordField.setBounds(371, 184, 142, 39);
 
         sairButton.setText("Sair");
         sairButton.addActionListener(new java.awt.event.ActionListener() {
@@ -49,6 +68,8 @@ public class LoginTela extends javax.swing.JFrame {
                 sairButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(sairButton);
+        sairButton.setBounds(370, 241, 70, 27);
 
         entrarButton.setText("Entrar");
         entrarButton.addActionListener(new java.awt.event.ActionListener() {
@@ -56,37 +77,21 @@ public class LoginTela extends javax.swing.JFrame {
                 entrarButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(entrarButton);
+        entrarButton.setBounds(450, 241, 76, 27);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(64, 64, 64)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(loginTextField)
-                    .addComponent(senhaPasswordField)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addComponent(sairButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
-                        .addComponent(entrarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(19, 19, 19)))
-                .addContainerGap(75, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(86, 86, 86)
-                .addComponent(loginTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(senhaPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(sairButton, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-                    .addComponent(entrarButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(38, Short.MAX_VALUE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/usjt/green/journey/imagens/teste-removebg-preview.png"))); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(100, 110, 200, 60);
+
+        jTextField1.setText("Ajude   o   planeta   com pequenas  atitudes.  ");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField1);
+        jTextField1.setBounds(74, 192, 258, 31);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -101,11 +106,11 @@ public class LoginTela extends javax.swing.JFrame {
         
         try {
             //verificar se o usuario existe no db
-            Pessoa pessoa = new Pessoa(username, senha);
+            Pessoa usuario = new Pessoa(username, senha);
             PessoaDAO dao = new PessoaDAO();
             
-            if (dao.consultarSeExistir(pessoa)) {
-                JOptionPane.showMessageDialog(null, "Bem vindo, " + pessoa.getUsername() + "!", "Olá!", JOptionPane.INFORMATION_MESSAGE);
+            if (dao.consultarSeExistir(usuario)) {
+                JOptionPane.showMessageDialog(null, "Bem vindo, " + usuario.getUsername() + "!", "Olá!", JOptionPane.INFORMATION_MESSAGE);
             } else {
                 JOptionPane.showMessageDialog(null, "Usuário Inválido!", "Oops", JOptionPane.WARNING_MESSAGE);
             }
@@ -114,6 +119,14 @@ public class LoginTela extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }//GEN-LAST:event_entrarButtonActionPerformed
+
+    private void loginTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_loginTextFieldActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -152,6 +165,8 @@ public class LoginTela extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton entrarButton;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField loginTextField;
     private javax.swing.JButton sairButton;
     private javax.swing.JPasswordField senhaPasswordField;

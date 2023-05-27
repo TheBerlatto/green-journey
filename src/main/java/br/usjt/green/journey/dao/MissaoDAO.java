@@ -47,6 +47,8 @@ public class MissaoDAO {
                     missao.setDescricao(rs.getString("descricao"));
                     missao.setNivelDificuldade(rs.getInt("nivelDificuldade"));
                     missao.setPontos(rs.getInt("pontos"));
+                } else {
+                    missao = null;
                 }
             }
         }
