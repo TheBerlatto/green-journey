@@ -104,7 +104,7 @@ public class LoginTela extends javax.swing.JFrame {
             Pessoa pessoa = new Pessoa(username, senha);
             PessoaDAO dao = new PessoaDAO();
             
-            if (dao.consultar(pessoa)) {
+            if (dao.consultarSeExistir(pessoa)) {
                 JOptionPane.showMessageDialog(null, "Bem vindo, " + pessoa.getUsername() + "!", "Olá!", JOptionPane.INFORMATION_MESSAGE);
             } else {
                 JOptionPane.showMessageDialog(null, "Usuário Inválido!", "Oops", JOptionPane.WARNING_MESSAGE);

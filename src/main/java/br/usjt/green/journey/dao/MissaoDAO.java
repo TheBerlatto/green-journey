@@ -6,10 +6,14 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+/**
+ *
+ * @author TheBerlatto
+ */
 public class MissaoDAO {
 
-    public void incluir(Missao missao) throws Exception {
-        String sql = "insert into tb_missao (titulo, descricao, nivelDificuldade, pontos) VALUES (?, ?, ?, ?);";
+    public void inserir(Missao missao) throws Exception {
+        String sql = "INSERT INTO tb_missao (titulo, descricao, nivelDificuldade, pontos) VALUES (?, ?, ?, ?);";
         try (Connection conn = ConnectionFactory.obtemConexao(); PreparedStatement ps = conn.prepareStatement(sql)) {
 
             ps.setString(1, missao.getTitulo());
@@ -19,8 +23,9 @@ public class MissaoDAO {
             ps.executeUpdate();
         }
     }
+    
     public void deletar(Missao missao) throws Exception {
-        String sql = "delete from tb_missao where id = ?";
+        String sql = "DELETE FROM tb_missao where id = ?";
         try (Connection conn = ConnectionFactory.obtemConexao(); PreparedStatement ps = conn.prepareStatement(sql)) {
 
             ps.setInt(1, missao.getId());
@@ -56,10 +61,7 @@ public class MissaoDAO {
             ps.setString(2, missao.getDescricao());
             ps.setInt(3, missao.getNivelDificuldade());
             ps.setInt(4, missao.getPontos());
-            ps.setInt(5, missao.getId());
-            ps.executeUpdate();
-            
-            //A AVALIAR!!!
+            ps.executeUpdate();   
         }
     }
 }

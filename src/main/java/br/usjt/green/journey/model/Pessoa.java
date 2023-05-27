@@ -7,6 +7,10 @@ public class Pessoa {
     private String email;
     private String senha;
 
+    public Pessoa() {
+        
+    }
+    
     public Pessoa(String username, String senha) {
         this.username = username;
         this.senha = senha;
