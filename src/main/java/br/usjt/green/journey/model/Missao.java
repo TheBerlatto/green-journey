@@ -9,32 +9,37 @@ public class Missao {
     private String descricao;
     private int nivelDificuldade;
     private int pontos;
-    
+
     private MissaoDAO missaoDAO = new MissaoDAO();
-    
-    public void inserirMissao() throws Exception {
+
+    public void inserirMissao(String titulo, String descricao, int nivelDificuldade, int pontos) throws Exception {
         Missao missao = new Missao();
-        missao.setTitulo(this.titulo);
-        missao.setDescricao(this.descricao);
-        missao.setNivelDificuldade(this.nivelDificuldade);
-        missao.setPontos(this.pontos);
-        
+        missao.setTitulo(titulo);
+        missao.setDescricao(descricao);
+        missao.setNivelDificuldade(nivelDificuldade);
+        missao.setPontos(pontos);
+
         missaoDAO.inserir(missao);
     }
-    
-    public Missao consultarMissao(int id) throws Exception{
-        MissaoDAO missaoDAO = new MissaoDAO();
+
+    public Missao consultarMissao(int id) throws Exception {
         return missaoDAO.consultar(id);
     }
-    
-    public void alterarMissao() {
+
+    public void alterarMissao(String titulo, String descricao, int nivelDificuldade, int pontos) throws Exception {
+        Missao missao = new Missao();
+        missao.setTitulo(titulo);
+        missao.setDescricao(descricao);
+        missao.setNivelDificuldade(nivelDificuldade);
+        missao.setPontos(pontos);
         
+        missaoDAO.alterar(missao);
     }
-    
-    public void excluirMissao() {
-        
+
+    public void deletarMissao(int id) throws Exception {
+        missaoDAO.deletar(id);
     }
-    
+
     public int getId() {
         return id;
     }
@@ -74,6 +79,5 @@ public class Missao {
     public void setPontos(int pontos) {
         this.pontos = pontos;
     }
-    
-    
+
 }

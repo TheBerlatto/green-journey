@@ -22,12 +22,18 @@ public class MissaoAtribuida {
     public void setMissao(Missao missao) {
         this.missao = missao;
     }
-      public void inserirMissaoAt(String username) throws Exception {
+
+    public void inserirMissaoAt(String username) throws Exception {
         MissaoAtDAO dao = new MissaoAtDAO();
         dao.inserirMissaoAt(username);
     }
-       public void alterarEstado(int idUsuario, int idMissao) throws Exception {
+
+    public void alterarEstado(int idUsuario, int idMissao) throws Exception {
         MissaoAtDAO dao = new MissaoAtDAO();
         dao.alterarEstado(idUsuario, idMissao);
+    }
+
+    public void concluirMissao() {
+
     }
 }

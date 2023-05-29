@@ -24,11 +24,11 @@ public class MissaoDAO {
         }
     }
     
-    public void deletar(Missao missao) throws Exception {
+    public void deletar(int id) throws Exception {
         String sql = "DELETE FROM tb_missao where id = ?";
         try (Connection conn = ConnectionFactory.obtemConexao(); PreparedStatement ps = conn.prepareStatement(sql)) {
 
-            ps.setInt(1, missao.getId());
+            ps.setInt(1, id);
             ps.executeUpdate();
         }
     }
@@ -63,6 +63,7 @@ public class MissaoDAO {
             ps.setString(2, missao.getDescricao());
             ps.setInt(3, missao.getNivelDificuldade());
             ps.setInt(4, missao.getPontos());
+            ps.setInt(5, missao.getId());
             ps.executeUpdate();   
         }
     }

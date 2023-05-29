@@ -131,7 +131,7 @@ public class LoginTela extends javax.swing.JFrame {
         
         try {
             //verificar se o usuario existe no db
-            Pessoa usuario = new Pessoa(username, senha);
+            Usuario usuario = new Usuario(username, senha);
             PessoaDAO dao = new PessoaDAO();
             
             if (dao.consultarSeExistir(usuario)) {
