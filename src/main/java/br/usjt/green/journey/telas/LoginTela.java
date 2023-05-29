@@ -38,11 +38,15 @@ public class LoginTela extends javax.swing.JFrame {
         sairButton = new javax.swing.JButton();
         entrarButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAutoRequestFocus(false);
-        setBackground(new java.awt.Color(178, 204, 178));
         setBounds(new java.awt.Rectangle(0, 0, 0, 0));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setEnabled(false);
@@ -56,11 +60,11 @@ public class LoginTela extends javax.swing.JFrame {
             }
         });
         getContentPane().add(loginTextField);
-        loginTextField.setBounds(371, 114, 142, 39);
+        loginTextField.setBounds(390, 140, 170, 49);
 
         senhaPasswordField.setBorder(javax.swing.BorderFactory.createTitledBorder("Digite sua senha:"));
         getContentPane().add(senhaPasswordField);
-        senhaPasswordField.setBounds(371, 184, 142, 39);
+        senhaPasswordField.setBounds(390, 210, 170, 49);
 
         sairButton.setText("Sair");
         sairButton.addActionListener(new java.awt.event.ActionListener() {
@@ -69,7 +73,7 @@ public class LoginTela extends javax.swing.JFrame {
             }
         });
         getContentPane().add(sairButton);
-        sairButton.setBounds(370, 241, 70, 27);
+        sairButton.setBounds(390, 270, 70, 29);
 
         entrarButton.setText("Entrar");
         entrarButton.addActionListener(new java.awt.event.ActionListener() {
@@ -78,20 +82,41 @@ public class LoginTela extends javax.swing.JFrame {
             }
         });
         getContentPane().add(entrarButton);
-        entrarButton.setBounds(450, 241, 76, 27);
+        entrarButton.setBounds(470, 270, 90, 29);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/usjt/green/journey/imagens/teste-removebg-preview.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Osmar Jatoba Neto\\Desktop\\green-journey-master\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\teste-removebg-preview.png")); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(100, 110, 200, 60);
+        jLabel1.setBounds(70, 150, 200, 60);
 
-        jTextField1.setText("Ajude   o   planeta   com pequenas  atitudes.  ");
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Osmar Jatoba Neto\\Desktop\\foia canto inferior direito.png")); // NOI18N
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(520, 350, 100, 80);
+
+        jTextField1.setText("Ajude o planeta com pequenas  atitudes.  ");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
         });
         getContentPane().add(jTextField1);
-        jTextField1.setBounds(74, 192, 258, 31);
+        jTextField1.setBounds(20, 230, 310, 31);
+
+        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\Osmar Jatoba Neto\\Desktop\\foia_canto_inferior_esquerdo.png")); // NOI18N
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(-10, 340, 90, 90);
+
+        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Osmar Jatoba Neto\\Desktop\\foia canto superior esquerdo.png")); // NOI18N
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(-10, -10, 90, 90);
+
+        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Osmar Jatoba Neto\\Desktop\\foia canto superior direito.png")); // NOI18N
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(520, -10, 90, 90);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Osmar Jatoba Neto\\Desktop\\green-journey-master\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\Cor de Fundo.jpg")); // NOI18N
+        jLabel2.setText("dsfsdf");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(0, 0, 600, 420);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -166,6 +191,11 @@ public class LoginTela extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton entrarButton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField loginTextField;
     private javax.swing.JButton sairButton;
