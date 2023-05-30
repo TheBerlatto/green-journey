@@ -1,5 +1,6 @@
 package br.usjt.green.journey.model;
 
+//Concluída
 public class Pessoa {
 
     private int id;
