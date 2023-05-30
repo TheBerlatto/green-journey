@@ -28,9 +28,9 @@ public class MissaoAtribuida {
         dao.inserirMissaoAt(username);
     }
 
-    public void alterarEstado(int idUsuario, int idMissao) throws Exception {
+    public void concluirMissao(int idUsuario, int idMissao) throws Exception {
         MissaoAtDAO dao = new MissaoAtDAO();
-        dao.alterarEstado(idUsuario, idMissao);
+        dao.concluirMissao(idUsuario, idMissao);
     }
 
     public void concluirMissao() {

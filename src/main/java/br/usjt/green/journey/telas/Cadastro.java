@@ -29,12 +29,10 @@ public class Cadastro extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel3 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        emailTextField = new javax.swing.JTextField();
+        usernameTextField = new javax.swing.JTextField();
+        passwordTextField = new javax.swing.JPasswordField();
+        cadastroButton = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -42,44 +40,36 @@ public class Cadastro extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jTextField3.setText("Email");
-        getContentPane().add(jTextField3);
-        jTextField3.setBounds(220, 220, 173, 26);
-
-        jTextField4.setText("Nome de Usúario");
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        emailTextField.setText("Email");
+        emailTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                emailTextFieldActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField4);
-        jTextField4.setBounds(220, 250, 173, 26);
+        getContentPane().add(emailTextField);
+        emailTextField.setBounds(210, 130, 173, 22);
 
-        jTextField2.setText("Data de Nascimento");
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        usernameTextField.setText("Nome de Usúario");
+        usernameTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                usernameTextFieldActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField2);
-        jTextField2.setBounds(220, 190, 173, 26);
+        getContentPane().add(usernameTextField);
+        usernameTextField.setBounds(210, 170, 173, 22);
 
-        jPasswordField1.setText("jPasswordField1");
-        getContentPane().add(jPasswordField1);
-        jPasswordField1.setBounds(220, 280, 173, 26);
+        passwordTextField.setText("jPasswordField1");
+        getContentPane().add(passwordTextField);
+        passwordTextField.setBounds(210, 210, 173, 22);
 
-        jButton1.setText("Finalizar");
-        getContentPane().add(jButton1);
-        jButton1.setBounds(250, 320, 77, 27);
-
-        jTextField1.setText("Nome Completo");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        cadastroButton.setText("Finalizar");
+        cadastroButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                cadastroButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(220, 160, 173, 26);
+        getContentPane().add(cadastroButton);
+        cadastroButton.setBounds(250, 280, 73, 22);
         getContentPane().add(jLabel2);
         jLabel2.setBounds(130, 220, 80, 0);
         getContentPane().add(jLabel1);
@@ -90,17 +80,42 @@ public class Cadastro extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void usernameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_usernameTextFieldActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void emailTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_emailTextFieldActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    private void cadastroButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroButtonActionPerformed
+        // botão que faz o cadastro usuario
+        String email = emailTextField.getText();
+        //recebe o nome do usuario
+        String username = usernameTextField.getText();
+        String senha = new String(passwordTextField.getPassword());
+        /*
+        try {
+            Usuario usuario = new Usuario (login, senha);
+            DAO dao = new DAO();
+            if (dao.existeUsuario(usuario)) {
+                JOptionPane.showMessageDialog(null, "Bem-vindo, " + login, "Resultado",
+                JOptionPane.INFORMATION_MESSAGE);
+                dt.setVisible(true);
+                this.dispose();
+            }
+            else {
+                JOptionPane.showMessageDialog(null, "Usuario não cadastrado", 
+                "Ups", JOptionPane.WARNING_MESSAGE);
+            }
+        }
+        catch (Exception e) {
+            JOptionPane.showMessageDialog (null, "ups, tente mais tarde");
+            e.printStackTrace();
+        }
+        //--------------------*/
+        
+    }//GEN-LAST:event_cadastroButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -138,15 +153,13 @@ public class Cadastro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton cadastroButton;
+    private javax.swing.JTextField emailTextField;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JPasswordField passwordTextField;
+    private javax.swing.JTextField usernameTextField;
     // End of variables declaration//GEN-END:variables
 }

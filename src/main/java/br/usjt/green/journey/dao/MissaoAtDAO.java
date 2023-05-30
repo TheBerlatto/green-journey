@@ -1,6 +1,7 @@
 package br.usjt.green.journey.dao;
 
 import br.usjt.green.journey.connection.ConnectionFactory;
+import br.usjt.green.journey.model.MissaoAtribuida;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -79,7 +80,7 @@ public class MissaoAtDAO {
         }
         return false;
     }
-    public void alterarEstado(int idPessoa, int idMissao) throws Exception{
+    public void concluirMissao(int idPessoa, int idMissao) throws Exception{
     /*altera estado da missão de não finalizada para finalizada*/
       String sql = "UPDATE tb_missaoAt SET finalizada = ? WHERE id_missao = ? AND id_pessoa = ?";
         try (Connection conn = ConnectionFactory.obtemConexao();
@@ -92,6 +93,26 @@ public class MissaoAtDAO {
             ex.printStackTrace();
         }
     }
+    public MissaoAtribuida obterMissao(int idPessoa, int idMissao) throws Exception{
+    /*fazer metodo para selecionar missão com id dela (recebe id do usuario e da missão)*/
+    String sql = "SELECT finalizada FROM tb_missaoAt WHERE id_pessoa = ? AND id_missao = ?";
+        try (Connection conn = ConnectionFactory.obtemConexao();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setInt(1,idPessoa);
+            stmt.setInt(2, idMissao);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                boolean finalizada = rs.getBoolean("finalizada");
+
+                return new MissaoAtribuida(idPessoa, idMissao, finalizada);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return null;
+    }
+    } 
     
     
     
