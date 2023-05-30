@@ -13,6 +13,10 @@ public class Usuario extends Pessoa {
     public Usuario() {
         
     }
+
+    public Usuario(int id, String username, String email) {
+        super(id, username, email);
+    }
     
     public Usuario(String username, String senha) {
         super(username, senha);
