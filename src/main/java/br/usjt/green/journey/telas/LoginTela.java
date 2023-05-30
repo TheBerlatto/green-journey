@@ -35,8 +35,11 @@ public class LoginTela extends javax.swing.JFrame {
         entrarButton = new javax.swing.JButton();
         sairButton = new javax.swing.JButton();
         cadastroButton = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(555, 355));
+        getContentPane().setLayout(null);
 
         usernameTextField.setBorder(javax.swing.BorderFactory.createTitledBorder("Username:"));
         usernameTextField.addActionListener(new java.awt.event.ActionListener() {
@@ -44,12 +47,20 @@ public class LoginTela extends javax.swing.JFrame {
                 usernameTextFieldActionPerformed(evt);
             }
         });
+        getContentPane().add(usernameTextField);
+        usernameTextField.setBounds(301, 64, 200, 60);
 
         senhaPasswordField.setBorder(javax.swing.BorderFactory.createTitledBorder("Senha:"));
+        getContentPane().add(senhaPasswordField);
+        senhaPasswordField.setBounds(301, 142, 200, 60);
 
-        logoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/usjt/green/journey/imagens/teste-removebg-preview.png"))); // NOI18N
+        logoLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\teste-removebg-preview.png")); // NOI18N
+        getContentPane().add(logoLabel);
+        logoLabel.setBounds(50, 106, 200, 70);
 
         jLabel1.setText("Ajude o planeta com pequenas atitudes!");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(38, 188, 220, 30);
 
         entrarButton.setText("Entrar");
         entrarButton.addActionListener(new java.awt.event.ActionListener() {
@@ -57,6 +68,8 @@ public class LoginTela extends javax.swing.JFrame {
                 entrarButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(entrarButton);
+        entrarButton.setBounds(409, 210, 90, 40);
 
         sairButton.setText("Sair");
         sairButton.addActionListener(new java.awt.event.ActionListener() {
@@ -64,6 +77,8 @@ public class LoginTela extends javax.swing.JFrame {
                 sairButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(sairButton);
+        sairButton.setBounds(301, 210, 90, 40);
 
         cadastroButton.setText("Cadastre-se");
         cadastroButton.addActionListener(new java.awt.event.ActionListener() {
@@ -71,52 +86,12 @@ public class LoginTela extends javax.swing.JFrame {
                 cadastroButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(cadastroButton);
+        cadastroButton.setBounds(335, 262, 120, 40);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(logoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(sairButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(entrarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(usernameTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                        .addComponent(senhaPasswordField)))
-                .addGap(42, 42, 42))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(cadastroButton)
-                .addGap(98, 98, 98))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(106, 106, 106)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(logoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(usernameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(senhaPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(entrarButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(sairButton, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(cadastroButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\cor_de_fundo.jpg")); // NOI18N
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(0, 0, 560, 360);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -136,6 +111,9 @@ public class LoginTela extends javax.swing.JFrame {
             
             if (dao.consultarSeExistir(usuario)) {
                 JOptionPane.showMessageDialog(null, "Bem vindo, " + usuario.getUsername() + "!", "Olá!", JOptionPane.INFORMATION_MESSAGE);
+                DashboardTela dt = new DashboardTela();
+                dt.setVisible(true);
+                this.dispose();
             } else {
                 JOptionPane.showMessageDialog(null, "Usuário Inválido!", "Oops", JOptionPane.WARNING_MESSAGE);
             }
@@ -146,8 +124,8 @@ public class LoginTela extends javax.swing.JFrame {
     }//GEN-LAST:event_entrarButtonActionPerformed
 
     private void cadastroButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroButtonActionPerformed
-        DashboardTela dt = new DashboardTela();
-        dt.setVisible(true);
+        Cadastro ct = new Cadastro();
+        ct.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_cadastroButtonActionPerformed
 
@@ -194,6 +172,7 @@ public class LoginTela extends javax.swing.JFrame {
     private javax.swing.JButton cadastroButton;
     private javax.swing.JButton entrarButton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel logoLabel;
     private javax.swing.JButton sairButton;
     private javax.swing.JPasswordField senhaPasswordField;

@@ -153,8 +153,6 @@ public class DashboardTela extends javax.swing.JFrame {
         jLabel15.setBounds(0, 0, 0, 0);
         getContentPane().add(jLabel16);
         jLabel16.setBounds(0, 328, 0, 0);
-
-        jLabel17.setText("jLabel17");
         getContentPane().add(jLabel17);
         jLabel17.setBounds(0, 0, 670, 420);
 

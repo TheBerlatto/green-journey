@@ -35,32 +35,35 @@ public class Cadastro extends javax.swing.JFrame {
         cadastroButton = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        logoLabel = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocation(new java.awt.Point(0, 0));
+        setPreferredSize(new java.awt.Dimension(555, 355));
         getContentPane().setLayout(null);
 
-        emailTextField.setText("Email");
+        emailTextField.setBorder(javax.swing.BorderFactory.createTitledBorder("Email"));
         emailTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 emailTextFieldActionPerformed(evt);
             }
         });
         getContentPane().add(emailTextField);
-        emailTextField.setBounds(210, 130, 173, 22);
+        emailTextField.setBounds(160, 100, 220, 40);
 
-        usernameTextField.setText("Nome de Usúario");
+        usernameTextField.setBorder(javax.swing.BorderFactory.createTitledBorder("Username"));
         usernameTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 usernameTextFieldActionPerformed(evt);
             }
         });
         getContentPane().add(usernameTextField);
-        usernameTextField.setBounds(210, 170, 173, 22);
+        usernameTextField.setBounds(160, 150, 220, 40);
 
-        passwordTextField.setText("jPasswordField1");
+        passwordTextField.setBorder(javax.swing.BorderFactory.createTitledBorder("Senha"));
         getContentPane().add(passwordTextField);
-        passwordTextField.setBounds(210, 210, 173, 22);
+        passwordTextField.setBounds(160, 200, 220, 40);
 
         cadastroButton.setText("Finalizar");
         cadastroButton.addActionListener(new java.awt.event.ActionListener() {
@@ -69,13 +72,19 @@ public class Cadastro extends javax.swing.JFrame {
             }
         });
         getContentPane().add(cadastroButton);
-        cadastroButton.setBounds(250, 280, 73, 22);
+        cadastroButton.setBounds(220, 260, 100, 30);
         getContentPane().add(jLabel2);
         jLabel2.setBounds(130, 220, 80, 0);
         getContentPane().add(jLabel1);
         jLabel1.setBounds(120, 10, 0, 0);
+
+        logoLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\teste-removebg-preview.png")); // NOI18N
+        getContentPane().add(logoLabel);
+        logoLabel.setBounds(170, 20, 220, 70);
+
+        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\cor_de_fundo.jpg")); // NOI18N
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(-2, 0, 600, 420);
+        jLabel4.setBounds(0, 0, 560, 360);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -159,6 +168,7 @@ public class Cadastro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel logoLabel;
     private javax.swing.JPasswordField passwordTextField;
     private javax.swing.JTextField usernameTextField;
     // End of variables declaration//GEN-END:variables
