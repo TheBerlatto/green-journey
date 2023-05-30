@@ -24,12 +24,27 @@ public class MissaoDAO {
         }
     }
     
-    public void deletar(int id) throws Exception {
-        String sql = "DELETE FROM tb_missao where id = ?";
-        try (Connection conn = ConnectionFactory.obtemConexao(); PreparedStatement ps = conn.prepareStatement(sql)) {
-
-            ps.setInt(1, id);
-            ps.executeUpdate();
+    public Missao[] consultar() throws Exception {
+        String sql = "SELECT * FROM tb_missao";
+        try (Connection conn = ConnectionFactory.obtemConexao();
+            PreparedStatement ps = conn.prepareStatement(sql,
+                                    ResultSet.TYPE_SCROLL_INSENSITIVE,//pode flutuar pela tabela
+                                    ResultSet.CONCUR_READ_ONLY); //somente leitura
+            ResultSet rs = ps.executeQuery()){
+            //contar quantas missões tem
+            int totalDeMissoes = rs.last () ? rs.getRow() : 0; //if(rs.last())
+            Missao[] missoes = new Missao[totalDeMissoes];
+            rs.beforeFirst();
+            int contador = 0;
+            while (rs.next()){
+                int id = rs.getInt("id");
+                String titulo = rs.getString("titulo");
+                String descricao = rs.getString ("descricao");
+                int nivelDificuldade = rs.getInt("nivelDificuldade");
+                int pontos = rs.getInt("pontos");
+                missoes[contador++] = new Missao(id, titulo, descricao, nivelDificuldade, pontos);
+            }
+            return missoes;
         }
     }
     
@@ -55,30 +70,6 @@ public class MissaoDAO {
         return missao;
     }
     
-    public Missao[] consultar() throws Exception {
-        String sql = "SELECT * FROM tb_missao";
-        try (Connection conn = ConnectionFactory.obtemConexao();
-            PreparedStatement ps = conn.prepareStatement(sql,
-                                    ResultSet.TYPE_SCROLL_INSENSITIVE,//pode flutuar pela tabela
-                                    ResultSet.CONCUR_READ_ONLY); //somente leitura
-            ResultSet rs = ps.executeQuery()){
-            //contar quantas missões tem
-            int totalDeMissoes = rs.last () ? rs.getRow() : 0; //if(rs.last())
-            Missao[] missoes = new Missao[totalDeMissoes];
-            rs.beforeFirst();
-            int contador = 0;
-            while (rs.next()){
-                int id = rs.getInt("id");
-                String titulo = rs.getString("titulo");
-                String descricao = rs.getString ("descricao");
-                int nivelDificuldade = rs.getInt("nivelDificuldade");
-                int pontos = rs.getInt("pontos");
-                missoes[contador++] = new Missao(id, titulo, descricao, nivelDificuldade, pontos);
-            }
-            return missoes;
-        }
-    }
-    
     public void alterar(Missao missao) throws Exception {
         String sql = "UPDATE tb_missao SET titulo = ?, descricao = ?, nivelDificuldade = ?, pontos = ? WHERE id = ?;";
         try (Connection conn = ConnectionFactory.obtemConexao(); PreparedStatement ps = conn.prepareStatement(sql)) {
@@ -91,4 +82,13 @@ public class MissaoDAO {
             ps.executeUpdate();   
         }
     }
+    
+    public void deletar(int id) throws Exception {
+        String sql = "DELETE FROM tb_missao where id = ?";
+        try (Connection conn = ConnectionFactory.obtemConexao(); PreparedStatement ps = conn.prepareStatement(sql)) {
+
+            ps.setInt(1, id);
+            ps.executeUpdate();
+        }
+    }   
 }

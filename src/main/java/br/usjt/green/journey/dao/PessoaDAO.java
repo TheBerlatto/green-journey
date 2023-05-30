@@ -24,16 +24,7 @@ public class PessoaDAO {
         }
     }
     
-    public void deletar(int id) throws Exception {
-        String sql = "DELETE FROM tb_pessoa WHERE id = ?;";
-        try (Connection conn = ConnectionFactory.obtemConexao(); PreparedStatement ps = conn.prepareStatement(sql)) {
-
-            ps.setInt(1, id);
-            ps.executeUpdate();
-        }
-    }
-    
-    public Usuario consultar(int id) throws Exception {
+    public Usuario consultarPorId(int id) throws Exception {
         String sql = "SELECT * FROM tb_pessoa WHERE id = ?;";
         Usuario usuario = new Usuario();
         try (Connection conn = ConnectionFactory.obtemConexao(); PreparedStatement ps = conn.prepareStatement(sql)) {
@@ -73,8 +64,18 @@ public class PessoaDAO {
             ps.setString(1, usuario.getUsername());
             ps.setString(2, usuario.getEmail());
             ps.setString(3, usuario.getSenha());
+            ps.setInt(4, usuario.getId());
             ps.executeUpdate();   
         }
     }
+    
+    public void deletar(int id) throws Exception {
+        String sql = "DELETE FROM tb_pessoa WHERE id = ?;";
+        try (Connection conn = ConnectionFactory.obtemConexao(); PreparedStatement ps = conn.prepareStatement(sql)) {
+
+            ps.setInt(1, id);
+            ps.executeUpdate();
+        }
+    }    
 }
 

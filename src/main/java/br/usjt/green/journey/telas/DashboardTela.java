@@ -8,12 +8,12 @@ package br.usjt.green.journey.telas;
  *
  * @author Osmar Jatoba Neto
  */
-public class Ranking extends javax.swing.JFrame {
+public class DashboardTela extends javax.swing.JFrame {
 
     /**
      * Creates new form Ranking
      */
-    public Ranking() {
+    public DashboardTela() {
         initComponents();
     }
 
@@ -48,10 +48,8 @@ public class Ranking extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Osmar Jatoba Neto\\Desktop\\green_journey_logo.png")); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(167, 6, 350, 102);
+        jLabel1.setBounds(167, 6, 0, 102);
 
         jLabel2.setText("Usuário  1");
 
@@ -146,25 +144,16 @@ public class Ranking extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(157, 120, 350, 288);
-
-        jLabel13.setIcon(new javax.swing.ImageIcon("C:\\Users\\Osmar Jatoba Neto\\Desktop\\foia canto inferior direito.png")); // NOI18N
+        jPanel1.setBounds(157, 120, 341, 266);
         getContentPane().add(jLabel13);
-        jLabel13.setBounds(584, 328, 90, 90);
-
-        jLabel14.setIcon(new javax.swing.ImageIcon("C:\\Users\\Osmar Jatoba Neto\\Desktop\\foia canto superior direito.png")); // NOI18N
+        jLabel13.setBounds(584, 328, 0, 0);
         getContentPane().add(jLabel14);
-        jLabel14.setBounds(584, 0, 90, 90);
-
-        jLabel15.setIcon(new javax.swing.ImageIcon("C:\\Users\\Osmar Jatoba Neto\\Desktop\\foia canto superior esquerdo.png")); // NOI18N
+        jLabel14.setBounds(584, 0, 0, 0);
         getContentPane().add(jLabel15);
-        jLabel15.setBounds(0, 0, 90, 90);
-
-        jLabel16.setIcon(new javax.swing.ImageIcon("C:\\Users\\Osmar Jatoba Neto\\Desktop\\foia_canto_inferior_esquerdo.png")); // NOI18N
+        jLabel15.setBounds(0, 0, 0, 0);
         getContentPane().add(jLabel16);
-        jLabel16.setBounds(0, 328, 90, 90);
+        jLabel16.setBounds(0, 328, 0, 0);
 
-        jLabel17.setIcon(new javax.swing.ImageIcon("C:\\Users\\Osmar Jatoba Neto\\Desktop\\Cor de Fundo.jpg")); // NOI18N
         jLabel17.setText("jLabel17");
         getContentPane().add(jLabel17);
         jLabel17.setBounds(0, 0, 670, 420);
@@ -189,20 +178,23 @@ public class Ranking extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Ranking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DashboardTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Ranking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DashboardTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Ranking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DashboardTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Ranking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DashboardTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Ranking().setVisible(true);
+                new DashboardTela().setVisible(true);
             }
         });
     }

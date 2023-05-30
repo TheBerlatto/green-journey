@@ -35,8 +35,8 @@ public class Usuario extends Pessoa {
         pessoaDAO.deletar(id);
     }
     
-    public Usuario consultar(int id) throws Exception {
-        return pessoaDAO.consultar(id);
+    public Usuario consultarPorId(int id) throws Exception {
+        return pessoaDAO.consultarPorId(id);
     }
     
     public void alterar(String username, String email, String senha) throws Exception{

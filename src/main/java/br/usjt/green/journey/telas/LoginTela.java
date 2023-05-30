@@ -1,17 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package br.usjt.green.journey.telas;
 
 import br.usjt.green.journey.dao.PessoaDAO;
-import br.usjt.green.journey.model.Pessoa;
 import br.usjt.green.journey.model.Usuario;
 import javax.swing.JOptionPane;
 
 /**
  *
- * @author TheBerlatto
+ * @author eduar
  */
 public class LoginTela extends javax.swing.JFrame {
 
@@ -21,7 +16,7 @@ public class LoginTela extends javax.swing.JFrame {
     public LoginTela() {
         super("Bem-vindo(a) a Green Journey");
         initComponents();
-        this.setLocationRelativeTo(null);
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -33,47 +28,28 @@ public class LoginTela extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        loginTextField = new javax.swing.JTextField();
+        usernameTextField = new javax.swing.JTextField();
         senhaPasswordField = new javax.swing.JPasswordField();
-        sairButton = new javax.swing.JButton();
-        entrarButton = new javax.swing.JButton();
+        logoLabel = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        entrarButton = new javax.swing.JButton();
+        sairButton = new javax.swing.JButton();
+        cadastroButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setAutoRequestFocus(false);
-        setBounds(new java.awt.Rectangle(0, 0, 0, 0));
-        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setEnabled(false);
-        setFocusable(false);
-        getContentPane().setLayout(null);
 
-        loginTextField.setBorder(javax.swing.BorderFactory.createTitledBorder("Digite seu username:"));
-        loginTextField.addActionListener(new java.awt.event.ActionListener() {
+        usernameTextField.setBorder(javax.swing.BorderFactory.createTitledBorder("Username:"));
+        usernameTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginTextFieldActionPerformed(evt);
+                usernameTextFieldActionPerformed(evt);
             }
         });
-        getContentPane().add(loginTextField);
-        loginTextField.setBounds(390, 140, 170, 49);
 
-        senhaPasswordField.setBorder(javax.swing.BorderFactory.createTitledBorder("Digite sua senha:"));
-        getContentPane().add(senhaPasswordField);
-        senhaPasswordField.setBounds(390, 210, 170, 49);
+        senhaPasswordField.setBorder(javax.swing.BorderFactory.createTitledBorder("Senha:"));
 
-        sairButton.setText("Sair");
-        sairButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sairButtonActionPerformed(evt);
-            }
-        });
-        getContentPane().add(sairButton);
-        sairButton.setBounds(390, 270, 70, 29);
+        logoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/usjt/green/journey/imagens/teste-removebg-preview.png"))); // NOI18N
+
+        jLabel1.setText("Ajude o planeta com pequenas atitudes!");
 
         entrarButton.setText("Entrar");
         entrarButton.addActionListener(new java.awt.event.ActionListener() {
@@ -81,52 +57,76 @@ public class LoginTela extends javax.swing.JFrame {
                 entrarButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(entrarButton);
-        entrarButton.setBounds(470, 270, 90, 29);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Osmar Jatoba Neto\\Desktop\\green-journey-master\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\teste-removebg-preview.png")); // NOI18N
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(70, 150, 200, 60);
-
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Osmar Jatoba Neto\\Desktop\\foia canto inferior direito.png")); // NOI18N
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(520, 350, 100, 80);
-
-        jTextField1.setText("Ajude o planeta com pequenas  atitudes.  ");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        sairButton.setText("Sair");
+        sairButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                sairButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(20, 230, 310, 31);
 
-        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\Osmar Jatoba Neto\\Desktop\\foia_canto_inferior_esquerdo.png")); // NOI18N
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(-10, 340, 90, 90);
+        cadastroButton.setText("Cadastre-se");
+        cadastroButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadastroButtonActionPerformed(evt);
+            }
+        });
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Osmar Jatoba Neto\\Desktop\\foia canto superior esquerdo.png")); // NOI18N
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(-10, -10, 90, 90);
-
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Osmar Jatoba Neto\\Desktop\\foia canto superior direito.png")); // NOI18N
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(520, -10, 90, 90);
-
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Osmar Jatoba Neto\\Desktop\\green-journey-master\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\Cor de Fundo.jpg")); // NOI18N
-        jLabel2.setText("dsfsdf");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(0, 0, 600, 420);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(logoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(sairButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(entrarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(usernameTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                        .addComponent(senhaPasswordField)))
+                .addGap(42, 42, 42))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(cadastroButton)
+                .addGap(98, 98, 98))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(106, 106, 106)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(logoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(usernameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(senhaPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(entrarButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(sairButton, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(cadastroButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void sairButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sairButtonActionPerformed
-        this.dispose();
-    }//GEN-LAST:event_sairButtonActionPerformed
+    private void usernameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_usernameTextFieldActionPerformed
 
     private void entrarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrarButtonActionPerformed
-        String username = loginTextField.getText();
+        String username = usernameTextField.getText();
         String senha = new String(senhaPasswordField.getPassword());
         
         try {
@@ -145,13 +145,15 @@ public class LoginTela extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_entrarButtonActionPerformed
 
-    private void loginTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_loginTextFieldActionPerformed
+    private void cadastroButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroButtonActionPerformed
+        DashboardTela dt = new DashboardTela();
+        dt.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_cadastroButtonActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    private void sairButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sairButtonActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_sairButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -189,16 +191,12 @@ public class LoginTela extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton cadastroButton;
     private javax.swing.JButton entrarButton;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField loginTextField;
+    private javax.swing.JLabel logoLabel;
     private javax.swing.JButton sairButton;
     private javax.swing.JPasswordField senhaPasswordField;
+    private javax.swing.JTextField usernameTextField;
     // End of variables declaration//GEN-END:variables
 }
