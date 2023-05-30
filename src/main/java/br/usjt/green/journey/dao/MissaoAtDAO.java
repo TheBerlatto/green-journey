@@ -92,6 +92,10 @@ public class MissaoAtDAO {
             ex.printStackTrace();
         }
     }
+    public MissaoAt[] obterMissao(){
+    /*fazer metodo para selecionar missão com id dela (recebe id do usuario e da missão)*/
+    
+    } 
     
     
     
