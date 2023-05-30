@@ -12,6 +12,18 @@ public class Missao {
 
     private MissaoDAO missaoDAO = new MissaoDAO();
 
+    public Missao() {
+        
+    }
+
+    public Missao(int id, String titulo, String descricao, int nivelDificuldade, int pontos) {
+        this.id = id;
+        this.titulo = titulo;
+        this.descricao = descricao;
+        this.nivelDificuldade = nivelDificuldade;
+        this.pontos = pontos;
+    }
+
     public void inserirMissao(String titulo, String descricao, int nivelDificuldade, int pontos) throws Exception {
         Missao missao = new Missao();
         missao.setTitulo(titulo);
@@ -22,8 +34,8 @@ public class Missao {
         missaoDAO.inserir(missao);
     }
 
-    public Missao consultarMissao(int id) throws Exception {
-        return missaoDAO.consultar(id);
+    public Missao consultarMissaoPorId(int id) throws Exception {
+        return missaoDAO.consultarPorId(id);
     }
 
     public void alterarMissao(String titulo, String descricao, int nivelDificuldade, int pontos) throws Exception {
@@ -80,4 +92,10 @@ public class Missao {
         this.pontos = pontos;
     }
 
+    @Override
+    public String toString() {
+        return this.titulo;
+    }
+
+    
 }

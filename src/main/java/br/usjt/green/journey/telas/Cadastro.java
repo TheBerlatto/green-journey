@@ -14,7 +14,9 @@ public class Cadastro extends javax.swing.JFrame {
      * Creates new form Cadastro
      */
     public Cadastro() {
+        super("Cadastro");
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -37,14 +39,12 @@ public class Cadastro extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Osmar Jatoba Neto\\Desktop\\green-journey-master\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\Cor de Fundo.jpg")); // NOI18N
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
         jTextField3.setText("Email");
         getContentPane().add(jTextField3);
-        jTextField3.setBounds(220, 220, 173, 29);
+        jTextField3.setBounds(220, 220, 173, 26);
 
         jTextField4.setText("Nome de Usúario");
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
@@ -53,7 +53,7 @@ public class Cadastro extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextField4);
-        jTextField4.setBounds(220, 250, 173, 29);
+        jTextField4.setBounds(220, 250, 173, 26);
 
         jTextField2.setText("Data de Nascimento");
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
@@ -62,15 +62,15 @@ public class Cadastro extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextField2);
-        jTextField2.setBounds(220, 190, 173, 29);
+        jTextField2.setBounds(220, 190, 173, 26);
 
         jPasswordField1.setText("jPasswordField1");
         getContentPane().add(jPasswordField1);
-        jPasswordField1.setBounds(220, 280, 173, 29);
+        jPasswordField1.setBounds(220, 280, 173, 26);
 
         jButton1.setText("Finalizar");
         getContentPane().add(jButton1);
-        jButton1.setBounds(250, 320, 93, 29);
+        jButton1.setBounds(250, 320, 77, 27);
 
         jTextField1.setText("Nome Completo");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -79,18 +79,11 @@ public class Cadastro extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextField1);
-        jTextField1.setBounds(220, 160, 173, 29);
-
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Osmar Jatoba Neto\\Desktop\\green-journey-master\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\foia canto inferior direito.png")); // NOI18N
+        jTextField1.setBounds(220, 160, 173, 26);
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(130, 220, 80, 90);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Osmar Jatoba Neto\\Desktop\\green-journey-master\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\green_journey_logo.png")); // NOI18N
+        jLabel2.setBounds(130, 220, 80, 0);
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(120, 10, 350, 142);
-
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Osmar Jatoba Neto\\Desktop\\Cor de Fundo.jpg")); // NOI18N
-        jLabel4.setText("jLabel4");
+        jLabel1.setBounds(120, 10, 0, 0);
         getContentPane().add(jLabel4);
         jLabel4.setBounds(-2, 0, 600, 420);
 
