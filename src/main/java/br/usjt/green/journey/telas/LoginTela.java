@@ -124,7 +124,7 @@ public class LoginTela extends javax.swing.JFrame {
     }//GEN-LAST:event_entrarButtonActionPerformed
 
     private void cadastroButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroButtonActionPerformed
-        Cadastro ct = new Cadastro();
+        CadastroTela ct = new CadastroTela();
         ct.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_cadastroButtonActionPerformed
