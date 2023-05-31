@@ -129,7 +129,7 @@ public class CadastroTela extends javax.swing.JFrame {
                 usuario.setSenha(senha);
                 
                 pessoaDAO.inserir(usuario);
-                JOptionPane.showMessageDialog(null, "Usuario cadastrado com sucesso", "Ups", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Usuario cadastrado com sucesso", "Oops", JOptionPane.WARNING_MESSAGE);
                 DashboardTela dt = new DashboardTela();
                 MissaoAtribuida missaoAtribuida = new MissaoAtribuida();
                 missaoAtribuida.inserirMissaoAt(usuario.getUsername());
@@ -143,7 +143,7 @@ public class CadastroTela extends javax.swing.JFrame {
             }
         }
         catch (Exception e) {
-            JOptionPane.showMessageDialog (null, "ups, tente mais tarde");
+            JOptionPane.showMessageDialog (null, "Oops, tente mais tarde");
             e.printStackTrace();
         }
         
