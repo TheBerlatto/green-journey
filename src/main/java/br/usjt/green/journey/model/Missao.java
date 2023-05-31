@@ -15,6 +15,7 @@ public class Missao {
     public Missao() {
         
     }
+    //codigo modificado! construtor que recebe o id como parametro
     public Missao(int id){
     
     }
