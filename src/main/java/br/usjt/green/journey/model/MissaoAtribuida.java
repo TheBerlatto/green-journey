@@ -7,6 +7,10 @@ public class MissaoAtribuida {
     private boolean finalizada;
     private Missao missao;
     
+    
+    public MissaoAtribuida(Missao missao.getId(), boolean finalizada ){
+    }
+    
     public boolean isFinalizada(int idPessoa) throws Exception {
         MissaoAtDAO dao = new MissaoAtDAO();
         dao.isFinalizada(idPessoa);

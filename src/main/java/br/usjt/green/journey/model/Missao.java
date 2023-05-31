@@ -15,6 +15,9 @@ public class Missao {
     public Missao() {
         
     }
+    public Missao(int id){
+    
+    }
 
     public Missao(int id, String titulo, String descricao, int nivelDificuldade, int pontos) {
         this.id = id;
