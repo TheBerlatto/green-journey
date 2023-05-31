@@ -96,6 +96,9 @@ public class DashboardTela extends javax.swing.JFrame {
             }
         ));
         jScrollPane1.setViewportView(rankingTable);
+        if (rankingTable.getColumnModel().getColumnCount() > 0) {
+            rankingTable.getColumnModel().getColumn(0).setPreferredWidth(300);
+        }
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
