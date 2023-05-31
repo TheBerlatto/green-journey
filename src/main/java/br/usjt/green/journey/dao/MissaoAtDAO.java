@@ -93,27 +93,41 @@ public class MissaoAtDAO {
             ex.printStackTrace();
         }
     }
-    public MissaoAtribuida obterMissao(int idPessoa, int idMissao) throws Exception{
-    /*fazer metodo para selecionar missão com id dela (recebe id do usuario e da missão)*/
-    String sql = "SELECT finalizada FROM tb_missaoAt WHERE id_pessoa = ? AND id_missao = ?";
+   public MissaoAtribuida[] obterMissoes(int idPessoa) throws Exception{
+        String sql = "SELECT * FROM tb_missaoAt";
         try (Connection conn = ConnectionFactory.obtemConexao();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
-
-            stmt.setInt(1,idPessoa);
-            stmt.setInt(2, idMissao);
-            ResultSet rs = stmt.executeQuery();
-            if (rs.next()) {
+            PreparedStatement ps = conn.prepareStatement(sql,
+                                    ResultSet.TYPE_SCROLL_INSENSITIVE,
+                                    ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs = ps.executeQuery()){
+            int totalDeMissoes = rs.last () ? rs.getRow() : 0;
+            MissaoAtribuida [] missoesUsuario = new MissaoAtribuida[totalDeMissoes];
+            rs.beforeFirst();
+            int contador = 0;
+            while (rs.next()){
+                int idMissao = rs.getInt("idMissao");
                 boolean finalizada = rs.getBoolean("finalizada");
-
-                return new MissaoAtribuida(idPessoa, idMissao, finalizada);
+                missoesUsuario[contador++] = new MissaoAtribuida (idMissao, finalizada);
+            }
+            return missoesUsuario;
+        }
+    }
+   //metodo de retorno do atributo finalizada na tabela
+   //chamar esse metodo da classe missaoAtribuida
+    public boolean isFinalizada(int idPessoa) throws Exception {
+        String sql = "SELECT finalizada FROM tb_missaoAt WHERE id_pessoa = ?";
+        try (Connection conn = ConnectionFactory.obtemConexao();
+         PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setInt(1, idPessoa);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                return rs.getBoolean("finalizada");
             }
         } catch (SQLException ex) {
             ex.printStackTrace();
-        }
-        return null;
     }
-    } 
-    
+    return false;
+}
     
     
 }
