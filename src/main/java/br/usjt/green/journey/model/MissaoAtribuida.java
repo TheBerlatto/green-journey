@@ -19,8 +19,7 @@ public class MissaoAtribuida {
     
     public boolean isFinalizada(int idPessoa) throws Exception {
         MissaoAtDAO dao = new MissaoAtDAO();
-        dao.isFinalizada(idPessoa);
-        return false;
+       return dao.isFinalizada(idPessoa);
     }
 
     public void setFinalizada(boolean finalizada) {
@@ -43,5 +42,9 @@ public class MissaoAtribuida {
     public void concluirMissao(int idUsuario, int idMissao) throws Exception {
         MissaoAtDAO dao = new MissaoAtDAO();
         dao.concluirMissao(idUsuario, idMissao);
+    }
+    public MissaoAtribuida[] obterMissoes(int idPessoa) throws Exception{
+        MissaoAtDAO dao = new MissaoAtDAO();
+        return dao.obterMissoes(idPessoa);
     }
 }
