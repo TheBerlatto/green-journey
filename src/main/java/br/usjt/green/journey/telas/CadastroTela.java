@@ -1,8 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package br.usjt.green.journey.telas;
+
+import br.usjt.green.journey.dao.PessoaDAO;
+import br.usjt.green.journey.model.MissaoAtribuida;
+import br.usjt.green.journey.model.Usuario;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -32,7 +33,7 @@ public class CadastroTela extends javax.swing.JFrame {
         emailTextField = new javax.swing.JTextField();
         usernameTextField = new javax.swing.JTextField();
         passwordTextField = new javax.swing.JPasswordField();
-        cadastroButton = new javax.swing.JButton();
+        finalizarButton = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         logoLabel = new javax.swing.JLabel();
@@ -63,17 +64,22 @@ public class CadastroTela extends javax.swing.JFrame {
         usernameTextField.setBounds(160, 150, 220, 40);
 
         passwordTextField.setBorder(javax.swing.BorderFactory.createTitledBorder("Senha"));
+        passwordTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passwordTextFieldActionPerformed(evt);
+            }
+        });
         getContentPane().add(passwordTextField);
         passwordTextField.setBounds(160, 200, 220, 40);
 
-        cadastroButton.setText("Finalizar");
-        cadastroButton.addActionListener(new java.awt.event.ActionListener() {
+        finalizarButton.setText("Finalizar");
+        finalizarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cadastroButtonActionPerformed(evt);
+                finalizarButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(cadastroButton);
-        cadastroButton.setBounds(280, 260, 100, 30);
+        getContentPane().add(finalizarButton);
+        finalizarButton.setBounds(280, 260, 100, 30);
         getContentPane().add(jLabel2);
         jLabel2.setBounds(130, 220, 80, 0);
         getContentPane().add(jLabel1);
@@ -107,40 +113,49 @@ public class CadastroTela extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_emailTextFieldActionPerformed
 
-    private void cadastroButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroButtonActionPerformed
-        // botão que faz o cadastro usuario
+    // botão que faz o cadastro usuario
+    private void finalizarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_finalizarButtonActionPerformed
         String email = emailTextField.getText();
-        //recebe o nome do usuario
         String username = usernameTextField.getText();
         String senha = new String(passwordTextField.getPassword());
-        /*
+        
+        PessoaDAO pessoaDAO = new PessoaDAO();
+        Usuario usuario =  new Usuario();
+        
         try {
-            Usuario usuario = new Usuario (login, senha);
-            DAO dao = new DAO();
-            if (dao.existeUsuario(usuario)) {
-                JOptionPane.showMessageDialog(null, "Bem-vindo, " + login, "Resultado",
-                JOptionPane.INFORMATION_MESSAGE);
+            if (!pessoaDAO.consultarSeExistir(usuario)) {
+                usuario.setUsername(username);
+                usuario.setEmail(email);
+                usuario.setSenha(senha);
+                
+                pessoaDAO.inserir(usuario);
+                JOptionPane.showMessageDialog(null, "Usuario cadastrado com sucesso", "Ups", JOptionPane.WARNING_MESSAGE);
+                DashboardTela dt = new DashboardTela();
+                MissaoAtribuida missaoAtribuida = new MissaoAtribuida();
+                missaoAtribuida.inserirMissaoAt(usuario.getUsername());
                 dt.setVisible(true);
-                this.dispose();
             }
             else {
-                JOptionPane.showMessageDialog(null, "Usuario não cadastrado", 
-                "Ups", JOptionPane.WARNING_MESSAGE);
+                //lembrar de criar o construtor
+                JOptionPane.showMessageDialog(null, "Usuario ja existe", "Oops", JOptionPane.INFORMATION_MESSAGE);
             }
         }
         catch (Exception e) {
             JOptionPane.showMessageDialog (null, "ups, tente mais tarde");
             e.printStackTrace();
         }
-        //--------------------*/
         
-    }//GEN-LAST:event_cadastroButtonActionPerformed
+    }//GEN-LAST:event_finalizarButtonActionPerformed
 
     private void voltarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarButtonActionPerformed
         LoginTela lt = new LoginTela();
         lt.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_voltarButtonActionPerformed
+
+    private void passwordTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passwordTextFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -179,8 +194,8 @@ public class CadastroTela extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton cadastroButton;
     private javax.swing.JTextField emailTextField;
+    private javax.swing.JButton finalizarButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
