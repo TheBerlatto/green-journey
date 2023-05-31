@@ -36,10 +36,12 @@ public class CadastroTela extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         logoLabel = new javax.swing.JLabel();
+        voltarButton = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(0, 0));
+        setPreferredSize(new java.awt.Dimension(555, 355));
         getContentPane().setLayout(null);
 
         emailTextField.setBorder(javax.swing.BorderFactory.createTitledBorder("Email"));
@@ -71,7 +73,7 @@ public class CadastroTela extends javax.swing.JFrame {
             }
         });
         getContentPane().add(cadastroButton);
-        cadastroButton.setBounds(220, 260, 100, 30);
+        cadastroButton.setBounds(280, 260, 100, 30);
         getContentPane().add(jLabel2);
         jLabel2.setBounds(130, 220, 80, 0);
         getContentPane().add(jLabel1);
@@ -80,6 +82,15 @@ public class CadastroTela extends javax.swing.JFrame {
         logoLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\teste-removebg-preview.png")); // NOI18N
         getContentPane().add(logoLabel);
         logoLabel.setBounds(170, 20, 220, 70);
+
+        voltarButton.setText("Voltar");
+        voltarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                voltarButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(voltarButton);
+        voltarButton.setBounds(160, 260, 90, 30);
 
         jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\cor_de_fundo.jpg")); // NOI18N
         getContentPane().add(jLabel4);
@@ -124,6 +135,12 @@ public class CadastroTela extends javax.swing.JFrame {
         //--------------------*/
         
     }//GEN-LAST:event_cadastroButtonActionPerformed
+
+    private void voltarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarButtonActionPerformed
+        LoginTela lt = new LoginTela();
+        lt.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_voltarButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -171,5 +188,6 @@ public class CadastroTela extends javax.swing.JFrame {
     private javax.swing.JLabel logoLabel;
     private javax.swing.JPasswordField passwordTextField;
     private javax.swing.JTextField usernameTextField;
+    private javax.swing.JButton voltarButton;
     // End of variables declaration//GEN-END:variables
 }

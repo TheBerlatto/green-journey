@@ -34,7 +34,7 @@ public class MissaoAtDAO {
                     int idMissao = rsMissao.getInt("id");
                     
                     // Verifica se já existe a associação entre usuário e missão
-                    if (!existeAssociacao(idPessoa, idMissao, conn) && !existeMissao(idMissao, conn)) {
+                    if (!existeAssociacao(idPessoa, idMissao) && !existeMissao(idMissao)) {
                         // Insere a associação entre usuário e missão
                         String sqlInsert = "INSERT INTO tb_missaoAt (id_pessoa, id_missao, finalizada) VALUES (?, ?, ?)";
                         try (PreparedStatement stmtInsert = conn.prepareStatement(sqlInsert)) {
@@ -52,10 +52,10 @@ public class MissaoAtDAO {
         }
     
     }
-    private boolean existeAssociacao(int idPessoa, int idMissao, Connection conn) throws SQLException{
+    private boolean existeAssociacao(int idPessoa, int idMissao) throws Exception{
     /*metodo que verifica se ja existe uma associação do usuario com a missão*/
      String sql = "SELECT COUNT(*) FROM tb_missaoAt WHERE id_pessoa = ? AND id_missao = ?";
-        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+        try (Connection conn = ConnectionFactory.obtemConexao(); PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setInt(1, idPessoa);
             stmt.setInt(2, idMissao);
             ResultSet rs = stmt.executeQuery();
@@ -67,10 +67,10 @@ public class MissaoAtDAO {
         return false;
     
     }
-    private boolean existeMissao(int idMissao, Connection conn) throws SQLException{
+    private boolean existeMissao(int idMissao) throws Exception{
     /*verifica se a tabela ja possui a missão*/
     String sql = "SELECT COUNT(*) FROM tb_missaoAt WHERE id = ?";
-        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+        try (Connection conn = ConnectionFactory.obtemConexao(); PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setInt(1, idMissao);
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {

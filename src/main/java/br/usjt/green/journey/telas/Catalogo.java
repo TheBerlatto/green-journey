@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package br.usjt.green.journey.telas;
 
 /**
@@ -26,10 +22,6 @@ public class Catalogo extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -39,50 +31,18 @@ public class Catalogo extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jLabel5 = new javax.swing.JLabel();
 
         setLayout(null);
-
-        jButton1.setText("1 ☆");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        add(jButton1);
-        jButton1.setBounds(90, 140, 158, 84);
-
-        jButton2.setText("3 ☆");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        add(jButton2);
-        jButton2.setBounds(90, 270, 158, 84);
-
-        jTextField1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jTextField1.setText("    Em Breve . . .");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-        add(jTextField1);
-        jTextField1.setBounds(340, 270, 158, 84);
-
-        jButton3.setText("2 ☆");
-        add(jButton3);
-        jButton3.setBounds(340, 140, 158, 84);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Osmar Jatoba Neto\\Desktop\\green-journey-master\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\GJourney_logo_pequeno novo.png")); // NOI18N
         add(jLabel1);
-        jLabel1.setBounds(0, 6, 110, 103);
+        jLabel1.setBounds(0, 6, 0, 0);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel2.setText("Missões");
         add(jLabel2);
-        jLabel2.setBounds(248, 59, 126, 48);
+        jLabel2.setBounds(230, 30, 126, 48);
         add(jLabel3);
         jLabel3.setBounds(448, 85, 0, 0);
         add(jLabel4);
@@ -90,44 +50,39 @@ public class Catalogo extends javax.swing.JPanel {
 
         jButton4.setText("Ranking");
         add(jButton4);
-        jButton4.setBounds(250, 380, 91, 29);
+        jButton4.setBounds(250, 380, 77, 27);
 
         jLabel6.setText("36 ☆");
         add(jLabel6);
-        jLabel6.setBounds(520, 40, 33, 21);
+        jLabel6.setBounds(520, 40, 25, 16);
         add(jPanel1);
         jPanel1.setBounds(480, 30, 100, 40);
-
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\Osmar Jatoba Neto\\Desktop\\foia_canto_inferior_esquerdo.png")); // NOI18N
         add(jLabel7);
         jLabel7.setBounds(-10, 350, 80, 80);
-
-        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\Osmar Jatoba Neto\\Desktop\\foia canto inferior direito.png")); // NOI18N
         add(jLabel8);
-        jLabel8.setBounds(520, 340, 90, 80);
+        jLabel8.setBounds(520, 340, 0, 80);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Osmar Jatoba Neto\\Desktop\\green-journey-master\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\Cor de Fundo.jpg")); // NOI18N
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        add(jScrollPane1);
+        jScrollPane1.setBounds(100, 90, 390, 250);
         add(jLabel5);
         jLabel5.setBounds(0, 0, 600, 420);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -138,6 +93,7 @@ public class Catalogo extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

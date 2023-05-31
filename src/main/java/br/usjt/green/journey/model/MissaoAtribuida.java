@@ -6,7 +6,7 @@ public class MissaoAtribuida {
 
     private boolean finalizada;
     private Missao missao;
-
+    
     public boolean isFinalizada() {
         return finalizada;
     }
@@ -31,9 +31,5 @@ public class MissaoAtribuida {
     public void concluirMissao(int idUsuario, int idMissao) throws Exception {
         MissaoAtDAO dao = new MissaoAtDAO();
         dao.concluirMissao(idUsuario, idMissao);
-    }
-
-    public void concluirMissao() {
-
     }
 }

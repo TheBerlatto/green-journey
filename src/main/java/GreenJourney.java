@@ -1,14 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
+import br.usjt.green.journey.telas.LoginTela;
+import javax.security.auth.login.AppConfigurationEntry;
 
 /**
  *
- * @author eduar
+ * @author TheBerlatto
  */
 public class GreenJourney {
 
     public static void main(String[] args) {
-        System.out.println("Hello World olaaaaaaaa!");
+        LoginTela lt = new LoginTela();
+        lt.setVisible(true);
     }
 }
