@@ -15,6 +15,10 @@ public class Missao {
     public Missao() {
         
     }
+    //codigo modificado! construtor que recebe o id como parametro
+    public Missao(int id){
+    
+    }
 
     public Missao(int id, String titulo, String descricao, int nivelDificuldade, int pontos) {
         this.id = id;

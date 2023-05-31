@@ -7,8 +7,20 @@ public class MissaoAtribuida {
     private boolean finalizada;
     private Missao missao;
     
-    public boolean isFinalizada() {
-        return finalizada;
+    
+    public MissaoAtribuida(){
+        
+    }
+    //construtor que sera usado no metodo de obter missões
+    public MissaoAtribuida(int idMissao, boolean finalizada) {
+    this.missao = new Missao(idMissao);
+    this.finalizada = finalizada;
+}
+    
+    public boolean isFinalizada(int idPessoa) throws Exception {
+        MissaoAtDAO dao = new MissaoAtDAO();
+        dao.isFinalizada(idPessoa);
+        return false;
     }
 
     public void setFinalizada(boolean finalizada) {
