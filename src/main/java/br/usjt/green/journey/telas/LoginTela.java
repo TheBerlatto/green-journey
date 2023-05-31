@@ -113,6 +113,7 @@ public class LoginTela extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Bem vindo, " + usuario.getUsername() + "!", "Olá!", JOptionPane.INFORMATION_MESSAGE);
                 DashboardTela dt = new DashboardTela();
                 dt.setVisible(true);
+                dt.consultaPrimeiros();
                 this.dispose();
             } else {
                 JOptionPane.showMessageDialog(null, "Usuário Inválido!", "Oops", JOptionPane.WARNING_MESSAGE);

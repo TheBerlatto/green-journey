@@ -134,6 +134,8 @@ public class CadastroTela extends javax.swing.JFrame {
                 MissaoAtribuida missaoAtribuida = new MissaoAtribuida();
                 missaoAtribuida.inserirMissaoAt(usuario.getUsername());
                 dt.setVisible(true);
+                dt.consultaPrimeiros();
+                this.dispose();
             }
             else {
                 //lembrar de criar o construtor

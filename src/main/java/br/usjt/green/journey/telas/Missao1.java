@@ -56,7 +56,7 @@ public class Missao1 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextField1);
-        jTextField1.setBounds(243, 6, 90, 33);
+        jTextField1.setBounds(243, 6, 91, 35);
 
         jPanel1.setBackground(new java.awt.Color(201, 232, 201));
 
@@ -83,17 +83,13 @@ public class Missao1 extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 582, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jButton1))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel2))))
+                            .addComponent(jButton1)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -117,13 +113,13 @@ public class Missao1 extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(6, 133, 588, 248);
+        jPanel1.setBounds(6, 133, 588, 233);
 
         jTextField2.setFont(new java.awt.Font("Segoe UI", 3, 15)); // NOI18N
         jTextField2.setForeground(new java.awt.Color(0, 102, 102));
         jTextField2.setText("Alimente um Animal");
         getContentPane().add(jTextField2);
-        jTextField2.setBounds(210, 90, 170, 29);
+        jTextField2.setBounds(210, 90, 170, 31);
 
         jTextField3.setBackground(new java.awt.Color(0, 153, 153));
         jTextField3.setForeground(new java.awt.Color(255, 255, 0));
@@ -134,31 +130,25 @@ public class Missao1 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextField3);
-        jTextField3.setBounds(253, 57, 72, 29);
+        jTextField3.setBounds(253, 57, 72, 26);
 
         jButton2.setBackground(new java.awt.Color(0, 102, 51));
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Voltar às Missões");
         getContentPane().add(jButton2);
-        jButton2.setBounds(0, 390, 152, 29);
+        jButton2.setBounds(0, 390, 124, 27);
 
         jButton4.setBackground(new java.awt.Color(0, 102, 51));
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("Concluir");
         getContentPane().add(jButton4);
-        jButton4.setBounds(508, 390, 92, 29);
-
-        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\Osmar Jatoba Neto\\Desktop\\GJourney_logo_pequeno novo.png")); // NOI18N
+        jButton4.setBounds(508, 390, 79, 27);
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(10, 10, 110, 103);
-
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\Osmar Jatoba Neto\\Desktop\\foia canto superior direito.png")); // NOI18N
+        jLabel6.setBounds(10, 10, 0, 0);
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(520, 0, 90, 90);
+        jLabel7.setBounds(520, 0, 0, 0);
         getContentPane().add(jLabel4);
         jLabel4.setBounds(501, 45, 0, 0);
-
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Osmar Jatoba Neto\\Desktop\\Cor de Fundo.jpg")); // NOI18N
         getContentPane().add(jLabel5);
         jLabel5.setBounds(-5, -6, 610, 430);
 
