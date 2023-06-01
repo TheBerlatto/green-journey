@@ -4,6 +4,10 @@
  */
 package br.usjt.green.journey.telas;
 
+import br.usjt.green.journey.model.Missao;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author vivia
@@ -171,15 +175,23 @@ public class AdminMissoes extends javax.swing.JFrame {
     }//GEN-LAST:event_tituloMissaoTextFieldActionPerformed
 
     private void inserirMissaoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inserirMissaoButtonActionPerformed
-        // metodo que insere missões na tabela missões no banco
-        //pegando os atributos necessario para a criação da missão
-        String titulo = tituloMissaoTextField.getText();
-        String descricao = descricaoMissaoTextField.getText();
-        //parsea a string que vem do campo textField para int
-        int nivelDificuldade = Integer.parseInt(dificuldadeTextField.getText());
-        int pontos = Integer.parseInt(pontosTextField.getText());
+        try {
+            // metodo que insere missões na tabela missões no banco
+            //pegando os atributos necessario para a criação da missão
+            String titulo = tituloMissaoTextField.getText();
+            String descricao = descricaoMissaoTextField.getText();
+            //parsea a string que vem do campo textField para int
+            int nivelDificuldade = Integer.parseInt(dificuldadeTextField.getText());
+            int pontos = Integer.parseInt(pontosTextField.getText());
+            
+            //instanciar objeto
+            Missao missao = new Missao();
+            //metodo da classe missão que ja instancia missaoDAO e insere no banco de dados
+            missao.inserirMissao(titulo, descricao, nivelDificuldade, pontos);
+        } catch (Exception ex) {
+            Logger.getLogger(AdminMissoes.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
-        //instanciar objeto
     }//GEN-LAST:event_inserirMissaoButtonActionPerformed
 
     private void atualizarMissaoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atualizarMissaoButtonActionPerformed
