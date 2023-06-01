@@ -72,7 +72,7 @@ public class DashboardTela extends javax.swing.JFrame {
         jLabel22 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(675, 455));
+        setPreferredSize(new java.awt.Dimension(675, 485));
         getContentPane().setLayout(null);
         getContentPane().add(jLabel1);
         jLabel1.setBounds(167, 6, 0, 102);
@@ -135,7 +135,7 @@ public class DashboardTela extends javax.swing.JFrame {
 
         jLabel17.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\foia canto inferior direito.png")); // NOI18N
         getContentPane().add(jLabel17);
-        jLabel17.setBounds(590, 380, 80, 70);
+        jLabel17.setBounds(590, 370, 80, 70);
 
         jLabel19.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\foia canto superior direito.png")); // NOI18N
         getContentPane().add(jLabel19);
@@ -170,7 +170,7 @@ public class DashboardTela extends javax.swing.JFrame {
 
         jLabel22.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\cor_de_fundo.jpg")); // NOI18N
         getContentPane().add(jLabel22);
-        jLabel22.setBounds(0, 0, 680, 440);
+        jLabel22.setBounds(0, 0, 680, 450);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

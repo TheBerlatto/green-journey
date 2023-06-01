@@ -56,7 +56,7 @@ public class Missao1 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextField1);
-        jTextField1.setBounds(243, 6, 91, 35);
+        jTextField1.setBounds(243, 6, 90, 33);
 
         jPanel1.setBackground(new java.awt.Color(201, 232, 201));
 
@@ -113,13 +113,13 @@ public class Missao1 extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(6, 133, 588, 233);
+        jPanel1.setBounds(6, 133, 588, 261);
 
         jTextField2.setFont(new java.awt.Font("Segoe UI", 3, 15)); // NOI18N
         jTextField2.setForeground(new java.awt.Color(0, 102, 102));
         jTextField2.setText("Alimente um Animal");
         getContentPane().add(jTextField2);
-        jTextField2.setBounds(210, 90, 170, 31);
+        jTextField2.setBounds(210, 80, 170, 29);
 
         jTextField3.setBackground(new java.awt.Color(0, 153, 153));
         jTextField3.setForeground(new java.awt.Color(255, 255, 0));
@@ -130,19 +130,19 @@ public class Missao1 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextField3);
-        jTextField3.setBounds(253, 57, 72, 26);
+        jTextField3.setBounds(250, 40, 72, 29);
 
         jButton2.setBackground(new java.awt.Color(0, 102, 51));
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Voltar às Missões");
         getContentPane().add(jButton2);
-        jButton2.setBounds(0, 390, 124, 27);
+        jButton2.setBounds(0, 390, 152, 29);
 
         jButton4.setBackground(new java.awt.Color(0, 102, 51));
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("Concluir");
         getContentPane().add(jButton4);
-        jButton4.setBounds(508, 390, 79, 27);
+        jButton4.setBounds(508, 390, 92, 29);
         getContentPane().add(jLabel6);
         jLabel6.setBounds(10, 10, 0, 0);
         getContentPane().add(jLabel7);

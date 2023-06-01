@@ -42,22 +42,14 @@ public class MissaoConcluida extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Osmar Jatoba Neto\\Desktop\\foia canto inferior direito.png")); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(509, 329, 90, 90);
-
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Osmar Jatoba Neto\\Desktop\\foia canto superior direito.png")); // NOI18N
+        jLabel1.setBounds(509, 329, 0, 0);
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(521, 0, 90, 90);
-
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Osmar Jatoba Neto\\Desktop\\foia canto superior esquerdo.png")); // NOI18N
+        jLabel2.setBounds(521, 0, 0, 0);
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(0, 0, 90, 90);
-
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Osmar Jatoba Neto\\Desktop\\foia_canto_inferior_esquerdo.png")); // NOI18N
+        jLabel3.setBounds(0, 0, 0, 0);
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(0, 329, 90, 90);
+        jLabel4.setBounds(0, 329, 0, 0);
         getContentPane().add(jLabel6);
         jLabel6.setBounds(530, 248, 0, 0);
 
@@ -94,20 +86,14 @@ public class MissaoConcluida extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(114, 167, 371, 126);
-
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\Osmar Jatoba Neto\\Desktop\\green_journey_logo grande - menor.png")); // NOI18N
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(193, 18, 212, 86);
+        jLabel7.setBounds(193, 18, 0, 0);
 
         jButton1.setText("Pegar Recompensa ☆");
         getContentPane().add(jButton1);
-        jButton1.setBounds(211, 361, 182, 29);
-
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Osmar Jatoba Neto\\Desktop\\capybara_capybaracapybaracapybara.png")); // NOI18N
+        jButton1.setBounds(200, 330, 182, 29);
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(254, 286, 100, 69);
-
-        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\Osmar Jatoba Neto\\Desktop\\Cor de Fundo.jpg")); // NOI18N
+        jLabel5.setBounds(254, 286, 0, 69);
         getContentPane().add(jLabel8);
         jLabel8.setBounds(0, 0, 610, 420);
 
