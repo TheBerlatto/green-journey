@@ -1,6 +1,7 @@
 package br.usjt.green.journey.model;
 
 import br.usjt.green.journey.dao.MissaoAtDAO;
+import br.usjt.green.journey.dao.PessoaDAO;
 
 public class MissaoAtribuida {
 
@@ -40,8 +41,9 @@ public class MissaoAtribuida {
     }
 
     public void concluirMissao(int idUsuario, int idMissao) throws Exception {
-        MissaoAtDAO dao = new MissaoAtDAO();
-        dao.concluirMissao(idUsuario, idMissao);
+        MissaoAtDAO missaoAtDAO = new MissaoAtDAO();
+        PessoaDAO pessoaDAO = new PessoaDAO();
+        missaoAtDAO.concluirMissao(idUsuario, idMissao);
     }
     public MissaoAtribuida[] obterMissoes(int idPessoa) throws Exception{
         MissaoAtDAO dao = new MissaoAtDAO();

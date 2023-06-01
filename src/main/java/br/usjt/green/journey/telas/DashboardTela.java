@@ -55,6 +55,8 @@ public class DashboardTela extends javax.swing.JFrame {
         jLabel22 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(675, 485));
+        setSize(new java.awt.Dimension(675, 485));
         getContentPane().setLayout(null);
         getContentPane().add(jLabel1);
         jLabel1.setBounds(167, 6, 0, 102);

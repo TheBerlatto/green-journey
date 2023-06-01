@@ -124,5 +124,22 @@ public class MissaoDAO {
 
         return descricao;
     }
+    
+    public int consultarPontosPeloTitulo(String titulo) throws Exception {
+        int pontos = 0;
+
+        String sql = "SELECT pontos FROM tb_missao WHERE titulo = ?;";
+        try (Connection conn = ConnectionFactory.obtemConexao(); PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setString(1, titulo);
+
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    pontos = rs.getInt("pontos");
+                }
+            }
+        }
+
+        return pontos;
+    }
 
 }

@@ -44,7 +44,7 @@ public class LoginTela extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(575, 375));
-        setSize(new java.awt.Dimension(555, 390));
+        setSize(new java.awt.Dimension(575, 375));
         getContentPane().setLayout(null);
 
         sloganLabel.setForeground(new java.awt.Color(51, 51, 51));

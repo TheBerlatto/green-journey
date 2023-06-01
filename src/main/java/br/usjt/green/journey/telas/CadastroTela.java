@@ -135,8 +135,8 @@ public class CadastroTela extends javax.swing.JFrame {
 
     // botão que faz o cadastro usuario
     private void finalizarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_finalizarButtonActionPerformed
-        String email = emailTextField.getText();
         String username = usernameTextField.getText();
+        String email = emailTextField.getText();
         String senha = new String(passwordTextField.getPassword());
         
         PessoaDAO pessoaDAO = new PessoaDAO();
@@ -149,20 +149,21 @@ public class CadastroTela extends javax.swing.JFrame {
                 usuario.setSenha(senha);
                 
                 pessoaDAO.inserir(usuario);
-                JOptionPane.showMessageDialog(null, "Usuario cadastrado com sucesso", "Oops", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Usuario cadastrado com sucesso", "Oops", JOptionPane.INFORMATION_MESSAGE);
                 DashboardTela dt = new DashboardTela();
                 MissaoAtribuida missaoAtribuida = new MissaoAtribuida();
                 missaoAtribuida.inserirMissaoAt(usuario.getUsername());
+                dt.receberUsername(username);
                 dt.setVisible(true);
                 this.dispose();
             }
             else {
                 //lembrar de criar o construtor
-                JOptionPane.showMessageDialog(null, "Usuario ja existe", "Oops", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Usuario ja existe", "Oops", JOptionPane.WARNING_MESSAGE);
             }
         }
         catch (Exception e) {
-            JOptionPane.showMessageDialog (null, "Oops, tente mais tarde");
+            JOptionPane.showMessageDialog (null, "Erro ao cadastrar-se, tente novamente mais tarde!", "Oops", JOptionPane.ERROR_MESSAGE);
             e.printStackTrace();
         }
         
