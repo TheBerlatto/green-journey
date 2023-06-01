@@ -47,6 +47,10 @@ public class Usuario extends Pessoa {
         
         pessoaDAO.alterar(usuario);
     }
+    public int consultarIdPeloUsername(String username) throws Exception{
+        return pessoaDAO.consultarIdPeloUsername(username);
+    
+    }
 
     public int getPontuacao() {
         return pontuacao;

@@ -4,6 +4,13 @@
  */
 package br.usjt.green.journey.telas;
 
+import br.usjt.green.journey.dao.PessoaDAO;
+import br.usjt.green.journey.model.MissaoAtribuida;
+import br.usjt.green.journey.model.Usuario;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author vivia
@@ -30,17 +37,16 @@ public class AdminUsuario extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        usernameTextField = new javax.swing.JTextField();
+        emailTextField = new javax.swing.JTextField();
         inserirButton = new javax.swing.JButton();
         atualizarButton = new javax.swing.JButton();
         deletarButton = new javax.swing.JButton();
         voltarButton = new javax.swing.JButton();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        passwordTextField = new javax.swing.JPasswordField();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(675, 440));
         setSize(new java.awt.Dimension(675, 440));
         getContentPane().setLayout(null);
 
@@ -50,14 +56,14 @@ public class AdminUsuario extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Gerenciamento de Usuários");
 
-        jTextField1.setText("Username");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        usernameTextField.setText("Username");
+        usernameTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                usernameTextFieldActionPerformed(evt);
             }
         });
 
-        jTextField2.setText("Email");
+        emailTextField.setText("Email");
 
         inserirButton.setText("Inserir");
         inserirButton.addActionListener(new java.awt.event.ActionListener() {
@@ -67,8 +73,18 @@ public class AdminUsuario extends javax.swing.JFrame {
         });
 
         atualizarButton.setText("Atualizar");
+        atualizarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                atualizarButtonActionPerformed(evt);
+            }
+        });
 
         deletarButton.setText("Deletar");
+        deletarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deletarButtonActionPerformed(evt);
+            }
+        });
 
         voltarButton.setText("Voltar");
         voltarButton.addActionListener(new java.awt.event.ActionListener() {
@@ -77,7 +93,7 @@ public class AdminUsuario extends javax.swing.JFrame {
             }
         });
 
-        jPasswordField1.setText("jPasswordField1");
+        passwordTextField.setText("jPasswordField1");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -91,9 +107,9 @@ public class AdminUsuario extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(30, 30, 30)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField1)
-                            .addComponent(jTextField2)
-                            .addComponent(jPasswordField1, javax.swing.GroupLayout.DEFAULT_SIZE, 349, Short.MAX_VALUE)))
+                            .addComponent(usernameTextField)
+                            .addComponent(emailTextField)
+                            .addComponent(passwordTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 349, Short.MAX_VALUE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(96, 96, 96)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -111,11 +127,11 @@ public class AdminUsuario extends javax.swing.JFrame {
                 .addGap(17, 17, 17)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(usernameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(emailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(passwordTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(inserirButton)
@@ -128,21 +144,46 @@ public class AdminUsuario extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(130, 70, 411, 276);
-
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\cor_de_fundo.jpg")); // NOI18N
+        jPanel1.setBounds(130, 70, 411, 254);
         getContentPane().add(jLabel2);
         jLabel2.setBounds(0, 0, 680, 460);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void usernameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_usernameTextFieldActionPerformed
 
     private void inserirButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inserirButtonActionPerformed
-        // TODO add your handling code here:
+        // administrador cadastra usuarios no banco
+        String username = usernameTextField.getText();
+        String email = emailTextField.getText();
+        String senha = new String(passwordTextField.getPassword());
+        
+        PessoaDAO pessoaDAO = new PessoaDAO();
+        Usuario usuario =  new Usuario();
+        
+        try {
+            if (!pessoaDAO.consultarSeExistir(usuario)) {
+                usuario.setUsername(username);
+                usuario.setEmail(email);
+                usuario.setSenha(senha);
+                
+                pessoaDAO.inserir(usuario);
+                JOptionPane.showMessageDialog(null, "Usuario cadastrado com sucesso", "Oops", JOptionPane.INFORMATION_MESSAGE);
+                MissaoAtribuida missaoAtribuida = new MissaoAtribuida();
+                missaoAtribuida.inserirMissaoAt(usuario.getUsername());
+            }
+            else {
+                //lembrar de criar o construtor
+                JOptionPane.showMessageDialog(null, "Usuario ja existe", "Oops", JOptionPane.WARNING_MESSAGE);
+            }
+        }
+        catch (Exception e) {
+            JOptionPane.showMessageDialog (null, "Erro ao cadastrar-se, tente novamente mais tarde!", "Oops", JOptionPane.ERROR_MESSAGE);
+            e.printStackTrace();
+        }
     }//GEN-LAST:event_inserirButtonActionPerformed
 
     private void voltarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarButtonActionPerformed
@@ -150,6 +191,41 @@ public class AdminUsuario extends javax.swing.JFrame {
         a1.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_voltarButtonActionPerformed
+
+    private void atualizarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atualizarButtonActionPerformed
+        try {
+            // atualizar dados do usuario
+            String username = usernameTextField.getText();
+            String email = emailTextField.getText();
+            String senha = new String(passwordTextField.getPassword());
+            //instancia objeto Usuario
+            Usuario usuario = new Usuario();
+            //colocar condição de existir usando "consultarSeExistir"
+            usuario.alterar(username, email, senha);
+        }
+        catch (Exception e) {
+            JOptionPane.showMessageDialog (null, "Erro ao atualizar, tente novamente mais tarde!", "Oops", JOptionPane.ERROR_MESSAGE);
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_atualizarButtonActionPerformed
+
+    private void deletarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletarButtonActionPerformed
+        try {
+            // deleta usuariodo banco
+            String username = usernameTextField.getText();
+            String email = emailTextField.getText();
+            String senha = new String(passwordTextField.getPassword());
+            //instancia do objeto usuario
+            Usuario usuario = new Usuario();
+            //seguinte metodo devolve o id do usuario para o metodo buscar e deletar
+            usuario.deletar(usuario.consultarIdPeloUsername(username));
+            
+        } catch (Exception ex) {
+            Logger.getLogger(AdminUsuario.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+    }//GEN-LAST:event_deletarButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -189,13 +265,13 @@ public class AdminUsuario extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton atualizarButton;
     private javax.swing.JButton deletarButton;
+    private javax.swing.JTextField emailTextField;
     private javax.swing.JButton inserirButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JPasswordField passwordTextField;
+    private javax.swing.JTextField usernameTextField;
     private javax.swing.JButton voltarButton;
     // End of variables declaration//GEN-END:variables
 }
