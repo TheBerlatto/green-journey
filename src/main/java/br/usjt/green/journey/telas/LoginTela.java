@@ -126,34 +126,35 @@ public class LoginTela extends javax.swing.JFrame {
     }//GEN-LAST:event_usernameTextFieldActionPerformed
 
     private void entrarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrarButtonActionPerformed
+        //pegar o username que o usuário digitou
         String username = usernameTextField.getText();
+        //pegar a senha na forma de um array de caracteres e depois converter para String
         String senha = new String(senhaPasswordField.getPassword());
-        
-        try {
-            //verifica se a conta digitada pertence ao admin
-            if (username.equals("admin") && senha.equals("admin")) {
-            JOptionPane.showMessageDialog(null, "Bem vindo, " + username + "!", "Olá!", JOptionPane.INFORMATION_MESSAGE);
-            // Se a verificação for bem-sucedida, faça o que precisa ser feito
-            Admin1 principal = new Admin1();
-            principal.setVisible(true);
-            this.dispose();
-        } 
+
             
+        try {
             //verificar se o usuario existe no db
             Usuario usuario = new Usuario(username, senha);
             PessoaDAO dao = new PessoaDAO();
-            
             if (dao.consultarSeExistir(usuario)) {
-                JOptionPane.showMessageDialog(null, "Bem vindo, " + usuario.getUsername() + "!", "Olá!", JOptionPane.INFORMATION_MESSAGE);
-                DashboardTela dt = new DashboardTela();
-                dt.setVisible(true);
-                dt.consultaPrimeiros();
-                this.dispose();
+                //verifica se a conta digitada pertence ao admin
+                if (username.equalsIgnoreCase("administrador") && senha.equals("adminadmin123")) {
+                    JOptionPane.showMessageDialog(null, "Bem vindo, " + usuario.getUsername() + "!", "Olá!", JOptionPane.INFORMATION_MESSAGE);
+                    Admin1 a1 = new Admin1();
+                    a1.setVisible(true);
+                    this.dispose();
+                } else {
+                    JOptionPane.showMessageDialog(null, "Bem vindo, " + usuario.getUsername() + "!", "Olá!", JOptionPane.INFORMATION_MESSAGE);
+                    DashboardTela dt = new DashboardTela();
+                    dt.receberUsername(username);
+                    dt.setVisible(true);
+                    this.dispose();
+                }
             } else {
-                JOptionPane.showMessageDialog(null, "Usuário Inválido!", "Oops", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Usuário não cadastrado!", "Oops", JOptionPane.WARNING_MESSAGE);
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog (null, "Problemas técnicos. Tente novamente mais tarde");
+            JOptionPane.showMessageDialog(null, "Problemas técnicos. Tente novamente mais tarde");
             e.printStackTrace();
         }
     }//GEN-LAST:event_entrarButtonActionPerformed
@@ -202,6 +203,7 @@ public class LoginTela extends javax.swing.JFrame {
             }
         });
     }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cadastroButton;

@@ -1,8 +1,16 @@
 package br.usjt.green.journey.telas;
 
+import br.usjt.green.journey.dao.MissaoAtDAO;
+import br.usjt.green.journey.dao.MissaoDAO;
+import br.usjt.green.journey.dao.PessoaDAO;
+import br.usjt.green.journey.model.MissaoAtribuida;
+import java.awt.event.ActionEvent;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
+
 /**
  *
- * @author eduar
+ * @author TheBerlatto
  */
 public class CatalogoTela extends javax.swing.JFrame {
 
@@ -12,6 +20,7 @@ public class CatalogoTela extends javax.swing.JFrame {
     public CatalogoTela() {
         super("Catálogo de Missões");
         initComponents();
+        buscarMissoesAt();
         setLocationRelativeTo(null);
     }
 
@@ -24,20 +33,33 @@ public class CatalogoTela extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        usernameLabel = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         dashboardButton = new javax.swing.JButton();
+        missaoAtribuidaComboBox = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
+        concluirMissaoButton = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        descricaoTextArea = new javax.swing.JTextArea();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tituloTextArea = new javax.swing.JTextArea();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        idTextArea = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(695, 505));
+        setSize(new java.awt.Dimension(695, 505));
         getContentPane().setLayout(null);
+
+        usernameLabel.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        usernameLabel.setForeground(new java.awt.Color(51, 51, 51));
+        usernameLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        getContentPane().add(usernameLabel);
+        usernameLabel.setBounds(370, 0, 110, 70);
 
         jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\foia canto superior esquerdo.png")); // NOI18N
         getContentPane().add(jLabel2);
@@ -57,47 +79,98 @@ public class CatalogoTela extends javax.swing.JFrame {
         getContentPane().add(jLabel6);
         jLabel6.setBounds(597, 416, 80, 70);
 
+        dashboardButton.setText("Voltar ao Dashboard");
+        dashboardButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dashboardButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(dashboardButton);
+        dashboardButton.setBounds(140, 380, 170, 40);
+
+        missaoAtribuidaComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                missaoAtribuidaComboBoxActionPerformed(evt);
+            }
+        });
+        getContentPane().add(missaoAtribuidaComboBox);
+        missaoAtribuidaComboBox.setBounds(100, 66, 480, 40);
+
         jLabel7.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(51, 51, 51));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("Missões");
+        jLabel7.setText("Missões de ");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(210, 0, 280, 70);
+        jLabel7.setBounds(160, 0, 280, 70);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Título", "Descrição", "Pontos"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.Object.class, java.lang.Integer.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
+        concluirMissaoButton.setText("Concluir Missão");
+        concluirMissaoButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                concluirMissaoButtonActionPerformed(evt);
             }
         });
-        jScrollPane1.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(2).setPreferredWidth(10);
-        }
+        getContentPane().add(concluirMissaoButton);
+        concluirMissaoButton.setBounds(350, 380, 200, 40);
+
+        descricaoTextArea.setColumns(20);
+        descricaoTextArea.setRows(5);
+        descricaoTextArea.setBorder(javax.swing.BorderFactory.createTitledBorder("Descrição"));
+        jScrollPane1.setViewportView(descricaoTextArea);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(10, 60, 650, 370);
+        jScrollPane1.setBounds(120, 200, 450, 150);
 
-        dashboardButton.setText("Dashboard");
-        getContentPane().add(dashboardButton);
-        dashboardButton.setBounds(290, 430, 100, 30);
+        tituloTextArea.setColumns(20);
+        tituloTextArea.setRows(1);
+        tituloTextArea.setBorder(javax.swing.BorderFactory.createTitledBorder("Título"));
+        jScrollPane2.setViewportView(tituloTextArea);
+
+        getContentPane().add(jScrollPane2);
+        jScrollPane2.setBounds(230, 120, 340, 60);
+
+        idTextArea.setColumns(20);
+        idTextArea.setLineWrap(true);
+        idTextArea.setRows(1);
+        idTextArea.setAutoscrolls(false);
+        idTextArea.setBorder(javax.swing.BorderFactory.createTitledBorder("Id"));
+        jScrollPane3.setViewportView(idTextArea);
+
+        getContentPane().add(jScrollPane3);
+        jScrollPane3.setBounds(120, 120, 100, 60);
 
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\cor_de_fundo.jpg")); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 680, 480);
+        jLabel1.setBounds(0, 0, 680, 470);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void missaoAtribuidaComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_missaoAtribuidaComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_missaoAtribuidaComboBoxActionPerformed
+
+    private void concluirMissaoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_concluirMissaoButtonActionPerformed
+        MissaoAtDAO missaoAtDAO = new MissaoAtDAO();
+        PessoaDAO pessoaDAO = new PessoaDAO();
+
+        int idMissao;
+        int idUsuario;
+        String username = usernameLabel.getText();
+        try {
+            idMissao = Integer.parseInt(idTextArea.getText());
+            idUsuario = pessoaDAO.consultarIdPeloUsername(username);
+            missaoAtDAO.concluirMissao(idUsuario, idMissao);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erro ao finalizar missão... Tente novamente mais tarde!", "Oops", JOptionPane.WARNING_MESSAGE);
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_concluirMissaoButtonActionPerformed
+
+    private void dashboardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dashboardButtonActionPerformed
+        DashboardTela dt = new DashboardTela();
+        dt.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_dashboardButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -134,8 +207,42 @@ public class CatalogoTela extends javax.swing.JFrame {
         });
     }
 
+    private void buscarMissoesAt() {
+        try {
+            MissaoAtDAO missaoDAO = new MissaoAtDAO();
+            PessoaDAO pessoaDAO = new PessoaDAO();
+            MissaoAtribuida[] missoes = missaoDAO.obterMissoesAt(pessoaDAO.consultarIdPeloUsername(usernameLabel.getText()));
+            missaoAtribuidaComboBox.setModel(new DefaultComboBoxModel<>(missoes));
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Missões indisponíveis... Tente novamente mais tarde!");
+            e.printStackTrace();
+        }
+    }
+
+    //Recebe o username de quem logou!
+    public void receberUsername(String username) {
+        usernameLabel.setText(username);
+    }
+
+    public void actionPerformed(ActionEvent e) throws Exception {
+        String itemSelecionado = missaoAtribuidaComboBox.getSelectedItem().toString();
+        preencherCamposDeTexto(itemSelecionado);
+    }
+
+    private void preencherCamposDeTexto(String itemSelecionado) throws Exception {
+
+        MissaoDAO missaoDAO = new MissaoDAO();
+        idTextArea.setText(String.valueOf(missaoDAO.consultarIdPeloTitulo(itemSelecionado)));
+        tituloTextArea.setText(itemSelecionado);
+        descricaoTextArea.setText(missaoDAO.consultarDescricaoPeloTitulo(itemSelecionado));
+    }
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton concluirMissaoButton;
     private javax.swing.JButton dashboardButton;
+    private javax.swing.JTextArea descricaoTextArea;
+    private javax.swing.JTextArea idTextArea;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -144,6 +251,11 @@ public class CatalogoTela extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JComboBox<MissaoAtribuida> missaoAtribuidaComboBox;
+    private javax.swing.JTextArea tituloTextArea;
+    private javax.swing.JLabel usernameLabel;
     // End of variables declaration//GEN-END:variables
+
 }

@@ -23,23 +23,22 @@ public class MissaoDAO {
             ps.executeUpdate();
         }
     }
-    
+
     public Missao[] consultar() throws Exception {
         String sql = "SELECT * FROM tb_missao";
-        try (Connection conn = ConnectionFactory.obtemConexao();
-            PreparedStatement ps = conn.prepareStatement(sql,
-                                    ResultSet.TYPE_SCROLL_INSENSITIVE,//pode flutuar pela tabela
-                                    ResultSet.CONCUR_READ_ONLY); //somente leitura
-            ResultSet rs = ps.executeQuery()){
+        try (Connection conn = ConnectionFactory.obtemConexao(); PreparedStatement ps = conn.prepareStatement(sql,
+                ResultSet.TYPE_SCROLL_INSENSITIVE,//pode flutuar pela tabela
+                ResultSet.CONCUR_READ_ONLY); //somente leitura
+                 ResultSet rs = ps.executeQuery()) {
             //contar quantas missões tem
-            int totalDeMissoes = rs.last () ? rs.getRow() : 0; //if(rs.last())
+            int totalDeMissoes = rs.last() ? rs.getRow() : 0; //if(rs.last())
             Missao[] missoes = new Missao[totalDeMissoes];
             rs.beforeFirst();
             int contador = 0;
-            while (rs.next()){
+            while (rs.next()) {
                 int id = rs.getInt("id");
                 String titulo = rs.getString("titulo");
-                String descricao = rs.getString ("descricao");
+                String descricao = rs.getString("descricao");
                 int nivelDificuldade = rs.getInt("nivelDificuldade");
                 int pontos = rs.getInt("pontos");
                 missoes[contador++] = new Missao(id, titulo, descricao, nivelDificuldade, pontos);
@@ -47,15 +46,15 @@ public class MissaoDAO {
             return missoes;
         }
     }
-    
+
     public Missao consultarPorId(int id) throws Exception {
         String sql = "SELECT * FROM tb_missao WHERE id = ?;";
         Missao missao = new Missao();
         try (Connection conn = ConnectionFactory.obtemConexao(); PreparedStatement ps = conn.prepareStatement(sql, ResultSet.CONCUR_READ_ONLY)) {
 
             ps.setInt(1, id);
-            try(ResultSet rs = ps.executeQuery()) {
-                if(rs.next()) {
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
                     //Pegando os dados do ResultSet para criar um objeto Missao
                     missao.setId(rs.getInt("id"));
                     missao.setTitulo(rs.getString("titulo"));
@@ -69,26 +68,61 @@ public class MissaoDAO {
         }
         return missao;
     }
-    
+
     public void alterar(Missao missao) throws Exception {
         String sql = "UPDATE tb_missao SET titulo = ?, descricao = ?, nivelDificuldade = ?, pontos = ? WHERE id = ?;";
         try (Connection conn = ConnectionFactory.obtemConexao(); PreparedStatement ps = conn.prepareStatement(sql)) {
-            
+
             ps.setString(1, missao.getTitulo());
             ps.setString(2, missao.getDescricao());
             ps.setInt(3, missao.getNivelDificuldade());
             ps.setInt(4, missao.getPontos());
             ps.setInt(5, missao.getId());
-            ps.executeUpdate();   
+            ps.executeUpdate();
         }
     }
-    
+
     public void deletar(int id) throws Exception {
-        String sql = "DELETE FROM tb_missao where id = ?";
+        String sql = "DELETE FROM tb_missao where id = ?;";
         try (Connection conn = ConnectionFactory.obtemConexao(); PreparedStatement ps = conn.prepareStatement(sql)) {
 
             ps.setInt(1, id);
             ps.executeUpdate();
         }
-    }   
+    }
+
+    public int consultarIdPeloTitulo(String titulo) throws Exception {
+        int id = -1;
+
+        String sql = "SELECT id FROM tb_missao WHERE titulo = ?;";
+        try (Connection conn = ConnectionFactory.obtemConexao(); PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setString(1, titulo);
+
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    id = rs.getInt("id");
+                }
+            }
+        }
+
+        return id;
+    }
+
+    public String consultarDescricaoPeloTitulo(String titulo) throws Exception {
+        String descricao = null;
+
+        String sql = "SELECT descricao FROM tb_missao WHERE titulo = ?;";
+        try (Connection conn = ConnectionFactory.obtemConexao(); PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setString(1, titulo);
+
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    descricao = rs.getString("descricao");
+                }
+            }
+        }
+
+        return descricao;
+    }
+
 }

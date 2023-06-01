@@ -45,6 +45,13 @@ public class MissaoAtribuida {
     }
     public MissaoAtribuida[] obterMissoes(int idPessoa) throws Exception{
         MissaoAtDAO dao = new MissaoAtDAO();
-        return dao.obterMissoes(idPessoa);
+        return dao.obterMissoesAt(idPessoa);
     }
+
+    @Override
+    public String toString() {
+        return this.missao.getTitulo();
+    }
+    
+    
 }

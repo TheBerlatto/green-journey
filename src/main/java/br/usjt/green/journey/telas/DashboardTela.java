@@ -15,32 +15,13 @@ import javax.swing.table.DefaultTableModel;
  */
 public class DashboardTela extends javax.swing.JFrame {
 
-    public void consultaPrimeiros() throws Exception {
-        String sql = "SELECT username, pontuacao FROM tb_pessoa ORDER BY pontuacao DESC LIMIT 3";
-        
-        try (Connection conn = ConnectionFactory.obtemConexao(); Statement st = conn.createStatement(); ResultSet rs = st.executeQuery(sql)) {
-            
-            DefaultTableModel model = (DefaultTableModel) rankingTable.getModel();
-            // Preenche a tabela com os resultados da consulta
-            while (rs.next()) {
-                String username = rs.getString("username");
-                int pontuacao = rs.getInt("pontuacao");
-                model.addRow(new Object[]{username, pontuacao});
-            }
-            
-            rankingTable.setModel(model);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
     /**
      * Creates new form Ranking
      */
     public DashboardTela() {
         super("Dashboard");
         initComponents();
+        consultaPrimeiros();
         setLocationRelativeTo(null);
     }
 
@@ -68,11 +49,12 @@ public class DashboardTela extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        missoesButton = new javax.swing.JButton();
+        boasVindasLabel = new javax.swing.JLabel();
+        usernameLabel = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(675, 485));
         getContentPane().setLayout(null);
         getContentPane().add(jLabel1);
         jLabel1.setBounds(167, 6, 0, 102);
@@ -131,7 +113,7 @@ public class DashboardTela extends javax.swing.JFrame {
 
         jLabel18.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\teste-removebg-preview.png")); // NOI18N
         getContentPane().add(jLabel18);
-        jLabel18.setBounds(230, 0, 200, 70);
+        jLabel18.setBounds(100, 0, 200, 70);
 
         jLabel17.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\foia canto inferior direito.png")); // NOI18N
         getContentPane().add(jLabel17);
@@ -156,17 +138,30 @@ public class DashboardTela extends javax.swing.JFrame {
         getContentPane().add(jLabel28);
         jLabel28.setBounds(110, 80, 450, 30);
 
-        jButton1.setBackground(new java.awt.Color(0, 51, 0));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Missões");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        missoesButton.setBackground(new java.awt.Color(0, 51, 0));
+        missoesButton.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        missoesButton.setForeground(new java.awt.Color(255, 255, 255));
+        missoesButton.setText("Missões");
+        missoesButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                missoesButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(290, 410, 76, 27);
+        getContentPane().add(missoesButton);
+        missoesButton.setBounds(290, 410, 76, 27);
+
+        boasVindasLabel.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        boasVindasLabel.setForeground(new java.awt.Color(51, 51, 51));
+        boasVindasLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        boasVindasLabel.setText("Olá, ");
+        getContentPane().add(boasVindasLabel);
+        boasVindasLabel.setBounds(330, 0, 90, 60);
+
+        usernameLabel.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        usernameLabel.setForeground(new java.awt.Color(51, 51, 51));
+        usernameLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        getContentPane().add(usernameLabel);
+        usernameLabel.setBounds(380, 0, 140, 60);
 
         jLabel22.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\cor_de_fundo.jpg")); // NOI18N
         getContentPane().add(jLabel22);
@@ -175,9 +170,12 @@ public class DashboardTela extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void missoesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_missoesButtonActionPerformed
+        CatalogoTela catela = new CatalogoTela();
+        catela.receberUsername(usernameLabel.getText());
+        catela.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_missoesButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -216,9 +214,33 @@ public class DashboardTela extends javax.swing.JFrame {
             }
         });
     }
+    
+    private void consultaPrimeiros() {
+        String sql = "SELECT username, pontuacao FROM tb_pessoa ORDER BY pontuacao DESC LIMIT 3";
+        
+        try (Connection conn = ConnectionFactory.obtemConexao(); Statement st = conn.createStatement(); ResultSet rs = st.executeQuery(sql)) {
+            
+            DefaultTableModel model = (DefaultTableModel) rankingTable.getModel();
+            // Preenche a tabela com os resultados da consulta
+            while (rs.next()) {
+                String username = rs.getString("username");
+                int pontuacao = rs.getInt("pontuacao");
+                model.addRow(new Object[]{username, pontuacao});
+            }
+            
+            rankingTable.setModel(model);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public void receberUsername(String username) {
+        usernameLabel.setText(username);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel boasVindasLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -234,6 +256,8 @@ public class DashboardTela extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton missoesButton;
     private javax.swing.JTable rankingTable;
+    private javax.swing.JLabel usernameLabel;
     // End of variables declaration//GEN-END:variables
 }
