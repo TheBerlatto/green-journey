@@ -30,18 +30,17 @@ public class AdminMissoes extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        tituloMissaoTextField = new javax.swing.JTextField();
+        descricaoMissaoTextField = new javax.swing.JTextField();
+        dificuldadeTextField = new javax.swing.JTextField();
+        pontosTextField = new javax.swing.JTextField();
+        inserirMissaoButton = new javax.swing.JButton();
+        atualizarMissaoButton = new javax.swing.JButton();
+        deleteMissaoButton = new javax.swing.JButton();
         voltarButton = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(670, 485));
         setSize(new java.awt.Dimension(670, 485));
         getContentPane().setLayout(null);
 
@@ -52,19 +51,49 @@ public class AdminMissoes extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Gerenciamento de Missões");
 
-        jTextField1.setText("Título");
+        tituloMissaoTextField.setText("Título");
+        tituloMissaoTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tituloMissaoTextFieldActionPerformed(evt);
+            }
+        });
 
-        jTextField2.setText("Descrição");
+        descricaoMissaoTextField.setText("Descrição");
+        descricaoMissaoTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                descricaoMissaoTextFieldActionPerformed(evt);
+            }
+        });
 
-        jTextField3.setText("Nível de Dificuldade");
+        dificuldadeTextField.setText("Nível de Dificuldade");
+        dificuldadeTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dificuldadeTextFieldActionPerformed(evt);
+            }
+        });
 
-        jTextField4.setText("Pontos");
+        pontosTextField.setText("Pontos");
+        pontosTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pontosTextFieldActionPerformed(evt);
+            }
+        });
 
-        jButton1.setText("Inserir");
+        inserirMissaoButton.setText("Inserir");
+        inserirMissaoButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inserirMissaoButtonActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("Atualizar");
+        atualizarMissaoButton.setText("Atualizar");
+        atualizarMissaoButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                atualizarMissaoButtonActionPerformed(evt);
+            }
+        });
 
-        jButton3.setText("Deletar");
+        deleteMissaoButton.setText("Deletar");
 
         voltarButton.setText("Voltar");
         voltarButton.addActionListener(new java.awt.event.ActionListener() {
@@ -82,21 +111,21 @@ public class AdminMissoes extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(22, 22, 22)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField1)
-                            .addComponent(jTextField2)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE)
-                            .addComponent(jTextField4)))
+                            .addComponent(tituloMissaoTextField)
+                            .addComponent(descricaoMissaoTextField)
+                            .addComponent(dificuldadeTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE)
+                            .addComponent(pontosTextField)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(89, 89, 89)
                         .addComponent(jLabel1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(98, 98, 98)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton1)
-                            .addComponent(jButton3))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(deleteMissaoButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(inserirMissaoButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(48, 48, 48)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(atualizarMissaoButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(voltarButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
@@ -105,28 +134,26 @@ public class AdminMissoes extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tituloMissaoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(descricaoMissaoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(dificuldadeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pontosTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(inserirMissaoButton)
+                    .addComponent(atualizarMissaoButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
+                    .addComponent(deleteMissaoButton)
                     .addComponent(voltarButton))
                 .addContainerGap(15, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(120, 90, 417, 282);
-
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\cor_de_fundo.jpg")); // NOI18N
+        jPanel1.setBounds(120, 90, 417, 256);
         getContentPane().add(jLabel2);
         jLabel2.setBounds(0, 0, 680, 490);
 
@@ -138,6 +165,38 @@ public class AdminMissoes extends javax.swing.JFrame {
         a1.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_voltarButtonActionPerformed
+
+    private void tituloMissaoTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tituloMissaoTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tituloMissaoTextFieldActionPerformed
+
+    private void inserirMissaoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inserirMissaoButtonActionPerformed
+        // metodo que insere missões na tabela missões no banco
+        //pegando os atributos necessario para a criação da missão
+        String titulo = tituloMissaoTextField.getText();
+        String descricao = descricaoMissaoTextField.getText();
+        //parsea a string que vem do campo textField para int
+        int nivelDificuldade = Integer.parseInt(dificuldadeTextField.getText());
+        int pontos = Integer.parseInt(pontosTextField.getText());
+        
+        //instanciar objeto
+    }//GEN-LAST:event_inserirMissaoButtonActionPerformed
+
+    private void atualizarMissaoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atualizarMissaoButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_atualizarMissaoButtonActionPerformed
+
+    private void dificuldadeTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dificuldadeTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dificuldadeTextFieldActionPerformed
+
+    private void pontosTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pontosTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pontosTextFieldActionPerformed
+
+    private void descricaoMissaoTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_descricaoMissaoTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_descricaoMissaoTextFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -175,16 +234,16 @@ public class AdminMissoes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton atualizarMissaoButton;
+    private javax.swing.JButton deleteMissaoButton;
+    private javax.swing.JTextField descricaoMissaoTextField;
+    private javax.swing.JTextField dificuldadeTextField;
+    private javax.swing.JButton inserirMissaoButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField pontosTextField;
+    private javax.swing.JTextField tituloMissaoTextField;
     private javax.swing.JButton voltarButton;
     // End of variables declaration//GEN-END:variables
 }

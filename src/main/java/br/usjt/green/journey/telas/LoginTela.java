@@ -130,6 +130,15 @@ public class LoginTela extends javax.swing.JFrame {
         String senha = new String(senhaPasswordField.getPassword());
         
         try {
+            //verifica se a conta digitada pertence ao admin
+            if (username.equals("admin") && senha.equals("admin")) {
+            JOptionPane.showMessageDialog(null, "Bem vindo, " + username + "!", "Olá!", JOptionPane.INFORMATION_MESSAGE);
+            // Se a verificação for bem-sucedida, faça o que precisa ser feito
+            Admin1 principal = new Admin1();
+            principal.setVisible(true);
+            this.dispose();
+        } 
+            
             //verificar se o usuario existe no db
             Usuario usuario = new Usuario(username, senha);
             PessoaDAO dao = new PessoaDAO();
