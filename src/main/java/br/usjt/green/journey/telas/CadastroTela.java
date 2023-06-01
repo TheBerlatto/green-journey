@@ -84,8 +84,6 @@ public class CadastroTela extends javax.swing.JFrame {
         jLabel2.setBounds(130, 220, 80, 0);
         getContentPane().add(jLabel1);
         jLabel1.setBounds(120, 10, 0, 0);
-
-        logoLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\teste-removebg-preview.png")); // NOI18N
         getContentPane().add(logoLabel);
         logoLabel.setBounds(170, 20, 220, 70);
 
@@ -97,8 +95,6 @@ public class CadastroTela extends javax.swing.JFrame {
         });
         getContentPane().add(voltarButton);
         voltarButton.setBounds(160, 260, 90, 30);
-
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\cor_de_fundo.jpg")); // NOI18N
         getContentPane().add(jLabel4);
         jLabel4.setBounds(0, 0, 560, 360);
 

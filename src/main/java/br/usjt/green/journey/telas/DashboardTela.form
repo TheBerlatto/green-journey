@@ -150,11 +150,6 @@
       </SubComponents>
     </Container>
     <Component class="javax.swing.JLabel" name="jLabel18">
-      <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\eduar\ws-netbeans\GreenJourney\src\main\java\br\usjt\green\journey\imagens\teste-removebg-preview.png"/>
-        </Property>
-      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="230" y="0" width="200" height="70"/>
@@ -162,11 +157,6 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel17">
-      <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\eduar\ws-netbeans\GreenJourney\src\main\java\br\usjt\green\journey\imagens\foia canto inferior direito.png"/>
-        </Property>
-      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="590" y="380" width="80" height="70"/>
@@ -174,11 +164,6 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel19">
-      <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\eduar\ws-netbeans\GreenJourney\src\main\java\br\usjt\green\journey\imagens\foia canto superior direito.png"/>
-        </Property>
-      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="590" y="0" width="80" height="60"/>
@@ -186,11 +171,6 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel20">
-      <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\eduar\ws-netbeans\GreenJourney\src\main\java\br\usjt\green\journey\imagens\foia canto superior esquerdo.png"/>
-        </Property>
-      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="-10" y="0" width="80" height="60"/>
@@ -198,11 +178,6 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel21">
-      <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\eduar\ws-netbeans\GreenJourney\src\main\java\br\usjt\green\journey\imagens\foia_canto_inferior_esquerdo-removebg-preview.png"/>
-        </Property>
-      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="0" y="370" width="80" height="70"/>
@@ -251,11 +226,6 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel22">
-      <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\eduar\ws-netbeans\GreenJourney\src\main\java\br\usjt\green\journey\imagens\cor_de_fundo.jpg"/>
-        </Property>
-      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="0" y="0" width="680" height="440"/>

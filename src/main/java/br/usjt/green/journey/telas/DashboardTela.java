@@ -128,24 +128,14 @@ public class DashboardTela extends javax.swing.JFrame {
 
         getContentPane().add(jPanel2);
         jPanel2.setBounds(110, 110, 450, 290);
-
-        jLabel18.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\teste-removebg-preview.png")); // NOI18N
         getContentPane().add(jLabel18);
         jLabel18.setBounds(230, 0, 200, 70);
-
-        jLabel17.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\foia canto inferior direito.png")); // NOI18N
         getContentPane().add(jLabel17);
         jLabel17.setBounds(590, 380, 80, 70);
-
-        jLabel19.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\foia canto superior direito.png")); // NOI18N
         getContentPane().add(jLabel19);
         jLabel19.setBounds(590, 0, 80, 60);
-
-        jLabel20.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\foia canto superior esquerdo.png")); // NOI18N
         getContentPane().add(jLabel20);
         jLabel20.setBounds(-10, 0, 80, 60);
-
-        jLabel21.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\foia_canto_inferior_esquerdo-removebg-preview.png")); // NOI18N
         getContentPane().add(jLabel21);
         jLabel21.setBounds(0, 370, 80, 70);
 
@@ -166,9 +156,7 @@ public class DashboardTela extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(290, 410, 76, 27);
-
-        jLabel22.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\cor_de_fundo.jpg")); // NOI18N
+        jButton1.setBounds(290, 410, 90, 24);
         getContentPane().add(jLabel22);
         jLabel22.setBounds(0, 0, 680, 440);
 

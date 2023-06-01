@@ -53,10 +53,8 @@ public class LoginTela extends javax.swing.JFrame {
         senhaPasswordField.setBorder(javax.swing.BorderFactory.createTitledBorder("Senha:"));
         getContentPane().add(senhaPasswordField);
         senhaPasswordField.setBounds(301, 142, 200, 60);
-
-        logoLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\teste-removebg-preview.png")); // NOI18N
         getContentPane().add(logoLabel);
-        logoLabel.setBounds(50, 106, 200, 70);
+        logoLabel.setBounds(50, 106, 0, 70);
 
         jLabel1.setText("Ajude o planeta com pequenas atitudes!");
         getContentPane().add(jLabel1);
@@ -88,8 +86,6 @@ public class LoginTela extends javax.swing.JFrame {
         });
         getContentPane().add(cadastroButton);
         cadastroButton.setBounds(335, 262, 120, 40);
-
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\cor_de_fundo.jpg")); // NOI18N
         getContentPane().add(jLabel2);
         jLabel2.setBounds(0, 0, 560, 360);
 

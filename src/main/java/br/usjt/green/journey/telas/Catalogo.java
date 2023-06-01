@@ -50,11 +50,11 @@ public class Catalogo extends javax.swing.JPanel {
 
         jButton4.setText("Ranking");
         add(jButton4);
-        jButton4.setBounds(250, 380, 77, 27);
+        jButton4.setBounds(250, 380, 91, 29);
 
         jLabel6.setText("36 ☆");
         add(jLabel6);
-        jLabel6.setBounds(520, 40, 25, 16);
+        jLabel6.setBounds(520, 40, 33, 21);
         add(jPanel1);
         jPanel1.setBounds(480, 30, 100, 40);
         add(jLabel7);
@@ -64,19 +64,26 @@ public class Catalogo extends javax.swing.JPanel {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {"Missão 1", "Alimente um animal", "          3 *"},
+                {"Missão 2", "Em breve . . .", null},
+                {null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Missão", "Descrição", "Pontuação"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(100, 90, 390, 250);
+        jScrollPane1.setBounds(100, 90, 440, 250);
         add(jLabel5);
         jLabel5.setBounds(0, 0, 600, 420);
     }// </editor-fold>//GEN-END:initComponents
