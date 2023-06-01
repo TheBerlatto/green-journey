@@ -6,7 +6,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author eduar
+ * @author TheBerlatto
  */
 public class LoginTela extends javax.swing.JFrame {
 
@@ -28,37 +28,42 @@ public class LoginTela extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        usernameTextField = new javax.swing.JTextField();
-        senhaPasswordField = new javax.swing.JPasswordField();
-        logoLabel = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        sloganLabel = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        cadastroButton = new javax.swing.JButton();
         entrarButton = new javax.swing.JButton();
         sairButton = new javax.swing.JButton();
-        cadastroButton = new javax.swing.JButton();
+        senhaPasswordField = new javax.swing.JPasswordField();
+        usernameTextField = new javax.swing.JTextField();
+        logoLabel = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        fundoLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(555, 355));
+        setPreferredSize(new java.awt.Dimension(575, 375));
+        setSize(new java.awt.Dimension(555, 390));
         getContentPane().setLayout(null);
 
-        usernameTextField.setBorder(javax.swing.BorderFactory.createTitledBorder("Username:"));
-        usernameTextField.addActionListener(new java.awt.event.ActionListener() {
+        sloganLabel.setForeground(new java.awt.Color(51, 51, 51));
+        sloganLabel.setText("Ajude o planeta com pequenas atitudes!");
+        getContentPane().add(sloganLabel);
+        sloganLabel.setBounds(30, 180, 240, 30);
+
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\teste-removebg-preview.png")); // NOI18N
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(50, 110, 210, 70);
+
+        cadastroButton.setText("Cadastre-se");
+        cadastroButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                usernameTextFieldActionPerformed(evt);
+                cadastroButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(usernameTextField);
-        usernameTextField.setBounds(301, 64, 200, 60);
-
-        senhaPasswordField.setBorder(javax.swing.BorderFactory.createTitledBorder("Senha:"));
-        getContentPane().add(senhaPasswordField);
-        senhaPasswordField.setBounds(301, 142, 200, 60);
-        getContentPane().add(logoLabel);
-        logoLabel.setBounds(50, 106, 0, 70);
-
-        jLabel1.setText("Ajude o planeta com pequenas atitudes!");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(38, 188, 220, 30);
+        getContentPane().add(cadastroButton);
+        cadastroButton.setBounds(335, 262, 120, 40);
 
         entrarButton.setText("Entrar");
         entrarButton.addActionListener(new java.awt.event.ActionListener() {
@@ -78,16 +83,40 @@ public class LoginTela extends javax.swing.JFrame {
         getContentPane().add(sairButton);
         sairButton.setBounds(301, 210, 90, 40);
 
-        cadastroButton.setText("Cadastre-se");
-        cadastroButton.addActionListener(new java.awt.event.ActionListener() {
+        senhaPasswordField.setBorder(javax.swing.BorderFactory.createTitledBorder("Senha:"));
+        getContentPane().add(senhaPasswordField);
+        senhaPasswordField.setBounds(301, 142, 200, 60);
+
+        usernameTextField.setBorder(javax.swing.BorderFactory.createTitledBorder("Username:"));
+        usernameTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cadastroButtonActionPerformed(evt);
+                usernameTextFieldActionPerformed(evt);
             }
         });
-        getContentPane().add(cadastroButton);
-        cadastroButton.setBounds(335, 262, 120, 40);
+        getContentPane().add(usernameTextField);
+        usernameTextField.setBounds(301, 64, 200, 60);
+        getContentPane().add(logoLabel);
+        logoLabel.setBounds(50, 106, 0, 70);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\foia canto superior esquerdo.png")); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(-10, 0, 80, 60);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\foia canto superior direito.png")); // NOI18N
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(0, 0, 560, 360);
+        jLabel2.setBounds(480, 0, 70, 60);
+
+        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\foia_canto_inferior_esquerdo-removebg-preview.png")); // NOI18N
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(-10, 280, 70, 60);
+
+        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\foia canto inferior direito.png")); // NOI18N
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(480, 280, 80, 60);
+
+        fundoLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\cor_de_fundo.jpg")); // NOI18N
+        getContentPane().add(fundoLabel);
+        fundoLabel.setBounds(0, 0, 560, 360);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -168,11 +197,16 @@ public class LoginTela extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cadastroButton;
     private javax.swing.JButton entrarButton;
+    private javax.swing.JLabel fundoLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel logoLabel;
     private javax.swing.JButton sairButton;
     private javax.swing.JPasswordField senhaPasswordField;
+    private javax.swing.JLabel sloganLabel;
     private javax.swing.JTextField usernameTextField;
     // End of variables declaration//GEN-END:variables
 }

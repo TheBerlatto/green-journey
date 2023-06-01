@@ -38,11 +38,15 @@ public class CadastroTela extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         logoLabel = new javax.swing.JLabel();
         voltarButton = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(0, 0));
-        setPreferredSize(new java.awt.Dimension(555, 355));
+        setPreferredSize(new java.awt.Dimension(575, 390));
         getContentPane().setLayout(null);
 
         emailTextField.setBorder(javax.swing.BorderFactory.createTitledBorder("Email"));
@@ -84,6 +88,8 @@ public class CadastroTela extends javax.swing.JFrame {
         jLabel2.setBounds(130, 220, 80, 0);
         getContentPane().add(jLabel1);
         jLabel1.setBounds(120, 10, 0, 0);
+
+        logoLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\teste-removebg-preview.png")); // NOI18N
         getContentPane().add(logoLabel);
         logoLabel.setBounds(170, 20, 220, 70);
 
@@ -95,6 +101,24 @@ public class CadastroTela extends javax.swing.JFrame {
         });
         getContentPane().add(voltarButton);
         voltarButton.setBounds(160, 260, 90, 30);
+
+        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\foia canto superior esquerdo.png")); // NOI18N
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(-10, 0, 80, 60);
+
+        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\foia canto superior direito.png")); // NOI18N
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(477, 0, 80, 60);
+
+        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\foia_canto_inferior_esquerdo-removebg-preview.png")); // NOI18N
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(0, 296, 80, 60);
+
+        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\foia canto inferior direito.png")); // NOI18N
+        getContentPane().add(jLabel8);
+        jLabel8.setBounds(477, 296, 80, 60);
+
+        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\cor_de_fundo.jpg")); // NOI18N
         getContentPane().add(jLabel4);
         jLabel4.setBounds(0, 0, 560, 360);
 
@@ -198,6 +222,10 @@ public class CadastroTela extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel logoLabel;
     private javax.swing.JPasswordField passwordTextField;
     private javax.swing.JTextField usernameTextField;
