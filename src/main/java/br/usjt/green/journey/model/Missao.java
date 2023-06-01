@@ -56,6 +56,10 @@ public class Missao {
     public void deletarMissao(int id) throws Exception {
         missaoDAO.deletar(id);
     }
+    public int consultarIdPeloTitulo(String titulo)throws Exception{
+        return missaoDAO.consultarIdPeloTitulo(titulo);
+    
+    }
 
     public int getId() {
         return id;

@@ -49,6 +49,11 @@ public class MissaoAtribuida {
         MissaoAtDAO dao = new MissaoAtDAO();
         return dao.obterMissoesAt(idPessoa);
     }
+    // metodo que insere as missões a todos os usuarios cadastrados
+    public void inserirMissaoAtPorId(int idMissao) throws Exception{
+        MissaoAtDAO dao = new MissaoAtDAO();
+        dao.inserirMissaoAtPorId(idMissao);
+    }
 
     @Override
     public String toString() {

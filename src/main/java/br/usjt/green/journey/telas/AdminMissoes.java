@@ -5,8 +5,10 @@
 package br.usjt.green.journey.telas;
 
 import br.usjt.green.journey.model.Missao;
+import br.usjt.green.journey.model.MissaoAtribuida;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -98,6 +100,11 @@ public class AdminMissoes extends javax.swing.JFrame {
         });
 
         deleteMissaoButton.setText("Deletar");
+        deleteMissaoButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteMissaoButtonActionPerformed(evt);
+            }
+        });
 
         voltarButton.setText("Voltar");
         voltarButton.addActionListener(new java.awt.event.ActionListener() {
@@ -188,14 +195,31 @@ public class AdminMissoes extends javax.swing.JFrame {
             Missao missao = new Missao();
             //metodo da classe missão que ja instancia missaoDAO e insere no banco de dados
             missao.inserirMissao(titulo, descricao, nivelDificuldade, pontos);
-        } catch (Exception ex) {
-            Logger.getLogger(AdminMissoes.class.getName()).log(Level.SEVERE, null, ex);
+            //metodo a seguir devolve o id da missão previamente cadastrada para o metodo
+            // "inserirMissaoAtPorId" associa-la a todos os usuarios da plataforma
+            MissaoAtribuida missaoAtribuida = new MissaoAtribuida();
+            missaoAtribuida.inserirMissaoAtPorId(missao.consultarIdPeloTitulo(titulo));
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Problemas técnicos. Tente novamente mais tarde");
+            e.printStackTrace();
         }
         
     }//GEN-LAST:event_inserirMissaoButtonActionPerformed
 
     private void atualizarMissaoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atualizarMissaoButtonActionPerformed
-        // TODO add your handling code here:
+        try {
+            // atualizar a missão
+            String titulo = tituloMissaoTextField.getText();
+            String descricao = descricaoMissaoTextField.getText();
+            //parsea a string que vem do campo textField para int
+            int nivelDificuldade = Integer.parseInt(dificuldadeTextField.getText());
+            int pontos = Integer.parseInt(pontosTextField.getText());
+            Missao missao = new Missao();
+            missao.alterarMissao(titulo, descricao, nivelDificuldade, pontos);
+          } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Problemas técnicos. Tente novamente mais tarde");
+            e.printStackTrace();
+        }
     }//GEN-LAST:event_atualizarMissaoButtonActionPerformed
 
     private void dificuldadeTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dificuldadeTextFieldActionPerformed
@@ -209,6 +233,23 @@ public class AdminMissoes extends javax.swing.JFrame {
     private void descricaoMissaoTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_descricaoMissaoTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_descricaoMissaoTextFieldActionPerformed
+
+    private void deleteMissaoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteMissaoButtonActionPerformed
+        try {
+            // deleta missões que estão na tabela missão
+            String titulo = tituloMissaoTextField.getText();
+            String descricao = descricaoMissaoTextField.getText();
+            //parsea a string que vem do campo textField para int
+            int nivelDificuldade = Integer.parseInt(dificuldadeTextField.getText());
+            int pontos = Integer.parseInt(pontosTextField.getText());
+            //instancia do objeto missao que vamos utilizar
+            Missao missao = new Missao();
+            missao.deletarMissao(missao.consultarIdPeloTitulo(titulo));
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Problemas técnicos. Tente novamente mais tarde");
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_deleteMissaoButtonActionPerformed
 
     /**
      * @param args the command line arguments

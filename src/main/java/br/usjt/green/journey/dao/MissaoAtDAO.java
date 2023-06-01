@@ -128,6 +128,31 @@ public class MissaoAtDAO {
     }
     return false;
 }
+    //metodo que insere uma missão para todos os usuarios contidos na tabela missão
+    public void inserirMissaoAtPorId(int idMissao) throws Exception {
+        String sqlUsuarios = "SELECT id FROM tb_pessoa";
+    
+        try (Connection conn = ConnectionFactory.obtemConexao();
+            PreparedStatement stmtUsuarios = conn.prepareStatement(sqlUsuarios);
+            PreparedStatement stmtInsert = conn.prepareStatement("INSERT INTO tb_missaoAt (id_pessoa, id_missao, finalizada) VALUES (?, ?, ?)")) {
+        
+        // Obtém todos os IDs dos usuários
+        ResultSet rsUsuarios = stmtUsuarios.executeQuery();
+            while (rsUsuarios.next()) {
+                int idPessoa = rsUsuarios.getInt("id");
+            
+                // Insere a associação entre usuário e missão
+                stmtInsert.setInt(1, idPessoa);
+                stmtInsert.setInt(2, idMissao);
+                stmtInsert.setBoolean(3, false);
+                stmtInsert.executeUpdate();
+            
+        }
+        
+    } catch (SQLException ex) {
+        ex.printStackTrace();
+    }
+}
     
     
 }
