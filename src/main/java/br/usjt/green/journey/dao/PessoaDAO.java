@@ -26,6 +26,23 @@ public class PessoaDAO {
             ps.executeUpdate();
         }
     }
+    
+    public int consultarIdPeloUsername(String username) throws Exception {
+        int id = -1; // valor padrão para indicar que o ID não foi encontrado
+
+        String sql = "SELECT id FROM tb_pessoa WHERE username = ?;";
+        try (Connection conn = ConnectionFactory.obtemConexao(); PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setString(1, username);
+
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    id = rs.getInt("id");
+                }
+            } 
+        }
+
+        return id;
+    }
 
     public Usuario consultarPorId(int id) throws Exception {
         String sql = "SELECT * FROM tb_pessoa WHERE id = ?;";
@@ -49,7 +66,7 @@ public class PessoaDAO {
     public boolean consultarSeExistir(Usuario usuario) throws Exception {
 
         /*metodo que consulta os dados do usuario usando o username e a senha*/
-        String sql = "select * from tb_pessoa where nome = ? and senha = ?;";
+        String sql = "select * from tb_pessoa where username = ? and senha = ?;";
         try (Connection conn = ConnectionFactory.obtemConexao(); PreparedStatement ps = conn.prepareStatement(sql)) {
 
             ps.setString(1, usuario.getUsername());
@@ -77,6 +94,16 @@ public class PessoaDAO {
         try (Connection conn = ConnectionFactory.obtemConexao(); PreparedStatement ps = conn.prepareStatement(sql)) {
 
             ps.setInt(1, id);
+            ps.executeUpdate();
+        }
+    }
+    
+    public void atribuirPontosPorMissao(String username, int pontos) throws Exception {
+        String sql = "UPDATE tb_pessoas SET pontuacao = pontuacao + ? WHERE username = ?;";
+        try (Connection conn = ConnectionFactory.obtemConexao(); PreparedStatement ps = conn.prepareStatement(sql)) {
+
+            ps.setInt(1, pontos);
+            ps.setString(2, username);
             ps.executeUpdate();
         }
     }

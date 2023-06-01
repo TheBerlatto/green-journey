@@ -93,7 +93,7 @@ public class MissaoAtDAO {
             ex.printStackTrace();
         }
     }
-   public MissaoAtribuida[] obterMissoes(int idPessoa) throws Exception{
+   public MissaoAtribuida[] obterMissoesAt(int idPessoa) throws Exception{
         String sql = "SELECT * FROM tb_missaoAt";
         try (Connection conn = ConnectionFactory.obtemConexao();
             PreparedStatement ps = conn.prepareStatement(sql,
@@ -101,7 +101,7 @@ public class MissaoAtDAO {
                                     ResultSet.CONCUR_READ_ONLY);
             ResultSet rs = ps.executeQuery()){
             int totalDeMissoes = rs.last () ? rs.getRow() : 0;
-            MissaoAtribuida [] missoesUsuario = new MissaoAtribuida[totalDeMissoes];
+            MissaoAtribuida[] missoesUsuario = new MissaoAtribuida[totalDeMissoes];
             rs.beforeFirst();
             int contador = 0;
             while (rs.next()){
