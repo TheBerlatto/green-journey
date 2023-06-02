@@ -164,7 +164,9 @@ public class AdminMissoes extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(120, 90, 417, 256);
+        jPanel1.setBounds(120, 90, 417, 282);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\cor_de_fundo.jpg")); // NOI18N
         getContentPane().add(jLabel2);
         jLabel2.setBounds(0, 0, 680, 490);
 

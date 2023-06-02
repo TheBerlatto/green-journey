@@ -144,7 +144,9 @@ public class AdminUsuario extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(130, 70, 411, 254);
+        jPanel1.setBounds(130, 70, 411, 276);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\cor_de_fundo.jpg")); // NOI18N
         getContentPane().add(jLabel2);
         jLabel2.setBounds(0, 0, 680, 460);
 
@@ -220,8 +222,9 @@ public class AdminUsuario extends javax.swing.JFrame {
             //seguinte metodo devolve o id do usuario para o metodo buscar e deletar
             usuario.deletar(usuario.consultarIdPeloUsername(username));
             
-        } catch (Exception ex) {
-            Logger.getLogger(AdminUsuario.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog (null, "Erro ao deletar, tente novamente mais tarde!", "Oops", JOptionPane.ERROR_MESSAGE);
+            e.printStackTrace();
         }
         
         

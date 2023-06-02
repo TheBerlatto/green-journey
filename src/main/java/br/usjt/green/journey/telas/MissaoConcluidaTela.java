@@ -8,13 +8,15 @@ package br.usjt.green.journey.telas;
  *
  * @author Osmar Jatoba Neto
  */
-public class MissaoConcluida extends javax.swing.JFrame {
+public class MissaoConcluidaTela extends javax.swing.JFrame {
 
     /**
      * Creates new form MissaoConcluida
      */
-    public MissaoConcluida() {
+    public MissaoConcluidaTela() {
+        super("Missão Concluída");
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -36,8 +38,9 @@ public class MissaoConcluida extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jLabel7 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        voltaCatalogoButton = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
+        logoLabel = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -56,6 +59,7 @@ public class MissaoConcluida extends javax.swing.JFrame {
         jTextField1.setBackground(new java.awt.Color(0, 102, 51));
         jTextField1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         jTextField1.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField1.setText("   Parabéns, mais uma missão concluída!");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -63,7 +67,7 @@ public class MissaoConcluida extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextField1);
-        jTextField1.setBounds(114, 116, 371, 33);
+        jTextField1.setBounds(115, 116, 370, 35);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -81,19 +85,30 @@ public class MissaoConcluida extends javax.swing.JFrame {
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
-        jTextArea1.setText("As pequenas ações ajudam a mudar o mundo. \nCuide e proteja o nosso meio ambiente! \nContamos com você para evoluirmos e transformar \no mundo em um lugar melhor! ");
+        jTextArea1.setText("As pequenas ações ajudam a mudar o mundo. \nCuide e proteja o nosso meio ambiente! \nContamos com você para evoluirmos e transformar \no mundo em um lugar melhor!\n\nSua pontuação foi creditada! ");
         jScrollPane1.setViewportView(jTextArea1);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(114, 167, 371, 126);
+        jScrollPane1.setBounds(114, 167, 371, 110);
         getContentPane().add(jLabel7);
         jLabel7.setBounds(193, 18, 0, 0);
 
-        jButton1.setText("Pegar Recompensa ☆");
-        getContentPane().add(jButton1);
-        jButton1.setBounds(200, 330, 182, 29);
+        voltaCatalogoButton.setText("Voltar ao Catálogo");
+        voltaCatalogoButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                voltaCatalogoButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(voltaCatalogoButton);
+        voltaCatalogoButton.setBounds(232, 330, 140, 40);
         getContentPane().add(jLabel5);
         jLabel5.setBounds(254, 286, 0, 69);
+
+        logoLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\teste-removebg-preview.png")); // NOI18N
+        getContentPane().add(logoLabel);
+        logoLabel.setBounds(210, 30, 190, 60);
+
+        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\cor_de_fundo.jpg")); // NOI18N
         getContentPane().add(jLabel8);
         jLabel8.setBounds(0, 0, 610, 420);
 
@@ -103,6 +118,12 @@ public class MissaoConcluida extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void voltaCatalogoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltaCatalogoButtonActionPerformed
+        CatalogoTela ct = new CatalogoTela();
+        ct.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_voltaCatalogoButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -121,26 +142,26 @@ public class MissaoConcluida extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MissaoConcluida.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MissaoConcluidaTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MissaoConcluida.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MissaoConcluidaTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MissaoConcluida.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MissaoConcluidaTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MissaoConcluida.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MissaoConcluidaTela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MissaoConcluida().setVisible(true);
+                new MissaoConcluidaTela().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -153,5 +174,7 @@ public class MissaoConcluida extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel logoLabel;
+    private javax.swing.JButton voltaCatalogoButton;
     // End of variables declaration//GEN-END:variables
 }

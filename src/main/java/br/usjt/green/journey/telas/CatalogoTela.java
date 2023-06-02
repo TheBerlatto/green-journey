@@ -171,6 +171,8 @@ public class CatalogoTela extends javax.swing.JFrame {
             idUsuario = pessoaDAO.consultarIdPeloUsername(username);
             missaoAt.concluirMissao(idUsuario, idMissao);
             pessoaDAO.atribuirPontosPorMissao(username, Integer.parseInt(pontosTextArea.getText()));
+            MissaoConcluidaTela mct = new MissaoConcluidaTela();
+            mct.setVisible(true);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Erro ao finalizar missão... Tente novamente mais tarde!", "Oops", JOptionPane.WARNING_MESSAGE);
             e.printStackTrace();
@@ -220,9 +222,9 @@ public class CatalogoTela extends javax.swing.JFrame {
 
     private void buscarMissoesAt() {
         try {
-            MissaoAtDAO missaoDAO = new MissaoAtDAO();
+            MissaoAtDAO missaoAtDAO = new MissaoAtDAO();
             PessoaDAO pessoaDAO = new PessoaDAO();
-            MissaoAtribuida[] missoes = missaoDAO.obterMissoesAt(pessoaDAO.consultarIdPeloUsername(usernameLabel.getText()));
+            MissaoAtribuida[] missoes = missaoAtDAO.obterMissoesAt(pessoaDAO.consultarIdPeloUsername(usernameLabel.getText()));
             missaoAtribuidaComboBox.setModel(new DefaultComboBoxModel<>(missoes));
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Missões indisponíveis... Tente novamente mais tarde!");

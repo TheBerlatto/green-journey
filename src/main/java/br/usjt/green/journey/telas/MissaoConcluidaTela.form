@@ -71,6 +71,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="   Parab&#xe9;ns, mais uma miss&#xe3;o conclu&#xed;da!"/>
       </Properties>
       <Events>
@@ -78,7 +79,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="114" y="116" width="371" height="-1"/>
+          <AbsoluteConstraints x="115" y="116" width="370" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -108,7 +109,7 @@
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="114" y="167" width="371" height="-1"/>
+          <AbsoluteConstraints x="114" y="167" width="371" height="110"/>
         </Constraint>
       </Constraints>
 
@@ -118,7 +119,7 @@
           <Properties>
             <Property name="columns" type="int" value="20"/>
             <Property name="rows" type="int" value="5"/>
-            <Property name="text" type="java.lang.String" value="As pequenas a&#xe7;&#xf5;es ajudam a mudar o mundo. &#xa;Cuide e proteja o nosso meio ambiente! &#xa;Contamos com voc&#xea; para evoluirmos e transformar &#xa;o mundo em um lugar melhor! "/>
+            <Property name="text" type="java.lang.String" value="As pequenas a&#xe7;&#xf5;es ajudam a mudar o mundo. &#xa;Cuide e proteja o nosso meio ambiente! &#xa;Contamos com voc&#xea; para evoluirmos e transformar &#xa;o mundo em um lugar melhor!&#xa;&#xa;Sua pontua&#xe7;&#xe3;o foi creditada! "/>
           </Properties>
         </Component>
       </SubComponents>
@@ -130,13 +131,16 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="voltaCatalogoButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Pegar Recompensa &#x2606;"/>
+        <Property name="text" type="java.lang.String" value="Voltar ao Cat&#xe1;logo"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="voltaCatalogoButtonActionPerformed"/>
+      </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="200" y="330" width="-1" height="-1"/>
+          <AbsoluteConstraints x="232" y="330" width="140" height="40"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -147,7 +151,24 @@
         </Constraint>
       </Constraints>
     </Component>
+    <Component class="javax.swing.JLabel" name="logoLabel">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="2" name="C:\Users\eduar\ws-netbeans\GreenJourney\src\main\java\br\usjt\green\journey\imagens\teste-removebg-preview.png"/>
+        </Property>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="210" y="30" width="190" height="60"/>
+        </Constraint>
+      </Constraints>
+    </Component>
     <Component class="javax.swing.JLabel" name="jLabel8">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="2" name="C:\Users\eduar\ws-netbeans\GreenJourney\src\main\java\br\usjt\green\journey\imagens\cor_de_fundo.jpg"/>
+        </Property>
+      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="0" y="0" width="610" height="420"/>
