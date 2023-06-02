@@ -135,8 +135,8 @@ public class CadastroTela extends javax.swing.JFrame {
 
     // botão que faz o cadastro usuario
     private void finalizarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_finalizarButtonActionPerformed
-        String username = usernameTextField.getText();
         String email = emailTextField.getText();
+        String username = usernameTextField.getText();
         String senha = new String(passwordTextField.getPassword());
         
         PessoaDAO pessoaDAO = new PessoaDAO();

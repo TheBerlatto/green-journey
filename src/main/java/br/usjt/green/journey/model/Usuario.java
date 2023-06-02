@@ -23,12 +23,11 @@ public class Usuario extends Pessoa {
     }
     
     public void inserir(String username, String email, String senha) throws Exception {
-        Usuario usuario = new Usuario();
-        usuario.setUsername(username);
-        usuario.setEmail(email);
-        usuario.setSenha(senha);
+        this.setUsername(username);
+        this.setEmail(email);
+        this.setSenha(senha);
 
-        pessoaDAO.inserir(usuario);
+        pessoaDAO.inserir(this);
     }
     
     public void deletar(int id) throws Exception{

@@ -54,6 +54,7 @@ public class CatalogoTela extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(695, 505));
         setSize(new java.awt.Dimension(695, 505));
         getContentPane().setLayout(null);
 
@@ -150,7 +151,7 @@ public class CatalogoTela extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\cor_de_fundo.jpg")); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 680, 470);
+        jLabel1.setBounds(0, 0, 680, 480);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -173,6 +174,7 @@ public class CatalogoTela extends javax.swing.JFrame {
             pessoaDAO.atribuirPontosPorMissao(username, Integer.parseInt(pontosTextArea.getText()));
             MissaoConcluidaTela mct = new MissaoConcluidaTela();
             mct.setVisible(true);
+            this.dispose();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Erro ao finalizar missão... Tente novamente mais tarde!", "Oops", JOptionPane.WARNING_MESSAGE);
             e.printStackTrace();

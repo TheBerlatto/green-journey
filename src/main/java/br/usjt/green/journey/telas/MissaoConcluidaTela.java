@@ -44,6 +44,8 @@ public class MissaoConcluidaTela extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(695, 505));
+        setSize(new java.awt.Dimension(695, 505));
         getContentPane().setLayout(null);
         getContentPane().add(jLabel1);
         jLabel1.setBounds(509, 329, 0, 0);
