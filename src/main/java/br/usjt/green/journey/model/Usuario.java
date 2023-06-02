@@ -38,13 +38,16 @@ public class Usuario extends Pessoa {
         return pessoaDAO.consultarPorId(id);
     }
     
+    public boolean consultarSeExistir(Usuario usuario) throws Exception {
+        return pessoaDAO.consultarSeExistir(usuario);
+    }
+    
     public void alterar(String username, String email, String senha) throws Exception{
-        Usuario usuario = new Usuario();
-        usuario.setUsername(username);
-        usuario.setEmail(email);
-        usuario.setSenha(senha);
+        this.setUsername(username);
+        this.setEmail(email);
+        this.setSenha(senha);
         
-        pessoaDAO.alterar(usuario);
+        pessoaDAO.alterar(this);
     }
     public int consultarIdPeloUsername(String username) throws Exception{
         return pessoaDAO.consultarIdPeloUsername(username);

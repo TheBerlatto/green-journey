@@ -34,6 +34,7 @@ public class DashboardTela extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        missoesButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -52,10 +53,22 @@ public class DashboardTela extends javax.swing.JFrame {
         missoesButton = new javax.swing.JButton();
         boasVindasLabel = new javax.swing.JLabel();
         usernameLabel = new javax.swing.JLabel();
+        logoffButton = new javax.swing.JButton();
         jLabel22 = new javax.swing.JLabel();
+
+        missoesButton2.setBackground(new java.awt.Color(0, 51, 0));
+        missoesButton2.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        missoesButton2.setForeground(new java.awt.Color(255, 255, 255));
+        missoesButton2.setText("Missões");
+        missoesButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                missoesButton2ActionPerformed(evt);
+            }
+        });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(675, 485));
+        setResizable(false);
         setSize(new java.awt.Dimension(675, 485));
         getContentPane().setLayout(null);
         getContentPane().add(jLabel1);
@@ -150,7 +163,7 @@ public class DashboardTela extends javax.swing.JFrame {
             }
         });
         getContentPane().add(missoesButton);
-        missoesButton.setBounds(290, 410, 76, 27);
+        missoesButton.setBounds(340, 400, 76, 27);
 
         boasVindasLabel.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         boasVindasLabel.setForeground(new java.awt.Color(51, 51, 51));
@@ -165,6 +178,18 @@ public class DashboardTela extends javax.swing.JFrame {
         getContentPane().add(usernameLabel);
         usernameLabel.setBounds(380, 0, 140, 60);
 
+        logoffButton.setBackground(new java.awt.Color(0, 51, 0));
+        logoffButton.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        logoffButton.setForeground(new java.awt.Color(255, 255, 255));
+        logoffButton.setText("Logoff");
+        logoffButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logoffButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(logoffButton);
+        logoffButton.setBounds(230, 400, 76, 27);
+
         jLabel22.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\cor_de_fundo.jpg")); // NOI18N
         getContentPane().add(jLabel22);
         jLabel22.setBounds(0, 0, 680, 450);
@@ -178,6 +203,16 @@ public class DashboardTela extends javax.swing.JFrame {
         catela.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_missoesButtonActionPerformed
+
+    private void logoffButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoffButtonActionPerformed
+        LoginTela lt = new LoginTela();
+        lt.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_logoffButtonActionPerformed
+
+    private void missoesButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_missoesButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_missoesButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -258,7 +293,9 @@ public class DashboardTela extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton logoffButton;
     private javax.swing.JButton missoesButton;
+    private javax.swing.JButton missoesButton2;
     private javax.swing.JTable rankingTable;
     private javax.swing.JLabel usernameLabel;
     // End of variables declaration//GEN-END:variables

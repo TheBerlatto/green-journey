@@ -44,13 +44,12 @@ public class Missao {
     }
 
     public void alterarMissao(String titulo, String descricao, int nivelDificuldade, int pontos) throws Exception {
-        Missao missao = new Missao();
-        missao.setTitulo(titulo);
-        missao.setDescricao(descricao);
-        missao.setNivelDificuldade(nivelDificuldade);
-        missao.setPontos(pontos);
+        this.setTitulo(titulo);
+        this.setDescricao(descricao);
+        this.setNivelDificuldade(nivelDificuldade);
+        this.setPontos(pontos);
         
-        missaoDAO.alterar(missao);
+        missaoDAO.alterar(this);
     }
 
     public void deletarMissao(int id) throws Exception {

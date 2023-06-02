@@ -77,7 +77,7 @@ public class MissaoDAO {
             ps.setString(2, missao.getDescricao());
             ps.setInt(3, missao.getNivelDificuldade());
             ps.setInt(4, missao.getPontos());
-            ps.setInt(5, missao.getId());
+            ps.setInt(5, missao.consultarIdPeloTitulo(missao.getTitulo()));
             ps.executeUpdate();
         }
     }

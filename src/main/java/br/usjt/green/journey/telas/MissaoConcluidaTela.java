@@ -33,7 +33,6 @@ public class MissaoConcluidaTela extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
@@ -41,10 +40,17 @@ public class MissaoConcluidaTela extends javax.swing.JFrame {
         voltaCatalogoButton = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         logoLabel = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(695, 505));
+        setResizable(false);
         setSize(new java.awt.Dimension(695, 505));
         getContentPane().setLayout(null);
         getContentPane().add(jLabel1);
@@ -57,19 +63,6 @@ public class MissaoConcluidaTela extends javax.swing.JFrame {
         jLabel4.setBounds(0, 329, 0, 0);
         getContentPane().add(jLabel6);
         jLabel6.setBounds(530, 248, 0, 0);
-
-        jTextField1.setBackground(new java.awt.Color(0, 102, 51));
-        jTextField1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField1.setText("   Parabéns, mais uma missão concluída!");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(115, 116, 370, 35);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -91,7 +84,7 @@ public class MissaoConcluidaTela extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTextArea1);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(114, 167, 371, 110);
+        jScrollPane1.setBounds(80, 210, 371, 110);
         getContentPane().add(jLabel7);
         jLabel7.setBounds(193, 18, 0, 0);
 
@@ -102,24 +95,61 @@ public class MissaoConcluidaTela extends javax.swing.JFrame {
             }
         });
         getContentPane().add(voltaCatalogoButton);
-        voltaCatalogoButton.setBounds(232, 330, 140, 40);
+        voltaCatalogoButton.setBounds(200, 360, 140, 40);
         getContentPane().add(jLabel5);
         jLabel5.setBounds(254, 286, 0, 69);
 
         logoLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\teste-removebg-preview.png")); // NOI18N
         getContentPane().add(logoLabel);
-        logoLabel.setBounds(210, 30, 190, 60);
+        logoLabel.setBounds(170, 30, 190, 60);
+
+        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\foia canto superior esquerdo.png")); // NOI18N
+        getContentPane().add(jLabel9);
+        jLabel9.setBounds(-10, 0, 80, 60);
+
+        jLabel10.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\foia canto superior direito.png")); // NOI18N
+        getContentPane().add(jLabel10);
+        jLabel10.setBounds(620, 0, 80, 60);
+
+        jLabel11.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\foia_canto_inferior_esquerdo-removebg-preview.png")); // NOI18N
+        getContentPane().add(jLabel11);
+        jLabel11.setBounds(-10, 440, 80, 60);
+
+        jLabel13.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\capybara_capybaracapybaracapybara.png")); // NOI18N
+        getContentPane().add(jLabel13);
+        jLabel13.setBounds(460, 330, 230, 170);
+
+        jPanel2.setBackground(new java.awt.Color(0, 51, 0));
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel12.setText("   Parabéns, mais uma missão concluída!");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        getContentPane().add(jPanel2);
+        jPanel2.setBounds(80, 170, 370, 40);
 
         jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\cor_de_fundo.jpg")); // NOI18N
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(0, 0, 610, 420);
+        jLabel8.setBounds(0, 0, 700, 490);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void voltaCatalogoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltaCatalogoButtonActionPerformed
         CatalogoTela ct = new CatalogoTela();
@@ -165,6 +195,10 @@ public class MissaoConcluidaTela extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -172,10 +206,11 @@ public class MissaoConcluidaTela extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel logoLabel;
     private javax.swing.JButton voltaCatalogoButton;
     // End of variables declaration//GEN-END:variables

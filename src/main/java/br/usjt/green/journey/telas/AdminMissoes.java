@@ -47,7 +47,8 @@ public class AdminMissoes extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setSize(new java.awt.Dimension(670, 485));
+        setPreferredSize(new java.awt.Dimension(675, 440));
+        setSize(new java.awt.Dimension(670, 440));
         getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(155, 219, 155));
@@ -164,7 +165,7 @@ public class AdminMissoes extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(120, 90, 417, 282);
+        jPanel1.setBounds(110, 70, 417, 282);
 
         jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\cor_de_fundo.jpg")); // NOI18N
         getContentPane().add(jLabel2);
@@ -192,7 +193,7 @@ public class AdminMissoes extends javax.swing.JFrame {
             //parsea a string que vem do campo textField para int
             int nivelDificuldade = Integer.parseInt(dificuldadeTextField.getText());
             int pontos = Integer.parseInt(pontosTextField.getText());
-            
+
             //instanciar objeto
             Missao missao = new Missao();
             //metodo da classe missão que ja instancia missaoDAO e insere no banco de dados
@@ -205,7 +206,7 @@ public class AdminMissoes extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Problemas técnicos. Tente novamente mais tarde");
             e.printStackTrace();
         }
-        
+
     }//GEN-LAST:event_inserirMissaoButtonActionPerformed
 
     private void atualizarMissaoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atualizarMissaoButtonActionPerformed
@@ -213,12 +214,12 @@ public class AdminMissoes extends javax.swing.JFrame {
             // atualizar a missão
             String titulo = tituloMissaoTextField.getText();
             String descricao = descricaoMissaoTextField.getText();
-            //parsea a string que vem do campo textField para int
             int nivelDificuldade = Integer.parseInt(dificuldadeTextField.getText());
             int pontos = Integer.parseInt(pontosTextField.getText());
             Missao missao = new Missao();
             missao.alterarMissao(titulo, descricao, nivelDificuldade, pontos);
-          } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Missão atualizada!", "Deletado", JOptionPane.INFORMATION_MESSAGE);
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Problemas técnicos. Tente novamente mais tarde");
             e.printStackTrace();
         }
@@ -247,6 +248,7 @@ public class AdminMissoes extends javax.swing.JFrame {
             //instancia do objeto missao que vamos utilizar
             Missao missao = new Missao();
             missao.deletarMissao(missao.consultarIdPeloTitulo(titulo));
+            JOptionPane.showMessageDialog(null, "Missão deletada!", "Deletado", JOptionPane.INFORMATION_MESSAGE);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Problemas técnicos. Tente novamente mais tarde");
             e.printStackTrace();

@@ -47,6 +47,7 @@ public class AdminUsuario extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(675, 440));
         setSize(new java.awt.Dimension(675, 440));
         getContentPane().setLayout(null);
 
@@ -162,28 +163,26 @@ public class AdminUsuario extends javax.swing.JFrame {
         String username = usernameTextField.getText();
         String email = emailTextField.getText();
         String senha = new String(passwordTextField.getPassword());
-        
+
         PessoaDAO pessoaDAO = new PessoaDAO();
-        Usuario usuario =  new Usuario();
-        
+        Usuario usuario = new Usuario();
+
         try {
             if (!pessoaDAO.consultarSeExistir(usuario)) {
                 usuario.setUsername(username);
                 usuario.setEmail(email);
                 usuario.setSenha(senha);
-                
+
                 pessoaDAO.inserir(usuario);
                 JOptionPane.showMessageDialog(null, "Usuario cadastrado com sucesso", "Oops", JOptionPane.INFORMATION_MESSAGE);
                 MissaoAtribuida missaoAtribuida = new MissaoAtribuida();
                 missaoAtribuida.inserirMissaoAt(usuario.getUsername());
-            }
-            else {
+            } else {
                 //lembrar de criar o construtor
                 JOptionPane.showMessageDialog(null, "Usuario ja existe", "Oops", JOptionPane.WARNING_MESSAGE);
             }
-        }
-        catch (Exception e) {
-            JOptionPane.showMessageDialog (null, "Erro ao cadastrar-se, tente novamente mais tarde!", "Oops", JOptionPane.ERROR_MESSAGE);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erro ao cadastrar-se, tente novamente mais tarde!", "Oops", JOptionPane.ERROR_MESSAGE);
             e.printStackTrace();
         }
     }//GEN-LAST:event_inserirButtonActionPerformed
@@ -203,10 +202,15 @@ public class AdminUsuario extends javax.swing.JFrame {
             //instancia objeto Usuario
             Usuario usuario = new Usuario();
             //colocar condição de existir usando "consultarSeExistir"
-            usuario.alterar(username, email, senha);
-        }
-        catch (Exception e) {
-            JOptionPane.showMessageDialog (null, "Erro ao atualizar, tente novamente mais tarde!", "Oops", JOptionPane.ERROR_MESSAGE);
+            if (usuario.consultarSeExistir(usuario)) {
+                usuario.alterar(username, email, senha);
+                JOptionPane.showMessageDialog(null, "Usuário atualizado!", "Deletado", JOptionPane.INFORMATION_MESSAGE);
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Usuário não existe!", "Oops", JOptionPane.WARNING_MESSAGE);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erro ao atualizar, tente novamente mais tarde!", "Oops", JOptionPane.ERROR_MESSAGE);
             e.printStackTrace();
         }
     }//GEN-LAST:event_atualizarButtonActionPerformed
@@ -220,13 +224,19 @@ public class AdminUsuario extends javax.swing.JFrame {
             //instancia do objeto usuario
             Usuario usuario = new Usuario();
             //seguinte metodo devolve o id do usuario para o metodo buscar e deletar
-            usuario.deletar(usuario.consultarIdPeloUsername(username));
+            if (usuario.consultarSeExistir(usuario)) {
+                usuario.deletar(usuario.consultarIdPeloUsername(username));
+                JOptionPane.showMessageDialog(null, "Usuário deletado!", "Deletado", JOptionPane.INFORMATION_MESSAGE);
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Usuário não existe!", "Oops", JOptionPane.WARNING_MESSAGE);
+            }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog (null, "Erro ao deletar, tente novamente mais tarde!", "Oops", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Erro ao deletar, tente novamente mais tarde!", "Oops", JOptionPane.ERROR_MESSAGE);
             e.printStackTrace();
         }
-        
-        
+
+
     }//GEN-LAST:event_deletarButtonActionPerformed
 
     /**

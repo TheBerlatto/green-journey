@@ -84,7 +84,7 @@ public class PessoaDAO {
             ps.setString(1, usuario.getUsername());
             ps.setString(2, usuario.getEmail());
             ps.setString(3, usuario.getSenha());
-            ps.setInt(4, usuario.getId());
+            ps.setInt(4, usuario.consultarIdPeloUsername(usuario.getUsername()));
             ps.executeUpdate();
         }
     }
