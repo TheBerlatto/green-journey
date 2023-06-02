@@ -213,7 +213,7 @@ public class AdminUsuario extends javax.swing.JFrame {
 
     private void deletarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletarButtonActionPerformed
         try {
-            // deleta usuariodo banco
+            // deleta usuario do banco
             String username = usernameTextField.getText();
             String email = emailTextField.getText();
             String senha = new String(passwordTextField.getPassword());
@@ -221,7 +221,6 @@ public class AdminUsuario extends javax.swing.JFrame {
             Usuario usuario = new Usuario();
             //seguinte metodo devolve o id do usuario para o metodo buscar e deletar
             usuario.deletar(usuario.consultarIdPeloUsername(username));
-            
         } catch (Exception e) {
             JOptionPane.showMessageDialog (null, "Erro ao deletar, tente novamente mais tarde!", "Oops", JOptionPane.ERROR_MESSAGE);
             e.printStackTrace();
