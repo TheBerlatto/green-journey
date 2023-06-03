@@ -4,6 +4,7 @@ import br.usjt.green.journey.dao.MissaoAtDAO;
 import br.usjt.green.journey.dao.MissaoDAO;
 import br.usjt.green.journey.dao.PessoaDAO;
 import br.usjt.green.journey.model.MissaoAtribuida;
+import br.usjt.green.journey.model.Usuario;
 import java.awt.event.ActionEvent;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
@@ -20,7 +21,6 @@ public class CatalogoTela extends javax.swing.JFrame {
     public CatalogoTela() {
         super("Catálogo de Missões");
         initComponents();
-        buscarMissoesAt();
         setLocationRelativeTo(null);
     }
 
@@ -222,11 +222,17 @@ public class CatalogoTela extends javax.swing.JFrame {
         });
     }
 
-    private void buscarMissoesAt() {
+    public void buscarMissoesAt() {
         try {
             MissaoAtDAO missaoAtDAO = new MissaoAtDAO();
-            PessoaDAO pessoaDAO = new PessoaDAO();
-            MissaoAtribuida[] missoes = missaoAtDAO.obterMissoesAt(pessoaDAO.consultarIdPeloUsername(usernameLabel.getText()));
+            Usuario usuario = new Usuario();
+            MissaoAtribuida[] missoes = missaoAtDAO.obterMissoesAt(usuario.consultarIdPeloUsername(usernameLabel.getText()));
+            MissaoDAO daoMissao = new MissaoDAO();
+           
+            for (MissaoAtribuida misAt : missoes) {
+                misAt.setMissao(daoMissao.consultarPorId(misAt.getMissao().getId()));
+            }
+            
             missaoAtribuidaComboBox.setModel(new DefaultComboBoxModel<>(missoes));
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Missões indisponíveis... Tente novamente mais tarde!");

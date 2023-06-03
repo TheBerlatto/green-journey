@@ -48,11 +48,11 @@ public class DashboardTela extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
+        usernameLabel = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
         missoesButton = new javax.swing.JButton();
         boasVindasLabel = new javax.swing.JLabel();
-        usernameLabel = new javax.swing.JLabel();
         logoffButton = new javax.swing.JButton();
         jLabel22 = new javax.swing.JLabel();
 
@@ -142,6 +142,12 @@ public class DashboardTela extends javax.swing.JFrame {
         getContentPane().add(jLabel20);
         jLabel20.setBounds(-10, 0, 80, 60);
 
+        usernameLabel.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        usernameLabel.setForeground(new java.awt.Color(51, 51, 51));
+        usernameLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        getContentPane().add(usernameLabel);
+        usernameLabel.setBounds(380, 0, 200, 60);
+
         jLabel21.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\foia_canto_inferior_esquerdo-removebg-preview.png")); // NOI18N
         getContentPane().add(jLabel21);
         jLabel21.setBounds(0, 370, 80, 70);
@@ -172,12 +178,6 @@ public class DashboardTela extends javax.swing.JFrame {
         getContentPane().add(boasVindasLabel);
         boasVindasLabel.setBounds(330, 0, 90, 60);
 
-        usernameLabel.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
-        usernameLabel.setForeground(new java.awt.Color(51, 51, 51));
-        usernameLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        getContentPane().add(usernameLabel);
-        usernameLabel.setBounds(380, 0, 140, 60);
-
         logoffButton.setBackground(new java.awt.Color(0, 51, 0));
         logoffButton.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         logoffButton.setForeground(new java.awt.Color(255, 255, 255));
@@ -192,7 +192,7 @@ public class DashboardTela extends javax.swing.JFrame {
 
         jLabel22.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\cor_de_fundo.jpg")); // NOI18N
         getContentPane().add(jLabel22);
-        jLabel22.setBounds(0, 0, 680, 450);
+        jLabel22.setBounds(0, 0, 680, 440);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -200,6 +200,7 @@ public class DashboardTela extends javax.swing.JFrame {
     private void missoesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_missoesButtonActionPerformed
         CatalogoTela catela = new CatalogoTela();
         catela.receberUsername(usernameLabel.getText());
+        catela.buscarMissoesAt();
         catela.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_missoesButtonActionPerformed

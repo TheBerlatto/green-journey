@@ -139,12 +139,12 @@ public class LoginTela extends javax.swing.JFrame {
             if (dao.consultarSeExistir(usuario)) {
                 //verifica se a conta digitada pertence ao admin
                 if (username.equalsIgnoreCase("administrador") && senha.equals("adminadmin123")) {
-                    JOptionPane.showMessageDialog(null, "Bem vindo, " + usuario.getUsername() + "!", "Olá!", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Bem vindo(a), " + usuario.getUsername() + "!", "Olá!", JOptionPane.INFORMATION_MESSAGE);
                     Admin1 a1 = new Admin1();
                     a1.setVisible(true);
                     this.dispose();
                 } else {
-                    JOptionPane.showMessageDialog(null, "Bem vindo, " + usuario.getUsername() + "!", "Olá!", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Bem vindo(a), " + usuario.getUsername() + "!", "Olá!", JOptionPane.INFORMATION_MESSAGE);
                     DashboardTela dt = new DashboardTela();
                     dt.receberUsername(username);
                     dt.setVisible(true);

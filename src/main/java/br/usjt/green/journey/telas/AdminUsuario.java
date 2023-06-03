@@ -174,7 +174,7 @@ public class AdminUsuario extends javax.swing.JFrame {
                 usuario.setSenha(senha);
 
                 pessoaDAO.inserir(usuario);
-                JOptionPane.showMessageDialog(null, "Usuario cadastrado com sucesso", "Oops", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Usuario cadastrado com sucesso", "Ok!", JOptionPane.INFORMATION_MESSAGE);
                 MissaoAtribuida missaoAtribuida = new MissaoAtribuida();
                 missaoAtribuida.inserirMissaoAt(usuario.getUsername());
             } else {
@@ -204,7 +204,7 @@ public class AdminUsuario extends javax.swing.JFrame {
             //colocar condição de existir usando "consultarSeExistir"
             if (usuario.consultarSeExistir(usuario)) {
                 usuario.alterar(username, email, senha);
-                JOptionPane.showMessageDialog(null, "Usuário atualizado!", "Deletado", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Usuário atualizado!", "Atualizado", JOptionPane.INFORMATION_MESSAGE);
 
             } else {
                 JOptionPane.showMessageDialog(null, "Usuário não existe!", "Oops", JOptionPane.WARNING_MESSAGE);

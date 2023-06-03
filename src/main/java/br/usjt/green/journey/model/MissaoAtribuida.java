@@ -7,10 +7,16 @@ public class MissaoAtribuida {
 
     private boolean finalizada;
     private Missao missao;
+
+    @Override
+    public String toString() {
+        String titulo = missao.getTitulo();
+        return titulo;//"MissaoAtribuida{" + '}';
+    }
     
     
     public MissaoAtribuida(){
-        
+        missao = new Missao();        
     }
     //construtor que sera usado no metodo de obter missões
     public MissaoAtribuida(int idMissao, boolean finalizada) {
@@ -53,12 +59,6 @@ public class MissaoAtribuida {
     public void inserirMissaoAtPorId(int idMissao) throws Exception{
         MissaoAtDAO dao = new MissaoAtDAO();
         dao.inserirMissaoAtPorId(idMissao);
-    }
-
-    @Override
-    public String toString() {
-        return this.missao.getTitulo();
-    }
-    
+    }   
     
 }

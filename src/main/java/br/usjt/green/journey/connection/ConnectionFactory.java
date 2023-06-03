@@ -8,7 +8,7 @@ public class ConnectionFactory {
     private static String port = "3306";
     private static String db = "db_green_journey";
     private static String usuario = "root";
-    private static String senha = "xxxxx"; //senha não inserida ainda, vou inserir depois
+    private static String senha = "berlatto123"; //senha não inserida ainda, vou inserir depois
     
     public static Connection obtemConexao() throws Exception {
         String url = String.format("jdbc:mysql://%s:%s/%s", host, port, db);
