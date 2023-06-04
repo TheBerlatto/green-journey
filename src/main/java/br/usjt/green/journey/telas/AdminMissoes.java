@@ -44,6 +44,7 @@ public class AdminMissoes extends javax.swing.JFrame {
         atualizarMissaoButton = new javax.swing.JButton();
         deleteMissaoButton = new javax.swing.JButton();
         voltarButton = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -167,9 +168,16 @@ public class AdminMissoes extends javax.swing.JFrame {
         getContentPane().add(jPanel1);
         jPanel1.setBounds(110, 70, 417, 282);
 
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("OBS: Para deletar uma missão, basta inserir o título!");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(110, 370, 420, 30);
+
         jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\cor_de_fundo.jpg")); // NOI18N
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(0, 0, 680, 490);
+        jLabel2.setBounds(0, 0, 680, 470);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -241,10 +249,6 @@ public class AdminMissoes extends javax.swing.JFrame {
         try {
             // deleta missões que estão na tabela missão
             String titulo = tituloMissaoTextField.getText();
-            String descricao = descricaoMissaoTextField.getText();
-            //parsea a string que vem do campo textField para int
-            int nivelDificuldade = Integer.parseInt(dificuldadeTextField.getText());
-            int pontos = Integer.parseInt(pontosTextField.getText());
             //instancia do objeto missao que vamos utilizar
             Missao missao = new Missao();
             missao.deletarMissao(missao.consultarIdPeloTitulo(titulo));
@@ -298,6 +302,7 @@ public class AdminMissoes extends javax.swing.JFrame {
     private javax.swing.JButton inserirMissaoButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField pontosTextField;
     private javax.swing.JTextField tituloMissaoTextField;
