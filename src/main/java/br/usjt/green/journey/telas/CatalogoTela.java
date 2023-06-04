@@ -62,7 +62,7 @@ public class CatalogoTela extends javax.swing.JFrame {
         usernameLabel.setForeground(new java.awt.Color(51, 51, 51));
         usernameLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         getContentPane().add(usernameLabel);
-        usernameLabel.setBounds(370, 0, 110, 70);
+        usernameLabel.setBounds(340, 0, 230, 70);
 
         jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\foia canto superior esquerdo.png")); // NOI18N
         getContentPane().add(jLabel2);
@@ -104,7 +104,7 @@ public class CatalogoTela extends javax.swing.JFrame {
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Missões de ");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(160, 0, 280, 70);
+        jLabel7.setBounds(130, 0, 280, 70);
 
         concluirMissaoButton.setText("Concluir Missão");
         concluirMissaoButton.addActionListener(new java.awt.event.ActionListener() {
@@ -115,6 +115,7 @@ public class CatalogoTela extends javax.swing.JFrame {
         getContentPane().add(concluirMissaoButton);
         concluirMissaoButton.setBounds(350, 400, 200, 40);
 
+        descricaoTextArea.setEditable(false);
         descricaoTextArea.setColumns(20);
         descricaoTextArea.setRows(5);
         descricaoTextArea.setBorder(javax.swing.BorderFactory.createTitledBorder("Descrição"));
@@ -123,6 +124,7 @@ public class CatalogoTela extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(120, 180, 450, 150);
 
+        tituloTextArea.setEditable(false);
         tituloTextArea.setColumns(20);
         tituloTextArea.setRows(1);
         tituloTextArea.setBorder(javax.swing.BorderFactory.createTitledBorder("Título"));
@@ -131,6 +133,7 @@ public class CatalogoTela extends javax.swing.JFrame {
         getContentPane().add(jScrollPane2);
         jScrollPane2.setBounds(230, 120, 340, 60);
 
+        idTextArea.setEditable(false);
         idTextArea.setColumns(20);
         idTextArea.setLineWrap(true);
         idTextArea.setRows(1);
@@ -141,6 +144,7 @@ public class CatalogoTela extends javax.swing.JFrame {
         getContentPane().add(jScrollPane3);
         jScrollPane3.setBounds(120, 120, 100, 60);
 
+        pontosTextArea.setEditable(false);
         pontosTextArea.setColumns(20);
         pontosTextArea.setRows(1);
         pontosTextArea.setBorder(javax.swing.BorderFactory.createTitledBorder("Pontos"));
@@ -173,6 +177,7 @@ public class CatalogoTela extends javax.swing.JFrame {
             missaoAt.concluirMissao(idUsuario, idMissao);
             pessoaDAO.atribuirPontosPorMissao(username, Integer.parseInt(pontosTextArea.getText()));
             MissaoConcluidaTela mct = new MissaoConcluidaTela();
+            mct.receberUsername(username);
             mct.setVisible(true);
             this.dispose();
         } catch (Exception e) {
@@ -183,6 +188,7 @@ public class CatalogoTela extends javax.swing.JFrame {
 
     private void dashboardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dashboardButtonActionPerformed
         DashboardTela dt = new DashboardTela();
+        dt.receberUsername(usernameLabel.getText());
         dt.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_dashboardButtonActionPerformed
@@ -226,16 +232,20 @@ public class CatalogoTela extends javax.swing.JFrame {
         try {
             MissaoAtDAO missaoAtDAO = new MissaoAtDAO();
             Usuario usuario = new Usuario();
-            MissaoAtribuida[] missoes = missaoAtDAO.obterMissoesAt(usuario.consultarIdPeloUsername(usernameLabel.getText()));
+            MissaoAtribuida[] missoes = missaoAtDAO.obterMissoesAtFinalizadas(usuario.consultarIdPeloUsername(usernameLabel.getText()));
             MissaoDAO daoMissao = new MissaoDAO();
-           
+
             for (MissaoAtribuida misAt : missoes) {
                 misAt.setMissao(daoMissao.consultarPorId(misAt.getMissao().getId()));
+                idTextArea.setText(String.valueOf(misAt.getMissao().getId()));
+                tituloTextArea.setText(misAt.getMissao().getTitulo());
+                descricaoTextArea.setText(misAt.getMissao().getDescricao());
+                pontosTextArea.setText(String.valueOf(misAt.getMissao().getPontos()));
             }
-            
+
             missaoAtribuidaComboBox.setModel(new DefaultComboBoxModel<>(missoes));
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Missões indisponíveis... Tente novamente mais tarde!");
+            JOptionPane.showMessageDialog(null, "Missões indisponíveis... Tente novamente mais tarde!", "Oops", JOptionPane.ERROR_MESSAGE);
             e.printStackTrace();
         }
     }

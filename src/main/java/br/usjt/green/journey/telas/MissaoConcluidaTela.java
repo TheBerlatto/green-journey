@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package br.usjt.green.journey.telas;
 
 /**
@@ -46,11 +42,11 @@ public class MissaoConcluidaTela extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
+        usernameLabel = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(695, 505));
-        setResizable(false);
         setSize(new java.awt.Dimension(695, 505));
         getContentPane().setLayout(null);
         getContentPane().add(jLabel1);
@@ -78,6 +74,7 @@ public class MissaoConcluidaTela extends javax.swing.JFrame {
         getContentPane().add(jPanel1);
         jPanel1.setBounds(491, 254, 0, 165);
 
+        jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jTextArea1.setText("As pequenas ações ajudam a mudar o mundo. \nCuide e proteja o nosso meio ambiente! \nContamos com você para evoluirmos e transformar \no mundo em um lugar melhor!\n\nSua pontuação foi creditada! ");
@@ -144,6 +141,11 @@ public class MissaoConcluidaTela extends javax.swing.JFrame {
         getContentPane().add(jPanel2);
         jPanel2.setBounds(80, 170, 370, 40);
 
+        usernameLabel.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        usernameLabel.setForeground(new java.awt.Color(51, 51, 51));
+        getContentPane().add(usernameLabel);
+        usernameLabel.setBounds(410, 30, 220, 70);
+
         jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\cor_de_fundo.jpg")); // NOI18N
         getContentPane().add(jLabel8);
         jLabel8.setBounds(0, 0, 700, 490);
@@ -152,8 +154,10 @@ public class MissaoConcluidaTela extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void voltaCatalogoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltaCatalogoButtonActionPerformed
-        CatalogoTela ct = new CatalogoTela();
-        ct.setVisible(true);
+        CatalogoTela catela = new CatalogoTela();
+        catela.buscarMissoesAt();
+        catela.receberUsername(usernameLabel.getText());
+        catela.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_voltaCatalogoButtonActionPerformed
 
@@ -192,6 +196,11 @@ public class MissaoConcluidaTela extends javax.swing.JFrame {
             }
         });
     }
+    
+    //Recebe o username de quem logou!
+    public void receberUsername(String username) {
+        usernameLabel.setText(username);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
@@ -212,6 +221,7 @@ public class MissaoConcluidaTela extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel logoLabel;
+    private javax.swing.JLabel usernameLabel;
     private javax.swing.JButton voltaCatalogoButton;
     // End of variables declaration//GEN-END:variables
 }

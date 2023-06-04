@@ -47,6 +47,8 @@ public class CadastroTela extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(0, 0));
         setPreferredSize(new java.awt.Dimension(575, 390));
+        setResizable(false);
+        setSize(new java.awt.Dimension(575, 390));
         getContentPane().setLayout(null);
 
         emailTextField.setBorder(javax.swing.BorderFactory.createTitledBorder("Email"));

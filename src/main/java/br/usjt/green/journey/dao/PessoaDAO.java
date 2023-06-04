@@ -99,7 +99,7 @@ public class PessoaDAO {
     }
     
     public void atribuirPontosPorMissao(String username, int pontos) throws Exception {
-        String sql = "UPDATE tb_pessoas SET pontuacao = pontuacao + ? WHERE username = ?;";
+        String sql = "UPDATE tb_pessoa SET pontuacao = pontuacao + ? WHERE username = ?;";
         try (Connection conn = ConnectionFactory.obtemConexao(); PreparedStatement ps = conn.prepareStatement(sql)) {
 
             ps.setInt(1, pontos);

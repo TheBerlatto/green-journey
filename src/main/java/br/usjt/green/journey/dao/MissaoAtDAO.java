@@ -90,18 +90,27 @@ public class MissaoAtDAO {
     }
 
     public MissaoAtribuida[] obterMissoesAtFinalizadas(int idPessoa) throws Exception {
-        String sql = "SELECT * FROM tb_missaoAt WHERE finalizada = 1;";
-        try (Connection conn = ConnectionFactory.obtemConexao(); PreparedStatement ps = conn.prepareStatement(sql,
-                ResultSet.TYPE_SCROLL_INSENSITIVE,
-                ResultSet.CONCUR_READ_ONLY); ResultSet rs = ps.executeQuery()) {
+        String sql = "SELECT * FROM tb_missaoAt WHERE id_pessoa = ? AND finalizada = 0 ;";
+        try (Connection conn = ConnectionFactory.obtemConexao();) {
+            PreparedStatement ps = conn.prepareStatement(sql,
+                    ResultSet.TYPE_SCROLL_INSENSITIVE,
+                    ResultSet.CONCUR_READ_ONLY);
+
+            ps.setInt(1, idPessoa);
+            ResultSet rs = ps.executeQuery();
             int totalDeMissoes = rs.last() ? rs.getRow() : 0;
             MissaoAtribuida[] missoesUsuario = new MissaoAtribuida[totalDeMissoes];
             rs.beforeFirst();
             int contador = 0;
             while (rs.next()) {
+                //int idMissao = rs.getInt("id_missao");
+                //boolean finalizada = rs.getBoolean("finalizada");
+                missoesUsuario[contador] = new MissaoAtribuida();
+                
                 int idMissao = rs.getInt("id_missao");
-                boolean finalizada = rs.getBoolean("finalizada");
-                missoesUsuario[contador++] = new MissaoAtribuida(idMissao, finalizada);
+                 missoesUsuario[contador].getMissao().setId(idMissao);
+                contador++;
+                
             }
             return missoesUsuario;
         }

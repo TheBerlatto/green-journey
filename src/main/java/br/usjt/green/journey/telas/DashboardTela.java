@@ -68,7 +68,6 @@ public class DashboardTela extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(675, 485));
-        setResizable(false);
         setSize(new java.awt.Dimension(675, 485));
         getContentPane().setLayout(null);
         getContentPane().add(jLabel1);
@@ -146,7 +145,7 @@ public class DashboardTela extends javax.swing.JFrame {
         usernameLabel.setForeground(new java.awt.Color(51, 51, 51));
         usernameLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         getContentPane().add(usernameLabel);
-        usernameLabel.setBounds(380, 0, 200, 60);
+        usernameLabel.setBounds(380, 0, 220, 60);
 
         jLabel21.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\foia_canto_inferior_esquerdo-removebg-preview.png")); // NOI18N
         getContentPane().add(jLabel21);
