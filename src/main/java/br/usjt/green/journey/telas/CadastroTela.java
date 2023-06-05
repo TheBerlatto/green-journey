@@ -39,9 +39,12 @@ public class CadastroTela extends javax.swing.JFrame {
         logoLabel = new javax.swing.JLabel();
         voltarButton = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
+        termosCheckBox = new javax.swing.JCheckBox();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        termosButton = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -85,7 +88,7 @@ public class CadastroTela extends javax.swing.JFrame {
             }
         });
         getContentPane().add(finalizarButton);
-        finalizarButton.setBounds(280, 260, 100, 30);
+        finalizarButton.setBounds(340, 280, 100, 30);
         getContentPane().add(jLabel2);
         jLabel2.setBounds(130, 220, 80, 0);
         getContentPane().add(jLabel1);
@@ -102,11 +105,19 @@ public class CadastroTela extends javax.swing.JFrame {
             }
         });
         getContentPane().add(voltarButton);
-        voltarButton.setBounds(160, 260, 90, 30);
+        voltarButton.setBounds(100, 280, 90, 30);
 
         jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\foia canto superior esquerdo.png")); // NOI18N
         getContentPane().add(jLabel5);
         jLabel5.setBounds(-10, 0, 80, 60);
+
+        termosCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                termosCheckBoxActionPerformed(evt);
+            }
+        });
+        getContentPane().add(termosCheckBox);
+        termosCheckBox.setBounds(60, 250, 20, 19);
 
         jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\foia canto superior direito.png")); // NOI18N
         getContentPane().add(jLabel6);
@@ -119,6 +130,22 @@ public class CadastroTela extends javax.swing.JFrame {
         jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\foia canto inferior direito.png")); // NOI18N
         getContentPane().add(jLabel8);
         jLabel8.setBounds(477, 296, 80, 60);
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setText("Ao clicar em finalizar, você declara que aceita os Termos de Uso");
+        getContentPane().add(jLabel9);
+        jLabel9.setBounds(70, 250, 420, 20);
+
+        termosButton.setText("Termos de Uso");
+        termosButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                termosButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(termosButton);
+        termosButton.setBounds(200, 280, 130, 30);
 
         jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\cor_de_fundo.jpg")); // NOI18N
         getContentPane().add(jLabel4);
@@ -137,38 +164,39 @@ public class CadastroTela extends javax.swing.JFrame {
 
     // botão que faz o cadastro usuario
     private void finalizarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_finalizarButtonActionPerformed
-        String email = emailTextField.getText();
-        String username = usernameTextField.getText();
-        String senha = new String(passwordTextField.getPassword());
-        
-        PessoaDAO pessoaDAO = new PessoaDAO();
-        Usuario usuario =  new Usuario();
-        
-        try {
-            if (!pessoaDAO.consultarSeExistir(usuario)) {
-                usuario.setUsername(username);
-                usuario.setEmail(email);
-                usuario.setSenha(senha);
-                
-                pessoaDAO.inserir(usuario);
-                JOptionPane.showMessageDialog(null, "Usuario cadastrado com sucesso", "Oops", JOptionPane.INFORMATION_MESSAGE);
-                DashboardTela dt = new DashboardTela();
-                MissaoAtribuida missaoAtribuida = new MissaoAtribuida();
-                missaoAtribuida.inserirMissaoAt(usuario.getUsername());
-                dt.receberUsername(username);
-                dt.setVisible(true);
-                this.dispose();
+        if (termosCheckBox.isSelected()) {
+            String email = emailTextField.getText();
+            String username = usernameTextField.getText();
+            String senha = new String(passwordTextField.getPassword());
+
+            PessoaDAO pessoaDAO = new PessoaDAO();
+            Usuario usuario = new Usuario();
+
+            try {
+                if (!pessoaDAO.consultarSeExistir(usuario)) {
+                    usuario.setUsername(username);
+                    usuario.setEmail(email);
+                    usuario.setSenha(senha);
+
+                    pessoaDAO.inserir(usuario);
+                    JOptionPane.showMessageDialog(null, "Usuario cadastrado com sucesso", "Oops", JOptionPane.INFORMATION_MESSAGE);
+                    DashboardTela dt = new DashboardTela();
+                    MissaoAtribuida missaoAtribuida = new MissaoAtribuida();
+                    missaoAtribuida.inserirMissaoAt(usuario.getUsername());
+                    dt.receberUsername(username);
+                    dt.setVisible(true);
+                    this.dispose();
+                } else {
+                    //lembrar de criar o construtor
+                    JOptionPane.showMessageDialog(null, "Usuario ja existe", "Oops", JOptionPane.WARNING_MESSAGE);
+                }
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Erro ao cadastrar-se, tente novamente mais tarde!", "Oops", JOptionPane.ERROR_MESSAGE);
+                e.printStackTrace();
             }
-            else {
-                //lembrar de criar o construtor
-                JOptionPane.showMessageDialog(null, "Usuario ja existe", "Oops", JOptionPane.WARNING_MESSAGE);
-            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Aceite os termos de Uso!", "Oops", JOptionPane.WARNING_MESSAGE);
         }
-        catch (Exception e) {
-            JOptionPane.showMessageDialog (null, "Erro ao cadastrar-se, tente novamente mais tarde!", "Oops", JOptionPane.ERROR_MESSAGE);
-            e.printStackTrace();
-        }
-        
     }//GEN-LAST:event_finalizarButtonActionPerformed
 
     private void voltarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarButtonActionPerformed
@@ -180,6 +208,15 @@ public class CadastroTela extends javax.swing.JFrame {
     private void passwordTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_passwordTextFieldActionPerformed
+
+    private void termosCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_termosCheckBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_termosCheckBoxActionPerformed
+
+    private void termosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_termosButtonActionPerformed
+        TermosTela tt = new TermosTela();
+        tt.setVisible(true);
+    }//GEN-LAST:event_termosButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -228,8 +265,11 @@ public class CadastroTela extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel logoLabel;
     private javax.swing.JPasswordField passwordTextField;
+    private javax.swing.JButton termosButton;
+    private javax.swing.JCheckBox termosCheckBox;
     private javax.swing.JTextField usernameTextField;
     private javax.swing.JButton voltarButton;
     // End of variables declaration//GEN-END:variables

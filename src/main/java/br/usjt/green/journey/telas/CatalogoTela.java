@@ -6,6 +6,7 @@ import br.usjt.green.journey.dao.PessoaDAO;
 import br.usjt.green.journey.model.MissaoAtribuida;
 import br.usjt.green.journey.model.Usuario;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 
@@ -117,6 +118,7 @@ public class CatalogoTela extends javax.swing.JFrame {
 
         descricaoTextArea.setEditable(false);
         descricaoTextArea.setColumns(20);
+        descricaoTextArea.setLineWrap(true);
         descricaoTextArea.setRows(5);
         descricaoTextArea.setBorder(javax.swing.BorderFactory.createTitledBorder("Descrição"));
         jScrollPane1.setViewportView(descricaoTextArea);
@@ -244,6 +246,19 @@ public class CatalogoTela extends javax.swing.JFrame {
             }
 
             missaoAtribuidaComboBox.setModel(new DefaultComboBoxModel<>(missoes));
+
+            missaoAtribuidaComboBox.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    MissaoAtribuida selectedMisAt = (MissaoAtribuida) missaoAtribuidaComboBox.getSelectedItem();
+                    if (selectedMisAt != null) {
+                        idTextArea.setText(String.valueOf(selectedMisAt.getMissao().getId()));
+                        tituloTextArea.setText(selectedMisAt.getMissao().getTitulo());
+                        descricaoTextArea.setText(selectedMisAt.getMissao().getDescricao());
+                        pontosTextArea.setText(String.valueOf(selectedMisAt.getMissao().getPontos()));
+                    }
+                }
+            });
+
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Missões indisponíveis... Tente novamente mais tarde!", "Oops", JOptionPane.ERROR_MESSAGE);
             e.printStackTrace();
@@ -253,20 +268,6 @@ public class CatalogoTela extends javax.swing.JFrame {
     //Recebe o username de quem logou!
     public void receberUsername(String username) {
         usernameLabel.setText(username);
-    }
-
-    public void actionPerformed(ActionEvent e) throws Exception {
-        String itemSelecionado = missaoAtribuidaComboBox.getSelectedItem().toString();
-        preencherCamposDeTexto(itemSelecionado);
-    }
-
-    private void preencherCamposDeTexto(String itemSelecionado) throws Exception {
-
-        MissaoDAO missaoDAO = new MissaoDAO();
-        idTextArea.setText(String.valueOf(missaoDAO.consultarIdPeloTitulo(itemSelecionado)));
-        tituloTextArea.setText(itemSelecionado);
-        descricaoTextArea.setText(missaoDAO.consultarDescricaoPeloTitulo(itemSelecionado));
-        pontosTextArea.setText(String.valueOf(missaoDAO.consultarPontosPeloTitulo(itemSelecionado)));
     }
 
 

@@ -155,8 +155,8 @@ public class MissaoConcluidaTela extends javax.swing.JFrame {
 
     private void voltaCatalogoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltaCatalogoButtonActionPerformed
         CatalogoTela catela = new CatalogoTela();
-        catela.buscarMissoesAt();
         catela.receberUsername(usernameLabel.getText());
+        catela.buscarMissoesAt();
         catela.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_voltaCatalogoButtonActionPerformed
