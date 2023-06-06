@@ -183,7 +183,7 @@ public class CatalogoTela extends javax.swing.JFrame {
             mct.setVisible(true);
             this.dispose();
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Erro ao finalizar missão... Tente novamente mais tarde!", "Oops", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Todas as missões já foram concluídas, parabéns!", "Oops", JOptionPane.INFORMATION_MESSAGE);
             e.printStackTrace();
         }
     }//GEN-LAST:event_concluirMissaoButtonActionPerformed

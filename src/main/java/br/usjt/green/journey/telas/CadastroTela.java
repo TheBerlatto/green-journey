@@ -174,20 +174,23 @@ public class CadastroTela extends javax.swing.JFrame {
 
             try {
                 if (!pessoaDAO.consultarSeExistir(usuario)) {
-                    usuario.setUsername(username);
-                    usuario.setEmail(email);
-                    usuario.setSenha(senha);
+                    if (!email.isEmpty() && !username.isEmpty() && !senha.isEmpty()) {
+                        usuario.setEmail(email);
+                        usuario.setUsername(username);
+                        usuario.setSenha(senha);
 
-                    pessoaDAO.inserir(usuario);
-                    JOptionPane.showMessageDialog(null, "Usuario cadastrado com sucesso", "Oops", JOptionPane.INFORMATION_MESSAGE);
-                    DashboardTela dt = new DashboardTela();
-                    MissaoAtribuida missaoAtribuida = new MissaoAtribuida();
-                    missaoAtribuida.inserirMissaoAt(usuario.getUsername());
-                    dt.receberUsername(username);
-                    dt.setVisible(true);
-                    this.dispose();
+                        pessoaDAO.inserir(usuario);
+                        JOptionPane.showMessageDialog(null, "Usuario cadastrado com sucesso", "Oops", JOptionPane.INFORMATION_MESSAGE);
+                        DashboardTela dt = new DashboardTela();
+                        MissaoAtribuida missaoAtribuida = new MissaoAtribuida();
+                        missaoAtribuida.inserirMissaoAt(usuario.getUsername());
+                        dt.receberUsername(username);
+                        dt.setVisible(true);
+                        this.dispose();
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Todos os campos são obrigatórios!", "Oops", JOptionPane.WARNING_MESSAGE);
+                    }
                 } else {
-                    //lembrar de criar o construtor
                     JOptionPane.showMessageDialog(null, "Usuario ja existe", "Oops", JOptionPane.WARNING_MESSAGE);
                 }
             } catch (Exception e) {

@@ -31,6 +31,7 @@ public class Admin1 extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         usersButton = new javax.swing.JButton();
         missoesButton = new javax.swing.JButton();
+        logoffButton = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -64,6 +65,15 @@ public class Admin1 extends javax.swing.JFrame {
         getContentPane().add(missoesButton);
         missoesButton.setBounds(350, 170, 160, 70);
 
+        logoffButton.setText("Logoff");
+        logoffButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logoffButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(logoffButton);
+        logoffButton.setBounds(270, 270, 100, 30);
+
         jLabel3.setBackground(new java.awt.Color(0, 51, 0));
         jLabel3.setForeground(new java.awt.Color(0, 51, 0));
         jLabel3.setOpaque(true);
@@ -88,6 +98,12 @@ public class Admin1 extends javax.swing.JFrame {
         am.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_missoesButtonActionPerformed
+
+    private void logoffButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoffButtonActionPerformed
+        LoginTela lt = new LoginTela();
+        lt.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_logoffButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -128,6 +144,7 @@ public class Admin1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JButton logoffButton;
     private javax.swing.JButton missoesButton;
     private javax.swing.JButton usersButton;
     // End of variables declaration//GEN-END:variables
