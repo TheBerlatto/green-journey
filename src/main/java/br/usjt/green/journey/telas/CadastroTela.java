@@ -180,7 +180,7 @@ public class CadastroTela extends javax.swing.JFrame {
                         usuario.setSenha(senha);
 
                         pessoaDAO.inserir(usuario);
-                        JOptionPane.showMessageDialog(null, "Usuario cadastrado com sucesso", "Oops", JOptionPane.INFORMATION_MESSAGE);
+                        JOptionPane.showMessageDialog(null, "Usuário cadastrado com sucesso", "Oops", JOptionPane.INFORMATION_MESSAGE);
                         DashboardTela dt = new DashboardTela();
                         MissaoAtribuida missaoAtribuida = new MissaoAtribuida();
                         missaoAtribuida.inserirMissaoAt(usuario.getUsername());
@@ -188,10 +188,10 @@ public class CadastroTela extends javax.swing.JFrame {
                         dt.setVisible(true);
                         this.dispose();
                     } else {
-                        JOptionPane.showMessageDialog(null, "Todos os campos são obrigatórios!", "Oops", JOptionPane.WARNING_MESSAGE);
+                        JOptionPane.showMessageDialog(null, "Todos os campos são obrigatórios, preencha-os!", "Oops", JOptionPane.WARNING_MESSAGE);
                     }
                 } else {
-                    JOptionPane.showMessageDialog(null, "Usuario ja existe", "Oops", JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Usuário ja existe", "Oops", JOptionPane.WARNING_MESSAGE);
                 }
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Erro ao cadastrar-se, tente novamente mais tarde!", "Oops", JOptionPane.ERROR_MESSAGE);
