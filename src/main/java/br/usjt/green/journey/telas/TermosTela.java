@@ -49,7 +49,7 @@ public class TermosTela extends javax.swing.JFrame {
         jTextArea1.setForeground(new java.awt.Color(255, 255, 255));
         jTextArea1.setLineWrap(true);
         jTextArea1.setRows(5);
-        jTextArea1.setText("Este aplicativo pertence e é operado pela empresa Green Journey.\nEstes Termos estabelecem os termos e condições sob os quais você pode utilizar nossos serviços oferecidos. \n\nEste aplicativo oferece  um catálogo de missões relacionadas ao meio \nambiente, para que o úsuario tenha um direcionamento e ao mesmo tempo possa se divertir. Cada missão concluída equivale a pontuação informada em sua descrição, e será somada a pontuação total que um usuário possui. \n\nSerá disponibilizado um ranking que mostra os usuários com maior \npontuação dentro da plataforma. \n\nNão existe qualquer tipo de remuneração monetária pela conclusão das \nmissões. \n\nAo acessar ou usar a plataforma, você aprova que leu, entendeu e \nconcorda em ficar vinculado a estes Termos.\n");
+        jTextArea1.setText("Este aplicativo pertence e é operado pela empresa Green Journey.\nEstes Termos estabelecem os termos e condições sob os quais você pode utilizar nossos serviços oferecidos. \n\nEste aplicativo oferece  um catálogo de missões relacionadas ao meio \nambiente, para que o úsuario tenha um direcionamento e ao mesmo tempo possa se divertir. Cada missão concluída equivale a pontuação informada em sua descrição, e será somada a pontuação total que um usuário possui. \n\nSerá disponibilizado um ranking que mostra os usuários com maior \npontuação dentro da plataforma. \n\nNão existe qualquer tipo de remuneração monetária pela conclusão das \nmissões. \n\nAo acessar ou usar a plataforma, você aprova que leu, entendeu e \nconcorda em ficar vinculado a estes Termos.\n\nPara atualização de cadastros, contate o administrador!\n");
         jTextArea1.setWrapStyleWord(true);
         jScrollPane1.setViewportView(jTextArea1);
 
@@ -83,7 +83,7 @@ public class TermosTela extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\ws-netbeans\\GreenJourney\\src\\main\\java\\br\\usjt\\green\\journey\\imagens\\cor_de_fundo.jpg")); // NOI18N
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(0, 0, 680, 490);
+        jLabel2.setBounds(0, 0, 680, 491);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

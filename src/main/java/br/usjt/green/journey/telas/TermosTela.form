@@ -67,7 +67,7 @@
             </Property>
             <Property name="lineWrap" type="boolean" value="true"/>
             <Property name="rows" type="int" value="5"/>
-            <Property name="text" type="java.lang.String" value="Este aplicativo pertence e &#xe9; operado pela empresa Green Journey.&#xa;Estes Termos estabelecem os termos e condi&#xe7;&#xf5;es sob os quais voc&#xea; pode utilizar nossos servi&#xe7;os oferecidos. &#xa;&#xa;Este aplicativo oferece  um cat&#xe1;logo de miss&#xf5;es relacionadas ao meio &#xa;ambiente, para que o &#xfa;suario tenha um direcionamento e ao mesmo tempo possa se divertir. Cada miss&#xe3;o conclu&#xed;da equivale a pontua&#xe7;&#xe3;o informada em sua descri&#xe7;&#xe3;o, e ser&#xe1; somada a pontua&#xe7;&#xe3;o total que um usu&#xe1;rio possui. &#xa;&#xa;Ser&#xe1; disponibilizado um ranking que mostra os usu&#xe1;rios com maior &#xa;pontua&#xe7;&#xe3;o dentro da plataforma. &#xa;&#xa;N&#xe3;o existe qualquer tipo de remunera&#xe7;&#xe3;o monet&#xe1;ria pela conclus&#xe3;o das &#xa;miss&#xf5;es. &#xa;&#xa;Ao acessar ou usar a plataforma, voc&#xea; aprova que leu, entendeu e &#xa;concorda em ficar vinculado a estes Termos.&#xa;"/>
+            <Property name="text" type="java.lang.String" value="Este aplicativo pertence e &#xe9; operado pela empresa Green Journey.&#xa;Estes Termos estabelecem os termos e condi&#xe7;&#xf5;es sob os quais voc&#xea; pode utilizar nossos servi&#xe7;os oferecidos. &#xa;&#xa;Este aplicativo oferece  um cat&#xe1;logo de miss&#xf5;es relacionadas ao meio &#xa;ambiente, para que o &#xfa;suario tenha um direcionamento e ao mesmo tempo possa se divertir. Cada miss&#xe3;o conclu&#xed;da equivale a pontua&#xe7;&#xe3;o informada em sua descri&#xe7;&#xe3;o, e ser&#xe1; somada a pontua&#xe7;&#xe3;o total que um usu&#xe1;rio possui. &#xa;&#xa;Ser&#xe1; disponibilizado um ranking que mostra os usu&#xe1;rios com maior &#xa;pontua&#xe7;&#xe3;o dentro da plataforma. &#xa;&#xa;N&#xe3;o existe qualquer tipo de remunera&#xe7;&#xe3;o monet&#xe1;ria pela conclus&#xe3;o das &#xa;miss&#xf5;es. &#xa;&#xa;Ao acessar ou usar a plataforma, voc&#xea; aprova que leu, entendeu e &#xa;concorda em ficar vinculado a estes Termos.&#xa;&#xa;Para atualiza&#xe7;&#xe3;o de cadastros, contate o administrador!&#xa;"/>
             <Property name="wrapStyleWord" type="boolean" value="true"/>
           </Properties>
         </Component>
@@ -142,7 +142,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="0" y="0" width="680" height="490"/>
+          <AbsoluteConstraints x="0" y="0" width="680" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>

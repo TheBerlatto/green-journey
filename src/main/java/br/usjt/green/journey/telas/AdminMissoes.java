@@ -210,6 +210,7 @@ public class AdminMissoes extends javax.swing.JFrame {
             // "inserirMissaoAtPorId" associa-la a todos os usuarios da plataforma
             MissaoAtribuida missaoAtribuida = new MissaoAtribuida();
             missaoAtribuida.inserirMissaoAtPorId(missao.consultarIdPeloTitulo(titulo));
+            JOptionPane.showMessageDialog(null, "Missão criada com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Problemas técnicos. Tente novamente mais tarde");
             e.printStackTrace();

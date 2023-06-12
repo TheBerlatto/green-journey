@@ -78,13 +78,12 @@ public class PessoaDAO {
     }
 
     public void alterar(Usuario usuario) throws Exception {
-        String sql = "UPDATE tb_pessoa SET username = ?, email = ?, senha = ? WHERE id = ?;";
+        String sql = "UPDATE tb_pessoa SET email = ?, senha = ? WHERE id = ?;";
         try (Connection conn = ConnectionFactory.obtemConexao(); PreparedStatement ps = conn.prepareStatement(sql)) {
 
-            ps.setString(1, usuario.getUsername());
-            ps.setString(2, usuario.getEmail());
-            ps.setString(3, usuario.getSenha());
-            ps.setInt(4, usuario.consultarIdPeloUsername(usuario.getUsername()));
+            ps.setString(1, usuario.getEmail());
+            ps.setString(2, usuario.getSenha());
+            ps.setInt(3, usuario.consultarIdPeloUsername(usuario.getUsername()));
             ps.executeUpdate();
         }
     }

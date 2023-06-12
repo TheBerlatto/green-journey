@@ -201,14 +201,8 @@ public class AdminUsuario extends javax.swing.JFrame {
             String senha = new String(passwordTextField.getPassword());
             //instancia objeto Usuario
             Usuario usuario = new Usuario();
-            //colocar condição de existir usando "consultarSeExistir"
-            if (usuario.consultarSeExistir(usuario)) {
-                usuario.alterar(username, email, senha);
-                JOptionPane.showMessageDialog(null, "Usuário atualizado!", "Atualizado", JOptionPane.INFORMATION_MESSAGE);
-
-            } else {
-                JOptionPane.showMessageDialog(null, "Usuário não existe!", "Oops", JOptionPane.WARNING_MESSAGE);
-            }
+            usuario.alterar(username, email, senha);
+            JOptionPane.showMessageDialog(null, "Usuário atualizado!", "Atualizado", JOptionPane.INFORMATION_MESSAGE);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Erro ao atualizar, tente novamente mais tarde!", "Oops", JOptionPane.ERROR_MESSAGE);
             e.printStackTrace();
