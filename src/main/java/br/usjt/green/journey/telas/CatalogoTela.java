@@ -247,6 +247,11 @@ public class CatalogoTela extends javax.swing.JFrame {
 
             missaoAtribuidaComboBox.setModel(new DefaultComboBoxModel<>(missoes));
 
+            idTextArea.setText("");
+            tituloTextArea.setText("");
+            descricaoTextArea.setText("");
+            pontosTextArea.setText("");
+
             missaoAtribuidaComboBox.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     MissaoAtribuida selectedMisAt = (MissaoAtribuida) missaoAtribuidaComboBox.getSelectedItem();
